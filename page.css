@@ -1,0 +1,73 @@
+
+body {
+font-family:Helvetica;
+font-size: 15px;
+background-color: #8B1300;
+}
+#heading2{
+position: relative;
+color: white;
+padding: 1px;
+left: 220px;
+}
+/*
+a {
+color: #FFFFFF;
+}
+a:link {color: #FFFFFF; text-decoration: underline; }
+*/
+
+a:active {color: #FFFFFF; text-decoration: underline;}
+a:visited {color: #FFFFFF; text-decoration:none;}
+a:hover {color: #CDCDCD; text-decoration: none;}
+
+
+.container {
+width: 900px;
+margin: 0 auto;
+}
+
+#swap{
+position: relative;
+left: 220px;
+}
+#mogli,#pogli,#boomerang,#helicopter {
+ padding:20px;
+}
+
+#nav {
+    line-height:30px;
+    font-weight: bold;
+    color: white;
+    --background-color:#8B1300;
+    height:950px;
+    width:170px;
+    float:left;
+    padding:10px;
+}
+
+
+
+#main {
+border:solid 3px white;
+border-radius: 5px;
+color: white;
+background-color:white;
+}
+
+td,article{
+color: black;
+}
+
+#floted {
+color: black;
+float: left;
+width: 220px;
+position: relative;
+left: 600px;
+}
+
+
+
+
+
