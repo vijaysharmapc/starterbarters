@@ -6,7 +6,7 @@
 
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-01-04T12:41:13+0530" >
+<meta name="date" content="2015-01-04T23:38:43+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -29,19 +29,19 @@
 
 <a >Swap Categories </a>
 <br>
-<a  href="/starterbarters/category.php?catid=1" > Books </a>
+<a id="Books" href="/starterbarters/category.php?catid=1" > Books </a>
 <br>
-<a href="/starterbarters/category.php?catid=2"> DVD & films </a>
+<a id="DVD" href="/starterbarters/category.php?catid=2"> DVD & films </a>
 <br>
-<a href="/starterbarters/category.php?catid=3"> Sports gear </a>
+<a id="Sport" href="/starterbarters/category.php?catid=3"> Sports gear </a>
 <br>
-<a href="/starterbarters/category.php?catid=4"> Furniture</a>
+<a id="Furn" href="/starterbarters/category.php?catid=4"> Furnitures</a>
 <br>
-<a href="/starterbarters/category.php?catid=5">  Electronics </a> 
+<a id="Elec" href="/starterbarters/category.php?catid=5">  Electronics </a> 
 <br>
-<a href="/starterbarters/category.php?catid=6"> Toys & baby gear </a>
+<a id="Toys" href="/starterbarters/category.php?catid=6"> Toys & baby gear </a>
 <br>
-<a href="/starterbarters/category.php?catid=7">  Two wheelers! </a>
+<a id="Two" href="/starterbarters/category.php?catid=7">  Two wheelers! </a>
 <br>
 <a href="/starterbarters/swap.php" >  Cars!! </a>
 <br>

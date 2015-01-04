@@ -1,91 +1,98 @@
-1,Action & Adventure
-1,Biographies
-1,Comics
-1,Commerce
-1,Cooking & Food
-1,Diaries
-1,Engineering
-1,Entrance Exams
-1,Health & Fitness
-1,History & Politics
-1,Humor
-1,Indian Writing
-1,Knowledge & Learning
-1,Medicine
-1,Music & Films
-1,School Books
-1,Others
-2,New Releases
-2,Hollywood Movies
-2,Bollywood Movies
-2,Regional Movies
-2,TV Shows & Documentaries
-2,Kids & Educational
-2,Health & Fitness
-2,Music
-2,International Music
-2,Bollywood Music
-2,Indian Classical & Devotional
-2,Gaming
-2,PC Games
-2,Others
-6,School Supplies
-6,Toys for Boys
-6,Toys for Girls
-6,Infant Toys
-6,Remote Controlled Toys
-6,Soft Toys
-6,Educational toys
-6,Infant Clothing
-6,Cradels
-6,Others
-3,CLIMBING
-3,CYCLING
-3,COMBAT SPORTS
-3,FITNESS
-3,GOLF
-3,HIKING
-3,NATURE SPORTS
-3,RACQUET SPORTS
-3,RUNNING
-3,ROLLER SPORTS
-3,TEAM SPORTS
-3,TARGET SPORTS
-3,WATERSPORTS
-3,WALKING
-3,Others
-4,Living Room Furniture
-4,Bedroom Furniture
-4,Dining Room Furniture
-4,Bar Furniture
-4,Study Room Furniture
-4,Outdoor Furniture
-4,Lightings
-4,Wall Decor
-4,Bean Bags
-4,Housekeeping
-4,Others
-5,Mobiles
-5,Tablets
-5,Smart Watches & Bands
-5,Power Banks
-5,Mobile Memory Cards
-5,Laptops
-5,Computer Accessories
-5,Televisions
-5,Speakers
-5,MP3 Players
-5,Gaming Accessories
-5,Gaming Consoles
-5,Vacuum Cleaners
-5,Washing Machines
-5,Kitchen Appliances
-5,Cameras
-5,Health Care Devices
-5,Others
-7,Mopeds
-7,Scooter
-7,Cruiser
-7,Standard
-7,Semi faired
-7,Others
+1,BOOKS – SECTION,1,0
+1,Action & Adventure,2,0
+1,Biographies,3,0
+1,Comics,4,0
+1,Commerce,5,0
+1,Cooking & Food,6,0
+1,Diaries,7,0
+1,Engineering,8,0
+1,Entrance Exams,9,0
+1,Health & Fitness,10,0
+1,History & Politics,11,0
+1,Humor,12,0
+1,Indian Writing,13,0
+1,Knowledge & Learning,14,0
+1,Medicine,15,0
+1,Music & Films,16,0
+1,School Books,17,0
+1,Others,18,0
+2,DVD – SECTION,19,0
+2,New Releases,20,0
+2,Hollywood Movies,21,0
+2,Bollywood Movies,22,0
+2,Regional Movies,23,0
+2,Tv Shows & Documentaries,24,0
+2,Kids & Educational,25,0
+2,Health & Fitness,26,0
+2,Music,27,0
+2,International Music,28,0
+2,Bollywood Music,29,0
+2,Indian Classical & Devotional,30,0
+2,Gaming,31,0
+2,Pc Games,32,0
+2,Others,33,0
+6,TOYS & BABY SECTION,34,0
+6,School Supplies,35,0
+6,Toys For Boys,36,0
+6,Toys For Girls,37,0
+6,Infant Toys,38,0
+6,Remote Controlled Toys,39,0
+6,Soft Toys,40,0
+6,Educational Toys,41,0
+6,Infant Clothing,42,0
+6,Cradels,43,0
+6,Others,44,0
+3,SPORTS – SECTION,45,0
+3,Climbing,46,0
+3,Cycling,47,0
+3,Combat Sports,48,0
+3,Fitness,49,0
+3,Golf,50,0
+3,Hiking,51,0
+3,Nature Sports,52,0
+3,Racquet Sports,53,0
+3,Running,54,0
+3,Roller Sports,55,0
+3,Team Sports,56,0
+3,Target Sports,57,0
+3,Watersports,58,0
+3,Walking,59,0
+3,Others,60,0
+4,FURNITURE – SECTION,61,0
+4,Living Room Furniture,62,0
+4,Bedroom Furniture,63,0
+4,Dining Room Furniture,64,0
+4,Bar Furniture,65,0
+4,Study Room Furniture,66,0
+4,Outdoor Furniture,67,0
+4,Lightings,68,0
+4,Wall Decor,69,0
+4,Bean Bags,70,0
+4,Housekeeping,71,0
+4,Others,72,0
+5,ELECTRONICS – SECTION,73,0
+5,Mobiles,74,0
+5,Tablets,75,0
+5,Smart Watches & Bands,76,0
+5,Power Banks,77,0
+5,Mobile Memory Cards,78,0
+5,Laptops,79,0
+5,Computer Accessories,80,0
+5,Televisions,81,0
+5,Speakers,82,0
+5,Mp3 Players,83,0
+5,Gaming Accessories,84,0
+5,Gaming Consoles,85,0
+5,Vacuum Cleaners,86,0
+5,Washing Machines,87,0
+5,Kitchen Appliances,88,0
+5,Cameras,89,0
+5,Health Care Devices,90,0
+5,Others,91,0
+7,TWO WHEELER - SECTION,92,0
+7,Mopeds,93,0
+7,Scooter,94,0
+7,Cruiser,95,0
+7,Standard,96,0
+7,Semi Faired,97,0
+7,Others,98,0

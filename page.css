@@ -24,9 +24,14 @@ margin: 0 auto;
 }
 */
 
-a:active {color: #FFFFFF; text-decoration: underline;}
+
 a:visited {color: #FFFFFF; text-decoration:none;}
 a:hover {color: #CDCDCD; text-decoration: none;}
+a:active {background-color: #FF0000;}
+.catlist{
+color: black;
+}
+
 
 .container {
 width: 950px;
@@ -84,4 +89,7 @@ left: 600px;
 color: black;
 }
 
-
+.Highlight{
+	text-decoration: none;
+   background-color: #610B0B;
+ }

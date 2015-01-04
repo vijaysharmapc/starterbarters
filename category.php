@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-01-04T14:55:15+0530" >
+<meta name="date" content="2015-01-04T23:41:06+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -20,36 +20,27 @@
 <body>
 <?php
 require 'navigation.php';
-$Categories =array(
-"Books",
-"DVD & films",
-"Toys & baby gear ",
-"Sports gear",
-"Furniture",
-"Electronics",
-"Two wheelers!"
+$categories =array(
+1 => "Books",
+2 => "DVD & films",
+3  => "Sports gear",
+4  => "Furniture",
+5  => "Electronics",
+6  => "Toys & baby gear ",
+7  => "Two wheelers!"
 );
-$arrlen = count($Categories);
-$servername = "localhost";
-$username = "root";
-$password = "pd79";
 
-//i will have to check what is clicked
 
-// Create connection
-$conn = new mysqli($servername, $username, $password);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-
+//get category id clicked
 $catid = trim($_GET['catid']);
 $catid = addslashes($catid);
 printf ('<input id="cats" type="hidden" name="catid" value='.$catid.'>');
+$var = $categories[$catid];
+
+printf ('<h2 id="heading2"> Select the '.$var.'  which interest you </h2>')
 ?>
 
-<h2 id="heading2"> Select the categories which interest you </h2>
+
 
 <section id="main">
 <p id="catdata">
