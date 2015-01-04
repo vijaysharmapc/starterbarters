@@ -1,0 +1,44 @@
+app_user
+
+id
+useremail
+password
+phone*
+Country*
+City*
+pin
+
+
+the trade of barter is as old as human history goes,
+this portal is a small attempt to help us exchange or swap things,
+that we need, for what we have with us.
+There are a few categories to start with on the left ribbon,
+look for the categories that might intrest you and connect with your
+prospective barter partner by sending them a message.
+And yes all this is alsolutely free!!!
+
+ 
+
+GIt:
+ 1772  sudo apt-get install git
+ 1773  git config --global user.email "vijaysharmapc@gmail.com"
+ 1774  git config --global user.name "vijaysharmapc"
+ 1775  git init
+ 1776  git log
+ 1777  git status;
+ 1778  git add contact.php 
+ 1779  git index.js
+ 1780  git add index.js
+ 1793  git commit -m "initiala commit"
+ 1800  ssh-keygen -t rsa -C "vijaysharmapc@gmail.com"
+1808  cd .ssh/
+ 1809  ls
+ 1810  less id_rsa.pub 
+copy paste key in newly created git reposritry
+ 1838  git push -f origin master
+to push code base from local to remote
+
+******https://github.com/vijaysharmapc/starterbarters/commits/master
+Bosco@2012
+http://readwrite.com/2013/10/02/github-for-beginners-part-2
+

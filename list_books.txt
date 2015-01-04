@@ -1,0 +1,91 @@
+1,Action & Adventure
+1,Biographies
+1,Comics
+1,Commerce
+1,Cooking & Food
+1,Diaries
+1,Engineering
+1,Entrance Exams
+1,Health & Fitness
+1,History & Politics
+1,Humor
+1,Indian Writing
+1,Knowledge & Learning
+1,Medicine
+1,Music & Films
+1,School Books
+1,Others
+2,New Releases
+2,Hollywood Movies
+2,Bollywood Movies
+2,Regional Movies
+2,TV Shows & Documentaries
+2,Kids & Educational
+2,Health & Fitness
+2,Music
+2,International Music
+2,Bollywood Music
+2,Indian Classical & Devotional
+2,Gaming
+2,PC Games
+2,Others
+6,School Supplies
+6,Toys for Boys
+6,Toys for Girls
+6,Infant Toys
+6,Remote Controlled Toys
+6,Soft Toys
+6,Educational toys
+6,Infant Clothing
+6,Cradels
+6,Others
+3,CLIMBING
+3,CYCLING
+3,COMBAT SPORTS
+3,FITNESS
+3,GOLF
+3,HIKING
+3,NATURE SPORTS
+3,RACQUET SPORTS
+3,RUNNING
+3,ROLLER SPORTS
+3,TEAM SPORTS
+3,TARGET SPORTS
+3,WATERSPORTS
+3,WALKING
+3,Others
+4,Living Room Furniture
+4,Bedroom Furniture
+4,Dining Room Furniture
+4,Bar Furniture
+4,Study Room Furniture
+4,Outdoor Furniture
+4,Lightings
+4,Wall Decor
+4,Bean Bags
+4,Housekeeping
+4,Others
+5,Mobiles
+5,Tablets
+5,Smart Watches & Bands
+5,Power Banks
+5,Mobile Memory Cards
+5,Laptops
+5,Computer Accessories
+5,Televisions
+5,Speakers
+5,MP3 Players
+5,Gaming Accessories
+5,Gaming Consoles
+5,Vacuum Cleaners
+5,Washing Machines
+5,Kitchen Appliances
+5,Cameras
+5,Health Care Devices
+5,Others
+7,Mopeds
+7,Scooter
+7,Cruiser
+7,Standard
+7,Semi faired
+7,Others

@@ -8,24 +8,32 @@ background-color: #8B1300;
 position: relative;
 color: white;
 padding: 1px;
-left: 220px;
+left: 160px;
+}
+#hometext{
+
 }
 /*
 a {
 color: #FFFFFF;
 }
 a:link {color: #FFFFFF; text-decoration: underline; }
+.container {
+width: 950px;
+margin: 0 auto;
+}
 */
 
 a:active {color: #FFFFFF; text-decoration: underline;}
 a:visited {color: #FFFFFF; text-decoration:none;}
 a:hover {color: #CDCDCD; text-decoration: none;}
 
-
 .container {
-width: 900px;
+width: 950px;
 margin: 0 auto;
 }
+
+
 
 #swap{
 position: relative;
@@ -41,12 +49,10 @@ left: 220px;
     color: white;
     --background-color:#8B1300;
     height:950px;
-    width:170px;
+    width:190px;
     float:left;
     padding:10px;
 }
-
-
 
 #main {
 border:solid 3px white;
@@ -55,19 +61,27 @@ color: white;
 background-color:white;
 }
 
-td,article{
+td,p{
 color: black;
+
+}
+/*helps thext on home to stick to image
+*/
+img.bordered-image { 
+    float: left; 
+    margin: 4px; 
 }
 
 #floted {
 color: black;
 float: left;
-width: 220px;
+width: 200px;
 position: relative;
 left: 600px;
 }
 
-
-
+#catdata{
+color: black;
+}
 
 
