@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-01-04T14:54:21+0530" >
+<meta name="date" content="2015-01-05T23:56:47+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -31,8 +31,8 @@ require 'navigation.php';
 With a contemporary twist, while keeping the essence of barter alive!! </p>
 <p> Click into the category you like from the left ribbon,look for people & things they offer,connect with them using messages</p>
 <p>You only have to register to connect with your prospective barter partner and all this is absolutely free!!!</p>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-</p>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 </div>
 </section>
 

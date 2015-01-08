@@ -8,7 +8,8 @@ background-color: #8B1300;
 position: relative;
 color: white;
 padding: 1px;
-left: 160px;
+left: -5%;
+text-align: center;
 }
 #hometext{
 
@@ -27,7 +28,7 @@ margin: 0 auto;
 
 a:visited {color: #FFFFFF; text-decoration:none;}
 a:hover {color: #CDCDCD; text-decoration: none;}
-a:active {background-color: #FF0000;}
+a:active {background-color:  #610B0B;}
 .catlist{
 color: black;
 }
@@ -44,20 +45,17 @@ margin: 0 auto;
 position: relative;
 left: 220px;
 }
-#mogli,#pogli,#boomerang,#helicopter {
- padding:20px;
-}
 
 #nav {
     line-height:30px;
     font-weight: bold;
     color: white;
-    --background-color:#8B1300;
     height:950px;
     width:190px;
     float:left;
     padding:10px;
 }
+
 
 #main {
 border:solid 3px white;
@@ -93,3 +91,17 @@ color: black;
 	text-decoration: none;
    background-color: #610B0B;
  }
+ 
+.hidden {
+    visibility: hidden;
+}
+
+.visible{
+    visibility:visible;
+}
+
+/*
+.point{
+	 visibility: hidden;
+}
+*/

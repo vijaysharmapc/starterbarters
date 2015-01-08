@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-01-04T23:41:06+0530" >
+<meta name="date" content="2015-01-08T09:17:38+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -21,13 +21,15 @@
 <?php
 require 'navigation.php';
 $categories =array(
-1 => "Books",
-2 => "DVD & films",
-3  => "Sports gear",
-4  => "Furniture",
+1 => "Books,",
+2 => "DVD & films,",
+3  => "Sports gear,",
+4  => "Furniture,",
 5  => "Electronics",
-6  => "Toys & baby gear ",
-7  => "Two wheelers!"
+6  => "Toys & baby gear, ",
+7  => "Two wheelers,",
+8  => "Reality & property,",
+9  => "Cars,"
 );
 
 

@@ -42,3 +42,9 @@ to push code base from local to remote
 Bosco@2012
 http://readwrite.com/2013/10/02/github-for-beginners-part-2
 
+
+git status;
+git add -A
+git commit -m "05/01/15 updated"
+git push -f origin master;
+

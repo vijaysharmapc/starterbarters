@@ -1,12 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>SwapSite</title>
-<link rel="stylesheet" href="/starterbarters/page.css"/>
+<?php
+if(!isset($_SESSION['loggedin'])) 
+    {
+        session_start(); 
+    }
+//session_start();
+if(empty($_SESSION['loggedin']))
+//if(!$_SESSION['loggedin'])
+{
+header("Not logged in");
+exit;
+}
+else{
+$name = $_SESSION['name'];
+}
+?>
 
+
+<title>Barter Network </title>
+<link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-01-04T14:54:16+0530" >
+<meta name="date" content="2015-01-09T00:42:58+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -21,36 +38,18 @@
 <body>
 <?php
 require 'navigation.php';
+echo ('<h2 id="heading2"> Welcome to your Dashboard - '. $name .'</h2>');
 ?>
-<h2 id="heading2">  Give us feedback or ask a question here .. </h2>
+
+
+
 <section id="main">
 
-<p>
- Please feel free to leave your feedback,<br>
- you could either mail us using the below form .<br>
- Or contact us on 00838728282
-</p>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-
-<form action="contact.php" method="post">
-<table cellpadding="20">
-<tr>
-<td>Your email: </td>
-<td><INPUT type="text" name="customeremail"></td>
-</tr>
-<tr>
-<td>Your message:</td>
-<td><textarea rows="5" cols="50" name="message"></textarea> </td>
-</tr>
-
-<tr>
-<td><input type="submit" name="submit" value="Send Email"></td>
-</tr>
-</table>
-
-</form>
-
+</div>
 </section>
+
 <script type="text/javascript" src="/starterbarters/js/jquery-2.1.1.min.js"> </script>
 <script type="text/javascript" src="/starterbarters/js/index.js"> </script>
 </body>
