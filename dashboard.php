@@ -25,7 +25,7 @@ $img_name = $_SESSION['image_name'];
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-01-10T23:53:56+0530" >
+<meta name="date" content="2015-01-11T01:46:48+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -48,10 +48,14 @@ echo ('<h2 id="heading2"> Welcome to your Dashboard - '. $name .'</h2>');
 <form action="file_uploader.php" method="post" enctype="multipart/form-data">
 <br>
 <?php
-printf ('<img id="dp" src="uploads/'.$img_name .'" class="dashimg" height="150" width="150" title="Click to Change">')
+printf ('<img id="dp" src="uploads/'.$img_name .'" class="dashimg" height="150" width="150" title="click here to change">')
 ?>
-<input id="my_file" type="file" name="fileToUpload" id="fileToUpload"  style="display: none;"><br>
-<input type="submit" value="Upload Image" name="submit" id="submit" style="display: none;">
+<div id="move" class="move_back">
+<p> Select image to upload:</p>
+<p><input type="file" name="fileToUpload" id="fileToUpload"></p>
+<input type="submit" value="Upload" name="submit">
+(&nbsp<a id='lgn' href='dashboard.php' style='color:black'>Cancel</a><br>
+</div>
 </form>
 
 

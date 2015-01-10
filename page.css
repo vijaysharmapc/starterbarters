@@ -103,3 +103,19 @@ color: black;
 .dashimg{
 border:solid 3px #000000;
 }
+
+.move_form{
+    position: relative;
+    top: -120px;
+     visibility:visible;
+}
+
+.move_back{
+	 position: relative;
+    top: -10px;
+    visibility: hidden;
+}
+
+
+
+

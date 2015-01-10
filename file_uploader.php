@@ -78,6 +78,7 @@ $stmt = $db->prepare("update user_base set image_name= ? where CONCAT(user_name,
 $stmt->execute(array("$img_nme","$uid"));
 $url = "Location:dashboard.php";
 header($url);
+window.location.reload(true);
     } else {
         echo "Sorry, there was an error uploading your file.";
         printf (error_get_last());

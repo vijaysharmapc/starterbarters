@@ -44,22 +44,16 @@ if ( catid ) {
 });
 }
 
-$("#dp").hover(
-function() {
-$(this).stop().animate({"opacity": "0.5"}, "slow");
-},
-function() {
-$(this).stop().animate({"opacity": "1"}, "slow");
-});
 
-$("#dp").click(function() {
-$("input[id='my_file']").click();
-new_file = $("#my_file").val();
-alert(new_file);
-alert("Image ready to upload " + new_file + "");
-if(typeof new_file !== 'undefined'){
-$('#submit').click();
-}
+$( "#dp" ).click(function() {
+$(this).stop().animate({"opacity": "0.3"}, "fast");
+ $("#move").removeClass("move_back");
+$('#move').addClass("move_form");
+});
+$( "#dp" ).mousedown(function() {
+$(this).stop().animate({"opacity": "1"}, "fast");
+ $("#move").removeClass("move_form");
+$('#move').addClass("move_back");
 });
 
 
