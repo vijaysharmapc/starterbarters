@@ -43,3 +43,24 @@ if ( catid ) {
 
 });
 }
+
+$("#dp").hover(
+function() {
+$(this).stop().animate({"opacity": "0.5"}, "slow");
+},
+function() {
+$(this).stop().animate({"opacity": "1"}, "slow");
+});
+
+$("#dp").click(function() {
+$("input[id='my_file']").click();
+new_file = $("#my_file").val();
+alert(new_file);
+alert("Image ready to upload " + new_file + "");
+if(typeof new_file !== 'undefined'){
+$('#submit').click();
+}
+});
+
+
+

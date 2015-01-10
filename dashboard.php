@@ -15,6 +15,8 @@ exit;
 }
 else{
 $name = $_SESSION['name'];
+$uid = $_SESSION['uid'];
+$img_name = $_SESSION['image_name'];
 }
 ?>
 
@@ -23,7 +25,7 @@ $name = $_SESSION['name'];
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-01-09T00:42:58+0530" >
+<meta name="date" content="2015-01-10T23:53:56+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -42,8 +44,16 @@ echo ('<h2 id="heading2"> Welcome to your Dashboard - '. $name .'</h2>');
 ?>
 
 
-
 <section id="main">
+<form action="file_uploader.php" method="post" enctype="multipart/form-data">
+<br>
+<?php
+printf ('<img id="dp" src="uploads/'.$img_name .'" class="dashimg" height="150" width="150" title="Click to Change">')
+?>
+<input id="my_file" type="file" name="fileToUpload" id="fileToUpload"  style="display: none;"><br>
+<input type="submit" value="Upload Image" name="submit" id="submit" style="display: none;">
+</form>
+
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 

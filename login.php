@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-01-09T00:43:00+0530" >
+<meta name="date" content="2015-01-10T13:37:43+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -30,7 +30,7 @@ $upassword = $_POST['upassword'];
 # open a database conn
 require 'dbcon.php';
 //build query
-$query = " select CONCAT(user_name,'',user_id),password from user_base ";
+$query = " select CONCAT(user_name,'',user_id),password,first_name,image_name from user_base ";
 if ($ulogin && $upassword )  {
 $query = $query . " where CONCAT(user_name,'',user_id) = '" . $ulogin . "' and password = '" . $upassword . "'";
 }
@@ -44,12 +44,16 @@ printf ("<p> Wrong user id or password ,please try again </p>");
  
 } else {
 $_SESSION['loggedin'] = "YES";
-$_SESSION['name'] = $ulogin;
+$_SESSION['uid'] = $ulogin;
+$row = $sth->fetch(PDO::FETCH_ASSOC);
+$_SESSION['name'] = $row['first_name'];
+$_SESSION['image_name'] = $row['image_name'];
 $url = "Location:dashboard.php";
 header($url);
 exit;
 }
 }
+$db=null;
 ?>
 <section id="main">
 <form action="login.php" method="POST">
