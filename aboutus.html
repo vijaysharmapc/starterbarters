@@ -1,32 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<?php
-if(!isset($_SESSION['loggedin'])) 
-    {
-        session_start(); 
-    }
-//session_start();
-if(empty($_SESSION['loggedin']))
-//if(!$_SESSION['loggedin'])
-{
-header("Not logged in");
-exit;
-}
-else{
-$name = $_SESSION['name'];
-$uid = $_SESSION['uid'];
-//full path of image
-$img_name = $_SESSION['image_name'];
-}
-?>
-
-
 <title>Barter Network </title>
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-01-14T23:21:06+0530" >
+<meta name="date" content="2015-01-12T00:25:47+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -41,25 +20,11 @@ $img_name = $_SESSION['image_name'];
 <body>
 <?php
 require 'navigation.php';
-echo ('<h2 id="heading2"> Welcome to your Dashboard - '. $name .'</h2>');
 ?>
 
+<h2 id="heading2"> Hello, start your barter experience here.. </h2>
 
 <section id="main">
-<form action="file_uploader.php" method="post" enctype="multipart/form-data">
-<br>
-<?php
-printf ('<img id="dp" src="'.$img_name .'" class="dashimg" height="150" width="150" title="click here to change">')
-?>
-<div id="move" class="move_back">
-<p> Select image to upload:</p>
-<p><input type="file" name="fileToUpload" id="fileToUpload"></p>
-<input type="submit" value="Upload" name="submit">
-(&nbsp<a id='lgn' href='dashboard.php' style='color:black'>Cancel</a><br>
-</div>
-</form>
-
-
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 </div>

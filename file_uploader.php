@@ -16,13 +16,17 @@ exit;
 else{
 $name = $_SESSION['name'];
 $uid = $_SESSION['uid'];
+$fldr_path = $_SESSION['image_name'];
+$fldr_path = substr($fldr_path,0,17);
 }
 ?>
 </head>
 
 <body>
 <?php
-$target_dir = "uploads/";
+//$cnt = rand(1,4);
+//$target_dir = "uploads/";
+$target_dir = $fldr_path;
 //break to array and then pic last ext and rename
 $temp = explode(".",$_FILES["fileToUpload"]["name"]);
 //print_r($temp); 
@@ -71,8 +75,11 @@ if ($uploadOk == 0) {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo "The file ". basename($_FILES["fileToUpload"]["name"]). " has been uploaded.";
         
-//script to update image name in db
+//script to update image name and path in db
 $img_nme = basename($newfilename);
+$img_nme = $fldr_path.$img_nme;
+$_SESSION['image_name'] = $img_nme;
+//$img_nme = $target_dir ."".$img_nme;
 require 'dbcon.php';
 $stmt = $db->prepare("update user_base set image_name= ? where CONCAT(user_name,'',user_id) = ?");
 $stmt->execute(array("$img_nme","$uid"));

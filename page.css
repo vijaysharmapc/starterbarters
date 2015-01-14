@@ -3,6 +3,7 @@ body {
 font-family:Helvetica;
 font-size: 15px;
 background-color: #8B1300;
+//background: linear-gradient(darkred,brown);
 }
 #heading2{
 position: relative;
@@ -11,8 +12,16 @@ padding: 1px;
 left: -5%;
 text-align: center;
 }
-#hometext{
 
+#terms{
+padding: 22px;
+width: 450px;
+position: relative;
+left: 200px;
+
+}
+.fade{
+border-style:none;
 }
 /*
 a {

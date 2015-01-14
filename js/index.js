@@ -6,30 +6,21 @@ $(this).stop().animate({"opacity": "0.5"}, "fast");
 function() {
 $(this).stop().animate({"opacity": "1"}, "slow");
 });
-
 });
 
 
-
-//apply fade on clicked link
-/*
-$("#Books,#DVD,#Sport,#Furn,#Two,#Elec,#Toys,#Real,#Cars").click(function () {
-$(this).toggleClass('Highlight');
-})
-.mouseleave(function () {
-$(this).toggleClass('Highlight');
-});
-*/
 var lnk_id = $("#cats").val();
-$(".point").each(function(i,j){
+$(".hidden").each(function(i,j){
 img_id =  (j.id);
 if (img_id != lnk_id) {
-	//alert(img_id);
-	       $(this).addClass('hidden').removeClass('visible');  
+$(this).removeClass("visible");
+$(this).addClass("hidden");
+
 	  }
   else if  (img_id == lnk_id)
      {
-          $(this).addClass('visible').removeClass('hidden');	
+$(this).removeClass("hidden");
+$(this).addClass("visible");
      }
 });
 
