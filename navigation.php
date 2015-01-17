@@ -28,7 +28,7 @@ echo "</div>";
 ?>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-01-11T23:10:02+0530" >
+<meta name="date" content="2015-01-17T17:36:13+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -64,7 +64,7 @@ echo "</div>";
 <a id="Elec" style="color:white" href="/starterbarters/category.php?catid=5">  Electronics </a> 
 <img class="hidden" id="5" src="/starterbarters/images/arrow.jpg" height="10" width="10">
 <br>
-<a id="Toys" style="color:white" href="/starterbarters/category.php?catid=6"> Toys & baby gear </a>
+<a id="Toys" style="color:white" href="/starterbarters/category.php?catid=6"> Toys & kids gear </a>
 <img class="hidden" id="6" src="/starterbarters/images/arrow.jpg" height="10" width="10">
 <br>
 <a id="Two" style="color:white" href="/starterbarters/category.php?catid=7">  Two wheelers! </a>
@@ -73,7 +73,7 @@ echo "</div>";
 <a id="Cars" style="color:white" href="/starterbarters/category.php?catid=9">   Cars!! </a>
 <img class="hidden" id="9" src="/starterbarters/images/arrow.jpg" height="10" width="10">
 <br>
-<a id="Real" style="color:white" href="/starterbarters/aboutus.html">  About us </a>
+<a id="Real" style="color:white" href="/starterbarters/aboutus.php">  About us </a>
 <img class="hidden" id="8" src="/starterbarters/images/arrow.jpg" height="10" width="10">
 <br>
 <a style="color:white" href="/starterbarters/contact.php"> Connect with us</a>

@@ -3,7 +3,6 @@
 if(isset($_POST['catid']) == true){
 $searchcat = trim($_POST['catid']);
 
-
 # open a database conn
 require '../dbcon.php';
 #build a query
@@ -30,7 +29,12 @@ echo "<br>";
 catch (PDOException $e) {
 printf ("WE had a problem: %s\n",$e->getMessage());
 }
-
 }
+//my profile data
+
+
+//my profile data
+
+
 $db = null;
 ?>

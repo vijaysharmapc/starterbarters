@@ -71,6 +71,8 @@ border:solid 3px white;
 border-radius: 5px;
 color: white;
 background-color:white;
+width:950px;
+height: 800px;
 }
 
 td,p{
@@ -110,7 +112,7 @@ color: black;
 }
 
 .dashimg{
-border:solid 3px #000000;
+border:solid 7px #EBF4FA;
 }
 
 .move_form{
@@ -127,4 +129,75 @@ border:solid 3px #000000;
 
 
 
+.dashbrd1{
+    width:170px ;
+    height:50px;
+    background-color: #008080;
+    position: relative;
+    top: -100px;
+    left: 190px;
+}
+.dashbrd2{
+    width:170px ;
+    height:50px;
+    background-color: #3090C7;
+    position: relative;
+    top: -150px;
+    left: 370px;
+}
+.dashbrd3{
+    width:170px ;
+    height:50px;
+    background-color: #566D7E;
+    position: relative;
+    top: -200px;
+    left: 550px;
+}
 
+#txt1{
+color: white;
+font-weight: bold;
+text-align: left;
+padding:15px;
+padding-right: 15px;
+padding-left: 20px;
+}
+#txt2{
+color: white;
+font-weight: bold;
+text-align: left;
+padding:15px;
+padding-right: 15px;
+padding-left: 20px;
+}
+#txt3{
+color: white;
+font-weight: bold;
+text-align: left;
+padding:15px;
+padding-right: 15px;
+padding-left: 20px;
+}
+
+#data{
+    position: relative;
+    top: -200px;
+    left: 150px;
+}
+
+#itemupload{
+background-color: #EBF4FA;
+padding-top: 25px;
+}
+
+
+
+/*
+#myCanvas{
+    width:150px ;
+    height:50px;
+    background-color: #43C6DB;
+    
+    top: -50px;
+}
+*/

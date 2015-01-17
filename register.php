@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-01-15T00:08:41+0530" >
+<meta name="date" content="2015-01-17T00:14:47+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -121,7 +121,7 @@ $db=null;
 </table>
 </form>
 <p align='right'>**All information provided will be kept confidential</p>
-<br><br><br><br><br><br><br><br><br><br><br>
+
 </div>
 </section>
 

@@ -31,10 +31,14 @@ $_SESSION['image_name'] = $row['image_name'];
 $url = "Location:dashboard.php";
 //ob_start()
 header($url);
-//ob_end_flush()
+//login time stamp
+$stmt = $db->prepare("update user_base set time_stamp = now() where CONCAT(user_name,'',user_id) = ?");
+$stmt->execute(array("$ulogin"));
+
 exit;
 }
 }
+
 $db=null;
 ?>
 <!DOCTYPE html>
@@ -44,7 +48,7 @@ $db=null;
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-01-15T00:01:40+0530" >
+<meta name="date" content="2015-01-17T23:43:15+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">

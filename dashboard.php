@@ -21,12 +21,11 @@ $img_name = $_SESSION['image_name'];
 }
 ?>
 
-
 <title>Barter Network </title>
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-01-14T23:21:06+0530" >
+<meta name="date" content="2015-01-17T00:15:46+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -41,7 +40,8 @@ $img_name = $_SESSION['image_name'];
 <body>
 <?php
 require 'navigation.php';
-echo ('<h2 id="heading2"> Welcome to your Dashboard - '. $name .'</h2>');
+$name = ucwords($name);
+echo ('<h2 id="heading2"> Welcome to your dashboard - '. $name .'</h2>');
 ?>
 
 
@@ -58,13 +58,30 @@ printf ('<img id="dp" src="'.$img_name .'" class="dashimg" height="150" width="1
 (&nbsp<a id='lgn' href='dashboard.php' style='color:black'>Cancel</a><br>
 </div>
 </form>
+<div class="dashbrd1" id="myl">
+<div id="txt1">
+My Listings
+</div>
+</div>
+<div class="dashbrd2" id="msg">
+<div id="txt2">
+My Messages
+</div>
+</div>
+<div class="dashbrd3" id="mp">
+<div id="txt3">
+My Profile
+</div>
+</div>
+<section id="data_area">
+<p id="data">
+</p>
+</div>
 
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 </div>
 </section>
-
 <script type="text/javascript" src="/starterbarters/js/jquery-2.1.1.min.js"> </script>
 <script type="text/javascript" src="/starterbarters/js/index.js"> </script>
 </body>

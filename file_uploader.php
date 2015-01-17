@@ -40,8 +40,8 @@ $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 if(isset($_POST["submit"])) {
 
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-    echo "<br>";
-    print_r($check);
+    //echo "<br>";
+    //print_r($check);
     if($check !== false) {
         echo "File is an image - " . $check["mime"] . ".";
         $uploadOk = 1;
@@ -56,13 +56,14 @@ if (file_exists($target_file)) {
     echo "old file with same name will be replaced";
     $uploadOk = 1;
 }
-// Check file size
-if ($_FILES["fileToUpload"]["size"] > 50000) {
-    echo "Sorry, your file is too large.";
+// Check file size 
+if ($_FILES["fileToUpload"]["size"] > 2000000) {
+    echo "Sorry, your file is too large.Please keep it below 1.8 MB in size.";
+    echo $_FILES["fileToUpload"]["size"];
     $uploadOk = 0;
 }
 // Allow certain file formats
-if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+if($imageFileType != "jpg" && $imageFileType != "JPG" && $imageFileType != "png" && $imageFileType != "jpeg"
 && $imageFileType != "gif" ) {
     echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
     $uploadOk = 0;
@@ -74,12 +75,22 @@ if ($uploadOk == 0) {
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo "The file ". basename($_FILES["fileToUpload"]["name"]). " has been uploaded.";
-        
+
 //script to update image name and path in db
 $img_nme = basename($newfilename);
 $img_nme = $fldr_path.$img_nme;
 $_SESSION['image_name'] = $img_nme;
 //$img_nme = $target_dir ."".$img_nme;
+//resize image
+$scr = imagecreatefromjpeg($img_nme);
+list($width,$height) = getimagesize($img_nme);
+$newwidth = 150;
+$newheight = ($height/$width)*$newwidth;
+$tmp = imagecreatetruecolor($newwidth, $newheight);
+imagecopyresampled($tmp,$scr,0,0,0,0,$newwidth,$newheight,$width,$height);
+imagejpeg($tmp,"$img_nme",100);
+imagedestroy($tmp);
+//resize image
 require 'dbcon.php';
 $stmt = $db->prepare("update user_base set image_name= ? where CONCAT(user_name,'',user_id) = ?");
 $stmt->execute(array("$img_nme","$uid"));
