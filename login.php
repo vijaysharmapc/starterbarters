@@ -4,7 +4,9 @@ printf ('<h2 id="heading2"> Please login here  </h2>');
 if(isset($_POST['ulogin'])) {
 //session_start();
 $ulogin = $_POST['ulogin'];
+$ulogin = addslashes($ulogin);
 $upassword = $_POST['upassword'];
+$upassword = addslashes($upassword);
 $upassword = md5($upassword);
 
 
@@ -48,7 +50,7 @@ $db=null;
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-01-17T23:43:15+0530" >
+<meta name="date" content="2015-01-21T09:11:01+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">

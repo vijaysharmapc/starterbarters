@@ -2,6 +2,8 @@
 
 if(isset($_POST['catid']) == true){
 $searchcat = trim($_POST['catid']);
+settype($searchcat, 'integer');
+$searchcat = addslashes($searchcat);
 
 # open a database conn
 require '../dbcon.php';

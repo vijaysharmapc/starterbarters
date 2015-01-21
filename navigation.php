@@ -22,13 +22,13 @@ else{
 $name = $_SESSION['name'];
 echo ("<div style = 'clear: right; float: right; text-align: right;font-weight: bold; padding:10px;'><br>");
 echo "<A id='lgn' href='logout.php' style='color:white' >Logout</A><br>";
-echo "<A id='lgn' href='dashboard.php' style='color:white'>My Dashboard</A><br>";
+echo "<A id='lgnd' href='dashboard.php' style='color:white'>My Dashboard</A><br>";
 echo "</div>";
 }
 ?>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-01-17T17:36:13+0530" >
+<meta name="date" content="2015-01-18T23:15:00+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -71,10 +71,10 @@ echo "</div>";
 <img class="hidden" id="7" src="/starterbarters/images/arrow.jpg" height="10" width="10">
 <br>
 <a id="Cars" style="color:white" href="/starterbarters/category.php?catid=9">   Cars!! </a>
-<img class="hidden" id="9" src="/starterbarters/images/arrow.jpg" height="10" width="10">
+<img class="hidden" id="8" src="/starterbarters/images/arrow.jpg" height="10" width="10">
 <br>
 <a id="Real" style="color:white" href="/starterbarters/aboutus.php">  About us </a>
-<img class="hidden" id="8" src="/starterbarters/images/arrow.jpg" height="10" width="10">
+<img class="hidden" id="" src="/starterbarters/images/arrow.jpg" height="10" width="10">
 <br>
 <a style="color:white" href="/starterbarters/contact.php"> Connect with us</a>
 

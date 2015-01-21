@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-01-16T23:44:18+0530" >
+<meta name="date" content="2015-01-20T22:55:14+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -22,7 +22,7 @@
 require 'navigation.php';
 ?>
 
-<h2 id="heading2"> Hello, start your barter experience here.. </h2>
+<h2 id="heading2"> Hello, build your barter network here.. </h2>
 
 <section id="main">
 <img id="canvas" src="/starterbarters/images/canvas.jpg" class="bordered-image">

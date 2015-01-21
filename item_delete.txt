@@ -1,0 +1,38 @@
+<?php
+require 'navigation.php';
+if(isset($_POST['ihave'])) {
+   $section_id=trim($_POST['section_id']);
+   $category1=trim($_POST['category_id']);
+   $title = trim($_POST['title']);
+   $ihave = trim($_POST['ihave']);
+   $iwant=trim($_POST['iwant']);
+   $other=trim($_POST['other']);
+   $city=trim($_POST['city']);
+   $cnt = mt_rand(1,6);
+   $dir = "uploads/uploads".$cnt."/dp.jpg";
+   
+   	
+if($pswd1 != $pswd2 ){
+	printf("There could be a typo in password fields they do not match!!");
+	printf ("<br> <a href=register.php>Return to registration page</a>");
+	exit();
+}
+$pswd1 = md5($pswd1);
+# open a database conn
+require 'dbcon.php';
+
+
+$stmt = $db->prepare("insert into registration_desk values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+$stmt->execute(array('',"$firstname","$lastname","$pswd1","$email","$phone","$country","$state","$city","$postalcode",'','',"$terms","$dir"));
+
+$stmt = $db->prepare("insert into user_base values (?,?,?,?,?,?)");
+$user_name = substr($firstname,0,5);
+$stmt->execute(array('',"$user_name","$firstname","$pswd1","$dir",null));
+printf ("<br> User added" );
+printf ("<br> <a href=index.php>Return to home page and login</a>");
+
+exit;
+}
+$db=null;
+?>
+

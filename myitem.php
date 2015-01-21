@@ -18,8 +18,14 @@ $name = $_SESSION['name'];
 $uid = $_SESSION['uid'];
 //full path of image
 $img_name = $_SESSION['image_name'];
+# open a database conn
+require 'dbcon.php';
+$query = " select * from book_category";
+$query = $query . " where category_id = " . $searchcat . "";
 
-echo ('<input id="uid" type="hidden" name="uid" value = ' .$uid.'>');
+$_SESSION['itemdir'] = $dir
+
+
 }
 ?>
 
@@ -27,7 +33,7 @@ echo ('<input id="uid" type="hidden" name="uid" value = ' .$uid.'>');
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-01-20T23:36:59+0530" >
+<meta name="date" content="2015-01-18T22:18:01+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -43,7 +49,7 @@ echo ('<input id="uid" type="hidden" name="uid" value = ' .$uid.'>');
 <?php
 require 'navigation.php';
 $name = ucwords($name);
-echo ('<h2 id="heading2"> Welcome to your dashboard - '. $name .'</h2>');
+echo ('<h2 id="heading2"> New item upload - '. $name .'</h2>');
 ?>
 
 
@@ -51,7 +57,7 @@ echo ('<h2 id="heading2"> Welcome to your dashboard - '. $name .'</h2>');
 <form action="file_uploader.php" method="post" enctype="multipart/form-data">
 <br>
 <?php
-printf ('<img id="dp" src="'.$img_name .'" class="dashimg" height="150" width="150" title="click here to change">')
+printf ('<img id="dp" src="'.$img_name .'" class="dashimg" height="200" width="200" title="click here to change">')
 ?>
 <div id="move" class="move_back">
 <p> Select image to upload:</p>
@@ -75,7 +81,7 @@ My Messages
 My Profile
 </div>
 </div>
-<div id="data_area">
+<section id="data_area">
 <p id="data">
 </p>
 </div>
