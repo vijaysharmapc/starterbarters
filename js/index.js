@@ -66,8 +66,10 @@ $('div.dashbrd1,div.dashbrd2,div.dashbrd3').click(function () {
 $('div.dashbrd1').addClass('zoom');
 $('div.dashbrd2').removeClass('zoom');
 $('div.dashbrd3').removeClass('zoom');
-var tmp = ($(this).attr('id'));
 
+var tmp = ($(this).attr('id'));
+$('#data_area').empty();
+$('#data_area').append('<a href="itemupload.php" style="color:blue ;font-weight: bold">Upload a new item</a>');
 //alert(tmp);
 if (tmp == 'myl') {
 $.ajax({
@@ -79,29 +81,29 @@ success : function(response) {
 var total_count = response.total_count;
 //alert(total_count);
 if (response.status_value == 1) {
+
 //alert(total_count);
 var result = "";
 var cnt=0;
+var lid=0;
 //var rec_s= new Array();
 for(var i=0; i<total_count; i++)
 {
+lid = 0;
+lid+= response.data[i].line_id;
+result+='<p class ="clrbrk1"> &nbsp<a href="edit.php?lid='+lid+'" style="color:white ;font-weight: bold">Edit</a>  &nbsp<a href="delete.php" style="color:white ;font-weight: bold">Delete</a> </p>';
+result+='<div style="float: right;"> <img hspace="5" id="itmimg" src="' +response.data[i].file_path + '" alt="Smiley face" height="42" width="42"></div>';
 result+='<li id ="clr"> Title : ' + response.data[i].title + '</li>';
 result+='<li id ="clr"> I have : ' + response.data[i].have + '</li>';
 result+='<li id ="clr"> I want : ' + response.data[i].want + '</li>';
 result+='<li id ="clr"> Open to other swaps? ' + response.data[i].other + '</li>';
 result+='<li id ="clr"> Place : ' + response.data[i].city + '</li>';
-result+='<li id ="clr"> ------------------------------------------------</li>';
-//alert(response.data[i].title);
-//var xx=response.data[i].have;
-//$('#data_area').append(
-  //                   $('<p></p>').html("The Title of book is: " + response.data[i].title + "")
-//);
 }
 }
 $('#data_area').append(result);
 }
 });
-} 
+};
 
 
 if (tmp == 'msg') {

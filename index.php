@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-01-20T22:55:14+0530" >
+<meta name="date" content="2015-01-24T18:28:31+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -27,7 +27,7 @@ require 'navigation.php';
 <section id="main">
 <img id="canvas" src="/starterbarters/images/canvas.jpg" class="bordered-image">
 <div id="hometext">
-<p> &nbsp &nbsp The trade of barter is as old as human history goes,this portal will help you exchange things,that you have with what you would love to have.
+<p> &nbsp &nbsp Bartering/swapping of goods is as old as human history goes,this portal will help you exchange things,that you have with what you would love to have.
 With a contemporary twist, while keeping the essence of barter alive!! </p>
 <p> Click into the category you like from the left ribbon,look for people & things they offer,connect with them using messages</p>
 <p>You only have to register to connect with your prospective barter partner and all this is absolutely free!!!</p>

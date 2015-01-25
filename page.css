@@ -143,7 +143,7 @@ border:solid 7px #EBF4FA;
     background-color: #3090C7;
     position: relative;
     top: -150px;
-    left: 390px;
+    left: 400px;
 }
 .dashbrd3{
     width:170px ;
@@ -151,7 +151,7 @@ border:solid 7px #EBF4FA;
     background-color: #566D7E;
     position: relative;
     top: -200px;
-    left: 600px;
+    left: 610px;
 }
 
 #txt1{
@@ -198,24 +198,44 @@ position: relative;
 
 #data_area{
 border-top-width: 2px;
-background-color: #008080;
 width: 600px;
 position: relative;
-    top: -200px;
-    left: 180px;
+    top: -180px;
+    left: 135px;
+padding-top: 2px;
 }
+
 
 .zoom{
-    width:180px ;
-    height:60px;
+border:2px solid;
+box-shadow: 7px 7px 5px #888888;
+}
+.DivToScroll{   
+    
+    border: 2px solid #EBF4FA;
+    border-radius: 4px;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 20px;
+
 }
 
-/*
-#myCanvas{
-    width:150px ;
-    height:50px;
-    background-color: #43C6DB;
-    
-    top: -50px;
+.DivWithScroll{
+    height:500px;
+    overflow: auto;
+    overflow-x:hidden;
 }
-*/
+
+.clrbrk1{
+background-color: teal;
+}
+
+#itmimg{
+    height:90px;
+    width: 90px;
+   border: 2px solid;
+   border-color: #E5E4E2;
+   
+}
+

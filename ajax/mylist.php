@@ -21,24 +21,17 @@ $img_name = $_SESSION['image_name'];
 }
 
 
-
-
-
 //$uid = trim($_POST['uid']);
 //echo $uid;
 
 $show = htmlentities("Upload a new item");
-//echo ('<a class = "mylst" style="color:Green ;font-weight: bold" href="itemupload.php">' .$show . '<a/>');
-//echo "from ajax";
-//echo ("<br><br>");
-//echo "Existing uploads : " ;
-//echo ("<br><br>");
+
 # open a database conn
 require '../dbcon.php';
 
 //$sql = "select title,have,want,other,city,file_path from item_desk where usr_id = ". mysql_real_escape_string(trim($_POST['uid'])) ."";
 
-$result = $db->prepare("select title,have,want,other,city,file_path from item_desk where usr_id = ?");
+$result = $db->prepare("select line_id,title,have,want,other,city,file_path from item_desk where usr_id = ?");
 //$stmt->execute(array("$uid",“%$searchauthor”));
 $result->execute(array("$uid"));
 $linecount = $result->rowCount();
@@ -50,15 +43,20 @@ exit;
 $i=0;
 $data = array();
 while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+$data[$i]['line_id']=$row['line_id'];
 $data[$i]['title']=$row['title'];
 $data[$i]['have']=$row['have'];
 $data[$i]['want']=$row['want'];
 $data[$i]['other']=$row['other'];
 $data[$i]['city']=$row['city'];
 $data[$i]['file_path']=$row['file_path'];
+
 $i++;
 };
+
+
+
 $retval = array( 'status_value' => 1,'status_text' => 'TRUE','total_count' => count($data), 'data' => $data);
 echo json_encode($retval);
-
+$db = null;
 ?>

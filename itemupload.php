@@ -26,7 +26,7 @@ $fldr_path = substr($fldr_path,0,17);
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-01-18T22:17:09+0530" >
+<meta name="date" content="2015-01-24T23:16:36+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -55,6 +55,7 @@ if(isset($_POST['ihave'])) {
    $city=trim($_POST['city']);
    $cnt = mt_rand(1,6);
    $dir = "uploads/uploads".$cnt."/dpi.jpg";
+
 
 # open a database conn
 require 'dbcon.php';
@@ -143,7 +144,7 @@ $db=null;
 </tr>
 
 <tr>
-<td>Swap City</td>
+<td>Swap Location</td>
 <td>
 <select name="city" title="place where you want to connect?">
   <option value="bengaluru">Bengaluru</option>
@@ -163,22 +164,6 @@ $db=null;
 <td>
 <p> Click icon to upload an image of the item</p>
 </td>
-<!--
-<td>
-<form action="itemupload.php" method="post" enctype="multipart/form-data">
-<br>
-<?php
-printf ('<img id="dp" src="'. $fldr_path .'/dpi.jpg" class="" height="200" width="200" title="click here to change">');
-?>
-<div id="move" class="move_back">
-<p><input type="file" name="fileToUpload" id="fileToUpload"></p>
-<input type="submit" value="Upload" name="submit">
-&nbsp<a id='lgn' href='itemupload.php' style='color:black'>Cancel</a><br>
-</div>
-</form>
-</td>
-</tr>
--->
 <tr>
 <td>
 <INPUT type="submit" name="submit" value="Upload" id = "itemadd" style="height:40px; width:150px">

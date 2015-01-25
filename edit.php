@@ -26,7 +26,7 @@ $img_name = $_SESSION['image_name'];
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-01-25T00:09:22+0530" >
+<meta name="date" content="2015-01-25T19:12:37+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -42,7 +42,33 @@ $img_name = $_SESSION['image_name'];
 <?php
 require 'navigation.php';
 $name = ucwords($name);
-echo ('<h2 id="heading2"> Welcome to your dashboard - '. $name .'</h2>');
+echo ('<h2 id="heading2">'. $name .' you can upload a item image & edit information</h2>');
+$lid = trim($_GET['lid']);
+echo $lid;
+settype($lid, 'integer');
+$lid = addslashes($lid);
+$uid = $uid.$lid;
+
+# open a database conn
+require 'dbcon.php';
+
+$result = $db->prepare("select line_id,section_id,category_id,title,have,want,other,city,file_path from item_desk where CONCAT(usr_id,'',line_id) = ?");
+$result->execute(array("$uid"));
+$linecount = $result->rowCount();
+if ($linecount ==0){
+printf ("sorry we did not find any matching data");
+exit;
+}
+while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+$show = htmlentities($row['category_name']);
+//echo $show;
+//echo "<br>";
+echo ('<a class = "catlist" style="color:black ;font-weight: bold" href="checkout.php?bookid=' . urlencode($show) . '">' .$show . '<a/>');
+echo " &nbsp has 120 items";
+echo "<br>";
+}
+
+
 ?>
 
 
@@ -50,38 +76,16 @@ echo ('<h2 id="heading2"> Welcome to your dashboard - '. $name .'</h2>');
 <form action="file_uploader.php" method="post" enctype="multipart/form-data">
 <br>
 <?php
-printf ('<img id="dp" src="'.$img_name .'" class="dashimg" height="150" width="150" title="click here to change">')
+printf ('<img id="dp" src="'.$img_name .'" class="dashimg" height="200" width="200" title="click here to change">')
 ?>
 <div id="move" class="move_back">
 <p> Select image to upload:</p>
 <p><input type="file" name="fileToUpload" id="fileToUpload"></p>
 <input type="submit" value="Upload" name="submit">
-(&nbsp<a id='lgn' href='dashboard.php' style='color:black'>Cancel</a><br>
+(&nbsp<a id='lgn' href='' style='color:black'>Cancel</a><br>
 </div>
 </form>
-<div class="dashbrd1" id="myl">
-<div id="txt1">
-My Listings
-</div>
-</div>
-<div class="dashbrd2" id="msg">
-<div id="txt2">
-My Messages
-</div>
-</div>
-<div class="dashbrd3" id="mp">
-<div id="txt3">
-My Profile
-</div>
-</div>
-<div class="DivToScroll DivWithScroll" id="data_area">
-<p id="data">
-</p>
-</div>
 
-
-
-</div>
 </section>
 <script type="text/javascript" src="/starterbarters/js/jquery-2.1.1.min.js"> </script>
 <script type="text/javascript" src="/starterbarters/js/index.js"> </script>
