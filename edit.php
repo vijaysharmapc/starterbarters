@@ -2,6 +2,7 @@
 <html>
 <head>
 <?php
+
 if(!isset($_SESSION['loggedin'])) 
     {
         session_start(); 
@@ -18,7 +19,8 @@ $name = $_SESSION['name'];
 $uid = $_SESSION['uid'];
 //full path of image
 $img_name = $_SESSION['image_name'];
-
+//$img_name_item = $_SESSION['image_name_item'];
+//echo $img_name;
 }
 ?>
 
@@ -26,7 +28,7 @@ $img_name = $_SESSION['image_name'];
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-01-25T19:12:37+0530" >
+<meta name="date" content="2015-01-31T01:47:04+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -43,40 +45,31 @@ $img_name = $_SESSION['image_name'];
 require 'navigation.php';
 $name = ucwords($name);
 echo ('<h2 id="heading2">'. $name .' you can upload a item image & edit information</h2>');
+
+//get clicked edit
 $lid = trim($_GET['lid']);
-echo $lid;
+//echo $lid;
 settype($lid, 'integer');
 $lid = addslashes($lid);
-$uid = $uid.$lid;
-
-# open a database conn
-require 'dbcon.php';
-
-$result = $db->prepare("select line_id,section_id,category_id,title,have,want,other,city,file_path from item_desk where CONCAT(usr_id,'',line_id) = ?");
-$result->execute(array("$uid"));
-$linecount = $result->rowCount();
-if ($linecount ==0){
-printf ("sorry we did not find any matching data");
-exit;
-}
-while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-$show = htmlentities($row['category_name']);
-//echo $show;
-//echo "<br>";
-echo ('<a class = "catlist" style="color:black ;font-weight: bold" href="checkout.php?bookid=' . urlencode($show) . '">' .$show . '<a/>');
-echo " &nbsp has 120 items";
-echo "<br>";
-}
-
-
+$luid = $uid.$lid;
+if(empty($_SESSION["luid"])){
+//session_start();
+};
+printf ('<input id="editclk" type="hidden" name="catid" value='.$luid.'>');
+$_SESSION["luid"] = $luid;
+//echo  $_SESSION["luid"];
 ?>
 
 
 <section id="main">
-<form action="file_uploader.php" method="post" enctype="multipart/form-data">
+
+<form action="file_uploader_item.php" method="post" enctype="multipart/form-data">
 <br>
 <?php
-printf ('<img id="dp" src="'.$img_name .'" class="dashimg" height="200" width="200" title="click here to change">')
+//file path will have default image of item
+$file_path = $_SESSION["file_path"];
+//echo $file_path;
+printf ('<img id="idp" src="" class="dashimg" height="200" width="200" title="click here to change">');
 ?>
 <div id="move" class="move_back">
 <p> Select image to upload:</p>
@@ -85,6 +78,11 @@ printf ('<img id="dp" src="'.$img_name .'" class="dashimg" height="200" width="2
 (&nbsp<a id='lgn' href='' style='color:black'>Cancel</a><br>
 </div>
 </form>
+<div id="editdata">
+
+</div>
+
+
 
 </section>
 <script type="text/javascript" src="/starterbarters/js/jquery-2.1.1.min.js"> </script>

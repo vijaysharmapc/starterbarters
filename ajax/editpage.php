@@ -1,3 +1,4 @@
+
 <?php
 
 if(!isset($_SESSION['loggedin'])) 
@@ -16,24 +17,19 @@ $name = $_SESSION['name'];
 $uid = $_SESSION['uid'];
 //full path of image
 $img_name = $_SESSION['image_name'];
-
+//combo of uid and lid
+$luid = $_SESSION["luid"] ;
 //echo ('<input id="uid" type="hidden" name="uid" value = ' .$uid.'>');
 }
-
-
-//$uid = trim($_POST['uid']);
-//echo $uid;
-
+//echo $luid;
 $show = htmlentities("Upload a new item");
 
 # open a database conn
 require '../dbcon.php';
 
 //$sql = "select title,have,want,other,city,file_path from item_desk where usr_id = ". mysql_real_escape_string(trim($_POST['uid'])) ."";
-
-$result = $db->prepare("select line_id,title,have,want,other,city,file_path from item_desk where usr_id = ?");
-//$stmt->execute(array("$uid",“%$searchauthor”));
-$result->execute(array("$uid"));
+$result = $db->prepare("select line_id,section_id,category_id,title,have,want,other,city,file_path from item_desk where CONCAT(usr_id,'',line_id) = ?");
+$result->execute(array("$luid"));
 $linecount = $result->rowCount();
 if ($linecount ==0){
 printf ("sorry we did not find any matching categories");
@@ -42,19 +38,25 @@ exit;
 }
 $i=0;
 $data = array();
+if ($linecount ==1){
 while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-$data[$i]['line_id']=$row['line_id'];
-$data[$i]['title']=$row['title'];
-$data[$i]['have']=$row['have'];
-$data[$i]['want']=$row['want'];
-$data[$i]['other']=$row['other'];
-$data[$i]['city']=$row['city'];
-$data[$i]['file_path']=$row['file_path'];
+$data[$i]['file_paths']=$row['file_path'];
+$_SESSION['file_path'] = $row['file_path'];
+$data[$i]['line_ids']=$row['line_id'];
+$data[$i]['titles']=$row['title'];
+$data[$i]['haves']=$row['have'];
+$data[$i]['wants']=$row['want'];
+$data[$i]['others']=$row['other'];
+$data[$i]['citys']=$row['city'];
+//echo $_SESSION['file_path'];
 $i++;
 };
-
+};
 
 $retval = array( 'status_value' => 1,'status_text' => 'TRUE','total_count' => count($data), 'data' => $data);
 echo json_encode($retval);
 $db = null;
+
+//update query
+
 ?>

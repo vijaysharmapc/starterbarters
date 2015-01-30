@@ -18,8 +18,8 @@ padding: 22px;
 width: 450px;
 position: relative;
 left: 200px;
-
 }
+
 .fade{
 border-style:none;
 }
@@ -79,12 +79,35 @@ td,p{
 color: black;
 
 }
+
+#hometext{
+font-family: "Times New Roman", Times, serif;
+font-size: 18px;
+position:absolute;
+left: 650px;
+width:450px;
+height: 800px;
+}
+
+
+
 /*helps thext on home to stick to image
-*/
-img.bordered-image { 
+#slideshow {
     float: left; 
     margin: 4px; 
 }
+
+#slideshow  div {
+    float: left; 
+    margin: 4px; 
+}
+
+*/
+//--------------------image rotate
+
+
+
+//--------------------image rotate
 
 #floted {
 color: black;
@@ -218,7 +241,6 @@ box-shadow: 7px 7px 5px #888888;
     font-size: 15px;
     font-weight: bold;
     line-height: 20px;
-
 }
 
 .DivWithScroll{
@@ -238,4 +260,23 @@ background-color: teal;
    border-color: #E5E4E2;
    
 }
+//new image rotate
+#slideshow {
+    position:relative;
+//heigh;
+}
 
+#slideshow IMG {
+    position:absolute;
+    top:30;
+    left:30;
+    z-index:1;
+}
+
+#slideshow IMG.active {
+    z-index:3;
+}
+
+#slideshow IMG.last-active {
+    z-index:2;
+}

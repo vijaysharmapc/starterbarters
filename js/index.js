@@ -19,7 +19,7 @@ if (img_id != lnk_id) {
 $(this).removeClass("visible");
 $(this).addClass("hidden");
 
-	  }
+}
   else if  (img_id == lnk_id)
      {
 $(this).removeClass("hidden");
@@ -36,18 +36,6 @@ if ( catid ) {
  $("#catdata").html(data);
 });
 }
-
-
-$( "#dp" ).click(function() {
-$(this).stop().animate({"opacity": "0.3"}, "fast");
- $("#move").removeClass("move_back");
-$('#move').addClass("move_form");
-});
-$( "#dp" ).mousedown(function() {
-$(this).stop().animate({"opacity": "1"}, "fast");
- $("#move").removeClass("move_form");
-$('#move').addClass("move_back");
-});
 
 
 
@@ -91,7 +79,7 @@ for(var i=0; i<total_count; i++)
 {
 lid = 0;
 lid+= response.data[i].line_id;
-result+='<p class ="clrbrk1"> &nbsp<a href="edit.php?lid='+lid+'" style="color:white ;font-weight: bold">Edit</a>  &nbsp<a href="delete.php" style="color:white ;font-weight: bold">Delete</a> </p>';
+result+='<p class ="clrbrk1"> &nbsp<a id= "editclk" href="edit.php?lid='+lid+'" style="color:white ;font-weight: bold">Edit</a>  &nbsp<a href="delete.php" style="color:white ;font-weight: bold">Delete</a> </p>';
 result+='<div style="float: right;"> <img hspace="5" id="itmimg" src="' +response.data[i].file_path + '" alt="Smiley face" height="42" width="42"></div>';
 result+='<li id ="clr"> Title : ' + response.data[i].title + '</li>';
 result+='<li id ="clr"> I have : ' + response.data[i].have + '</li>';
@@ -104,6 +92,12 @@ $('#data_area').append(result);
 }
 });
 };
+//get edit page
+//$('#editclk').click(function () {
+//var addval = $(this).attr('href');
+//alert(addval);
+//});
+
 
 
 if (tmp == 'msg') {
@@ -209,3 +203,125 @@ $('#subcat').val(i+1)
 $(document).ready(function(){
 $('div.dashbrd1').trigger('click');
 });
+
+
+
+
+
+$(document).ready(function(){
+var editid = $("#editclk").val();
+//alert(editid);
+if (editid) {
+$.ajax({
+dataType :"json",
+type :"POST",
+data :{editid :editid,},
+url :'ajax/editpage.php',
+success : function(response) {
+var total_count = response.total_count;
+//alert(total_count);
+if (response.status_value == 1) {
+//alert(total_count);
+var results = "";
+var cnts=0;
+var lids=0;
+//var rec_s= new Array();
+for(var i=0; i<total_count; i++)
+{
+lids = 0;
+lids+= response.data[i].line_ids;
+
+//results+='<p class ="clrbrk1"> &nbsp<a id= "editclk" href="edit.php?lid='+lid+'" style="color:white ;font-weight: bold">Edit</a>  &nbsp<a href="delete.php" style="color:white ;font-weight: bold">Delete</a> </p>';
+//results+='<div style="float: right;"> <img hspace="5" id="itmimg" src="' +response.data[i].file_paths + '" alt="Smiley face" height="42" width="42"></div>';
+results+='<table>';
+results+='<tr><td>Title &nbsp</td>';
+results+='<td><INPUT type="text" name="title" title ="Name of the item" value ="'+response.data[i].titles+'" required></td></tr>';
+
+results+='<tr><td>I have &nbsp</td>';
+results+='<td><INPUT type="text" name="title" title ="short description of what you want to offer (max 150 characters)" value ="'+response.data[i].haves+'" required></td></tr>';
+
+results+='<tr><td>I want &nbsp</td>';
+results+='<td><INPUT type="text" name="title" title ="Name of the item" value ="'+response.data[i].wants+'" required></td></tr>';
+results+='</table>';
+//dynamically set image path on edit page
+loc =response.data[i].file_paths;
+$('#idp').attr("src",loc);
+results+='<li id ="clr"> Title : ' + response.data[i].titles + '</li>';
+results+='<li id ="clr"> I have : ' + response.data[i].haves + '</li>';
+results+='<li id ="clr"> I want : ' + response.data[i].wants + '</li>';
+results+='<li id ="clr"> Open to other swaps? ' + response.data[i].others + '</li>';
+results+='<li id ="clr"> Place : ' + response.data[i].citys + '</li>';
+}
+}
+$('#editdata').append(results);
+}
+
+});
+//window.location.reload(true);
+//location.reload(true);
+}
+//
+
+});
+
+
+$( "#dp" ).click(function() {
+$(this).stop().animate({"opacity": "0.3"}, "fast");
+ $("#move").removeClass("move_back");
+$('#move').addClass("move_form");
+});
+$( "#dp" ).mousedown(function() {
+$(this).stop().animate({"opacity": "1"}, "fast");
+ $("#move").removeClass("move_form");
+$('#move').addClass("move_back");
+});
+
+
+$( "#idp" ).click(function() {
+$(this).stop().animate({"opacity": "0.3"}, "fast");
+ $("#move").removeClass("move_back");
+$('#move').addClass("move_form");
+});
+$( "#idp" ).mousedown(function() {
+$(this).stop().animate({"opacity": "1"}, "fast");
+ $("#move").removeClass("move_form");
+$('#move').addClass("move_back");
+});
+
+
+//new image rotate
+function slideSwitch() {
+    var $active = $('#slideshow IMG.active');
+
+    if ( $active.length == 0 ) $active = $('#slideshow IMG:last');
+
+    var $next =  $active.next().length ? $active.next()
+        : $('#slideshow IMG:first');
+
+    $active.addClass('last-active');
+        
+    $next.css({opacity: 0.0})
+        .addClass('active')
+        .animate({opacity: 1.0}, 1000, function() {
+            $active.removeClass('active last-active');
+        });
+}
+
+
+$(function() {
+    setInterval( "slideSwitch()", 5000 );
+});
+
+
+/*
+//rotate pictures
+$("#slideshow div:gt(0)").hide();
+setInterval(function() {
+  $('#slideshow div:first')
+    .fadeOut(300)
+    .next()
+    .fadeIn(1000)
+    .end()
+    .appendTo('#slideshow');
+},  5000);
+*/

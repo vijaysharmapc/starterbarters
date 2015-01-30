@@ -16,10 +16,12 @@ exit;
 else{
 $name = $_SESSION['name'];
 $uid = $_SESSION['uid'];
+$luid = $_SESSION["luid"] ;
 $fldr_path = $_SESSION['image_name'];
 $fldr_path = substr($fldr_path,0,17);
 $file_path = $_SESSION["file_path"];
 $file_path = substr($file_path,0,17);
+echo $file_path;
 }
 ?>
 </head>
@@ -28,11 +30,11 @@ $file_path = substr($file_path,0,17);
 <?php
 //$cnt = rand(1,4);
 //$target_dir = "uploads/";
-$target_dir = $fldr_path;
+$target_dir = $file_path;
 //break to array and then pic last ext and rename
 $temp = explode(".",$_FILES["fileToUpload"]["name"]);
 //print_r($temp); 
-$newfilename = $uid . '.' .end($temp);
+$newfilename = $luid . '.' .end($temp);
 //echo $newfilename;
 $target_file = $target_dir . basename($newfilename);
 $uploadOk = 1;
@@ -80,13 +82,13 @@ if ($uploadOk == 0) {
 
 //script to update image name and path in db
 $img_nme = basename($newfilename);
-$img_nme = $fldr_path.$img_nme;
-$_SESSION['image_name'] = $img_nme;
+$img_nme = $file_path.$img_nme;
+$_SESSION['image_name_item'] = $img_nme;
 //$img_nme = $target_dir ."".$img_nme;
 //resize image
 $scr = imagecreatefromjpeg($img_nme);
 list($width,$height) = getimagesize($img_nme);
-$newwidth = 150;
+$newwidth = 200;
 $newheight = ($height/$width)*$newwidth;
 $tmp = imagecreatetruecolor($newwidth, $newheight);
 imagecopyresampled($tmp,$scr,0,0,0,0,$newwidth,$newheight,$width,$height);
@@ -94,11 +96,11 @@ imagejpeg($tmp,"$img_nme",100);
 imagedestroy($tmp);
 //resize image
 require 'dbcon.php';
-$stmt = $db->prepare("update user_base set image_name= ? where CONCAT(user_name,'',user_id) = ?");
-$stmt->execute(array("$img_nme","$uid"));
-$url = "Location:dashboard.php";
+$stmt = $db->prepare("update item_desk set file_path= ? where CONCAT(usr_id,'',line_id) = ?");
+$stmt->execute(array("$img_nme","$luid"));
+$url = "Location:edit.php";
 header($url);
-window.location.reload(true);
+//window.location.reload(true);
     } else {
         echo "Sorry, there was an error uploading your file.";
         printf (error_get_last());
