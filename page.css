@@ -42,7 +42,12 @@ a:active {background-color:  #610B0B;}
 color: black;
 }
 
-
+/*
+#lgnd{
+position: fixed;
+right: 19px;
+}
+*/
 .container {
 width: 950px;
 margin: 0 auto;
@@ -71,25 +76,30 @@ border:solid 3px white;
 border-radius: 5px;
 color: white;
 background-color:white;
-width:950px;
+width:100%;
 height: 800px;
 }
 
 td,p{
 color: black;
-
+font-size: 16px;
 }
 
 #hometext{
 font-family: "Times New Roman", Times, serif;
 font-size: 18px;
-position:absolute;
-left: 650px;
-width:450px;
+position:relative;
+left: 400px;
+width:55%;
 height: 800px;
+padding-left:20px;
 }
 
-
+#editdata{
+position:relative;
+top: -140px;
+left: 250px;
+}
 
 /*helps thext on home to stick to image
 #slideshow {
@@ -119,6 +129,10 @@ left: 600px;
 
 #catdata{
 color: black;
+font-family: "Times New Roman", Times, serif;
+font-size: 16px;
+padding-left: 60px;
+padding-top: 2px;
 }
 
 .Highlight{
@@ -210,8 +224,21 @@ padding-left: 20px;
 
 #itemupload{
 background-color: #EBF4FA;
-padding-top: 25px
+position: relative;
+right: 250px;
+padding-top: 25px;
 }
+#itemupdate{
+background-color: #EBF4FA;
+position: relative;
+right: 30px;
+top: -40px;
+padding-top: 25px;
+width: 50%;
+}
+
+
+
 
 #itemadd{
 position: relative;
@@ -220,11 +247,11 @@ position: relative;
 }
 
 #data_area{
-border-top-width: 2px;
-width: 600px;
 position: relative;
-    top: -180px;
-    left: 135px;
+width: 63%;
+top: -180px;
+left: 135px;
+border-top-width: 2px;
 padding-top: 2px;
 }
 
@@ -279,4 +306,13 @@ background-color: teal;
 
 #slideshow IMG.last-active {
     z-index:2;
+}
+
+#updatetable{
+border:solid 7px #black;
+}
+
+#idp{
+position: relative;
+top: 20px;
 }

@@ -1,5 +1,5 @@
 <?php
-
+//list of all sub categories
 if(isset($_POST['catid']) == true){
 $searchcat = trim($_POST['catid']);
 settype($searchcat, 'integer');
@@ -24,7 +24,7 @@ $show = htmlentities($row['category_name']);
 //echo "<br>";
 echo ('<a class = "catlist" style="color:black ;font-weight: bold" href="checkout.php?bookid=' . urlencode($show) . '">' .$show . '<a/>');
 echo " &nbsp has 120 items";
-echo "<br>";
+echo "<br><br>";
 }
 }
 

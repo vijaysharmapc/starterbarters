@@ -8,6 +8,7 @@ $(this).stop().animate({"opacity": "0.4"}, "fast");
 },
 function() {
 $(this).stop().animate({"opacity": "1"}, "slow");
+
 });
 });
 
@@ -230,31 +231,35 @@ for(var i=0; i<total_count; i++)
 {
 lids = 0;
 lids+= response.data[i].line_ids;
-
-//results+='<p class ="clrbrk1"> &nbsp<a id= "editclk" href="edit.php?lid='+lid+'" style="color:white ;font-weight: bold">Edit</a>  &nbsp<a href="delete.php" style="color:white ;font-weight: bold">Delete</a> </p>';
-//results+='<div style="float: right;"> <img hspace="5" id="itmimg" src="' +response.data[i].file_paths + '" alt="Smiley face" height="42" width="42"></div>';
-results+='<table>';
+results+='<table id="itemupdate">';
 results+='<tr><td>Title &nbsp</td>';
 results+='<td><INPUT type="text" name="title" title ="Name of the item" value ="'+response.data[i].titles+'" required></td></tr>';
 
 results+='<tr><td>I have &nbsp</td>';
-results+='<td><INPUT type="text" name="title" title ="short description of what you have to offer (max 150 characters)" value ="'+response.data[i].haves+'" required></td></tr>';
+results+='<td><textarea name="ihave" rows="5" cols="40" maxlength="200" title="short description of what you have to offer (max 200 characters)" required>'+response.data[i].haves+'</textarea></td>';
 
 results+='<tr><td>I want &nbsp</td>';
-results+='<td><INPUT type="text" name="title" title ="short description of what you want? (max 150 characters)" value ="'+response.data[i].wants+'" required></td></tr>';
+results+='<td><textarea name="ihave" rows="5" cols="40" maxlength="200" title="short description of what you want  (max 200 characters)" required>'+response.data[i].wants+'</textarea></td>';
 
-results+='<tr><td>Open to other swaps?  &nbsp</td>';
-results+='<td><INPUT type="text" name="title" title ="Open to other offers? " value ="'+ response.data[i].others +'" required></td></tr>';
+results+='<tr><td>Open to others?  &nbsp</td>';
+results+='<td><select name="other" title="open to other swap offers besides what you want?"><option value="yes">Yes</option><option value="no">No</option></select></td></tr>';
 
 results+='<tr><td>Swap location :  &nbsp</td>';
-results+='<td><INPUT type="text" name="title" title ="Change swap location" value ="'+ response.data[i].citys +'" required></td></tr>';
 
+results+='<td><select name="city" title="place where you want to connect?"><option value="bengaluru">Bengaluru</option><option value="ahmedabad">Ahmedabad</option>'
+results+='<option value="chennai">Chennai</option><option value="delhi">Delhi</option><option value="hyderabad">Hyderabad</option><option value="jaipur">Jaipur</option>'
+results+='<option value="kolkata">Kolkata</option><option value="mumbai">Mumbai</option><option value="pune">Pune</option></select></td></tr>'
+
+results+='<tr></tr>';
+results+='<tr></tr>';
 results+='</table>';
+results+='<input type="submit" value="Save Changes" name="save" id ="saves" >';
 //dynamically set image path on edit page
 loc =response.data[i].file_paths;
 $('#idp').attr("src",loc);
 
 }
+
 }
 $('#editdata').append(results);
 }
@@ -266,6 +271,16 @@ $('#editdata').append(results);
 //
 
 });
+
+//update line item
+$(document).on('click','#saves',function() {
+alert("saved");
+});
+
+
+
+
+
 
 
 $( "#dp" ).click(function() {
@@ -297,12 +312,10 @@ function slideSwitch() {
     var $active = $('#slideshow IMG.active');
 
     if ( $active.length == 0 ) $active = $('#slideshow IMG:last');
-
-    var $next =  $active.next().length ? $active.next()
+    
+ var $next =  $active.next().length ? $active.next()
         : $('#slideshow IMG:first');
-
     $active.addClass('last-active');
-        
     $next.css({opacity: 0.0})
         .addClass('active')
         .animate({opacity: 1.0}, 1000, function() {
@@ -311,10 +324,18 @@ function slideSwitch() {
 }
 
 
-$(function() {
-    setInterval( "slideSwitch()", 10000 );
-});
 
+$(function() {
+   var img_interval =  setInterval( "slideSwitch()", 7000 );
+
+$('#slideshow').hover(function() {
+	$(this).css('cursor','crosshair');
+        clearInterval(img_interval);
+    }, function() {
+        img_interval = setInterval( slideSwitch, 7000 );
+    });
+
+});
 
 /*
 //rotate pictures

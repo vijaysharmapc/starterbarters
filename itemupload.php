@@ -26,7 +26,7 @@ $fldr_path = substr($fldr_path,0,17);
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-01-24T23:16:36+0530" >
+<meta name="date" content="2015-01-31T23:25:11+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -88,7 +88,7 @@ $db=null;
 
 <form action="itemupload.php" method="post">
 
-<table id="itemupload" border="0" cellpadding="1" cellspacing="1" width="550" align="center">
+<table id="itemupload" border="0" cellpadding="1" cellspacing="1" width="550">
 <tr>
 <td>Title</td>
 <td><INPUT type="text" name="title" title ="Name of the item" required></td>
@@ -122,14 +122,14 @@ $db=null;
 <tr>
 <td>I Have : </td>
 <td>
-<textarea name="ihave" rows="5" cols="30" maxlength="150" title="short description of what you want to offer (max 150 characters)" required>
+<textarea name="ihave" rows="5" cols="40" maxlength="200" title="short description of what you want to offer (max 200 characters)" required>
 </textarea>
 </td>
 </tr>
 <tr>
 <td>I Want :</td>
 <td>
-<textarea name="iwant" rows="5" cols="30" maxlength="150" title="short description of what you want in exchange (max 150 characters)" required>
+<textarea name="iwant" rows="5" cols="40" maxlength="200" title="short description of what you want in exchange (max 200 characters)" required>
 </textarea>
 </td>
 </tr>

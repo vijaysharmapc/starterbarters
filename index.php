@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-01-28T23:16:37+0530" >
+<meta name="date" content="2015-01-31T16:22:32+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -46,8 +46,8 @@ require 'navigation.php';
 <!--
 -->
 <div id="slideshow">
-    <img src="/starterbarters/images/canvas.jpg" alt="" class="active" />
-    <img src="/starterbarters/images/canvas2.jpg" alt="" class="" />
+    <img id ="sl1" src="/starterbarters/images/canvas.jpg" alt="" class="active" />
+    <img id ="sl1" src="/starterbarters/images/canvas2.jpg" alt="" class="" />
 </div>
 
 

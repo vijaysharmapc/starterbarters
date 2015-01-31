@@ -30,7 +30,7 @@ $img_name_item = $_SESSION['image_name_item'];
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-01-31T13:12:23+0530" >
+<meta name="date" content="2015-01-31T23:42:19+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -72,7 +72,7 @@ $_SESSION["lid"] = $lid;
 <form action="file_uploader_item.php" method="post" enctype="multipart/form-data">
 <br>
 <?php
-//file path will have default image of item
+//file path will have default image of item also src set by js
 $file_path = $_SESSION["file_path"];
 printf ('<img id="idp" src="" class="dashimg" height="200" width="200" title="click here to change">');
 //}
