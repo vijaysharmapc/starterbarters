@@ -19,7 +19,9 @@ $name = $_SESSION['name'];
 $uid = $_SESSION['uid'];
 //full path of image
 $img_name = $_SESSION['image_name'];
-//$img_name_item = $_SESSION['image_name_item'];
+if(isset($_SESSION['image_name_item'])){ 
+$img_name_item = $_SESSION['image_name_item'];
+};
 //echo $img_name;
 }
 ?>
@@ -28,7 +30,7 @@ $img_name = $_SESSION['image_name'];
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-01-31T01:47:04+0530" >
+<meta name="date" content="2015-01-31T13:12:23+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -46,18 +48,22 @@ require 'navigation.php';
 $name = ucwords($name);
 echo ('<h2 id="heading2">'. $name .' you can upload a item image & edit information</h2>');
 
-//get clicked edit
+//get clicked edit on dashboard.php
+if (isset($_GET['lid'])){
 $lid = trim($_GET['lid']);
-//echo $lid;
 settype($lid, 'integer');
 $lid = addslashes($lid);
 $luid = $uid.$lid;
+
 if(empty($_SESSION["luid"])){
 //session_start();
 };
 printf ('<input id="editclk" type="hidden" name="catid" value='.$luid.'>');
 $_SESSION["luid"] = $luid;
+$_SESSION["lid"] = $lid;
 //echo  $_SESSION["luid"];
+}
+
 ?>
 
 
@@ -68,8 +74,8 @@ $_SESSION["luid"] = $luid;
 <?php
 //file path will have default image of item
 $file_path = $_SESSION["file_path"];
-//echo $file_path;
 printf ('<img id="idp" src="" class="dashimg" height="200" width="200" title="click here to change">');
+//}
 ?>
 <div id="move" class="move_back">
 <p> Select image to upload:</p>

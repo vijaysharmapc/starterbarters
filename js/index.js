@@ -4,7 +4,7 @@
 $(document).ready(function(){
 $(".fade").hover(
 function() {
-$(this).stop().animate({"opacity": "0.5"}, "fast");
+$(this).stop().animate({"opacity": "0.4"}, "fast");
 },
 function() {
 $(this).stop().animate({"opacity": "1"}, "slow");
@@ -207,7 +207,7 @@ $('div.dashbrd1').trigger('click');
 
 
 
-
+//catch edit click
 $(document).ready(function(){
 var editid = $("#editclk").val();
 //alert(editid);
@@ -238,19 +238,22 @@ results+='<tr><td>Title &nbsp</td>';
 results+='<td><INPUT type="text" name="title" title ="Name of the item" value ="'+response.data[i].titles+'" required></td></tr>';
 
 results+='<tr><td>I have &nbsp</td>';
-results+='<td><INPUT type="text" name="title" title ="short description of what you want to offer (max 150 characters)" value ="'+response.data[i].haves+'" required></td></tr>';
+results+='<td><INPUT type="text" name="title" title ="short description of what you have to offer (max 150 characters)" value ="'+response.data[i].haves+'" required></td></tr>';
 
 results+='<tr><td>I want &nbsp</td>';
-results+='<td><INPUT type="text" name="title" title ="Name of the item" value ="'+response.data[i].wants+'" required></td></tr>';
+results+='<td><INPUT type="text" name="title" title ="short description of what you want? (max 150 characters)" value ="'+response.data[i].wants+'" required></td></tr>';
+
+results+='<tr><td>Open to other swaps?  &nbsp</td>';
+results+='<td><INPUT type="text" name="title" title ="Open to other offers? " value ="'+ response.data[i].others +'" required></td></tr>';
+
+results+='<tr><td>Swap location :  &nbsp</td>';
+results+='<td><INPUT type="text" name="title" title ="Change swap location" value ="'+ response.data[i].citys +'" required></td></tr>';
+
 results+='</table>';
 //dynamically set image path on edit page
 loc =response.data[i].file_paths;
 $('#idp').attr("src",loc);
-results+='<li id ="clr"> Title : ' + response.data[i].titles + '</li>';
-results+='<li id ="clr"> I have : ' + response.data[i].haves + '</li>';
-results+='<li id ="clr"> I want : ' + response.data[i].wants + '</li>';
-results+='<li id ="clr"> Open to other swaps? ' + response.data[i].others + '</li>';
-results+='<li id ="clr"> Place : ' + response.data[i].citys + '</li>';
+
 }
 }
 $('#editdata').append(results);
@@ -266,7 +269,7 @@ $('#editdata').append(results);
 
 
 $( "#dp" ).click(function() {
-$(this).stop().animate({"opacity": "0.3"}, "fast");
+$(this).stop().animate({"opacity": "0.2"}, "fast");
  $("#move").removeClass("move_back");
 $('#move').addClass("move_form");
 });
@@ -309,7 +312,7 @@ function slideSwitch() {
 
 
 $(function() {
-    setInterval( "slideSwitch()", 5000 );
+    setInterval( "slideSwitch()", 10000 );
 });
 
 

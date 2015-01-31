@@ -4,15 +4,13 @@
 <?php
 if(!isset($_SESSION['loggedin'])) 
     {
-        session_start(); 
+       session_start(); 
     }
-//session_start();
 if(empty($_SESSION['loggedin']))
 //if(!$_SESSION['loggedin'])
 {
-header("Not logged in");
+
 echo ("<div style = 'clear: right; float: right; text-align: right;font-weight: bold; padding:10px;'><br>");
-//echo "<div style = 'clear: right; float: right; text-align: right;'> <br />";
 echo "<A id='lgn' href='login.php' style='color:white'>Login</A><br>";
 echo "<A id='lgn' href='register.php' style='color:white'>Register</A><br>";
 echo "</div>";
@@ -28,7 +26,7 @@ echo "</div>";
 ?>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-01-18T23:15:00+0530" >
+<meta name="date" content="2015-01-31T14:45:45+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -43,9 +41,8 @@ echo "</div>";
 
 <div id="nav">
 <br>
-<a href= "/starterbarters/index.php">
+<a href="/starterbarters/index.php">
 <img class="fade" src="/starterbarters/images/home.jpg" height="40" width="50" style="border-style:none;"> </a>
-<br>
 
 <a  style ="color:#E3CCCC"> Swap Categories </a>
 <br>

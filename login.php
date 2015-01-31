@@ -1,15 +1,18 @@
 <?php
+ob_start();
+error_reporting(E_ALL);
+session_start();
 require 'navigation.php';
-printf ('<h2 id="heading2"> Please login here  </h2>');
+
 if(isset($_POST['ulogin'])) {
-//session_start();
+
 $ulogin = $_POST['ulogin'];
 $ulogin = addslashes($ulogin);
 $upassword = $_POST['upassword'];
 $upassword = addslashes($upassword);
 $upassword = md5($upassword);
 
-
+printf ('<h2 id="heading2"> Please login here  </h2>');
 # open a database conn
 require 'dbcon.php';
 //build query
@@ -24,15 +27,18 @@ if ($ucount ==0){
 printf('<section id="main">');
 printf ("<p> Wrong user id or password ,please try again </p>");
 } else {
+
 $_SESSION['loggedin'] = "YES";
 $_SESSION['uid'] = $ulogin;
 $row = $sth->fetch(PDO::FETCH_ASSOC);
 $_SESSION['name'] = $row['first_name'];
 //full file path
 $_SESSION['image_name'] = $row['image_name'];
-$url = "Location:dashboard.php";
+//$url = "Location:dashboard.php";
 //ob_start()
-header($url);
+//header("Location:dashboard.php");
+header("Location: dashboard.php");
+die();
 //login time stamp
 $stmt = $db->prepare("update user_base set time_stamp = now() where CONCAT(user_name,'',user_id) = ?");
 $stmt->execute(array("$ulogin"));

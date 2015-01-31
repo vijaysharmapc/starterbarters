@@ -17,10 +17,12 @@ else{
 $name = $_SESSION['name'];
 $uid = $_SESSION['uid'];
 $luid = $_SESSION["luid"] ;
+$lid = $_SESSION["lid"];
 $fldr_path = $_SESSION['image_name'];
 $fldr_path = substr($fldr_path,0,17);
 $file_path = $_SESSION["file_path"];
 $file_path = substr($file_path,0,17);
+
 echo $file_path;
 }
 ?>
@@ -98,8 +100,10 @@ imagedestroy($tmp);
 require 'dbcon.php';
 $stmt = $db->prepare("update item_desk set file_path= ? where CONCAT(usr_id,'',line_id) = ?");
 $stmt->execute(array("$img_nme","$luid"));
-$url = "Location:edit.php";
-header($url);
+
+
+$url2 = "Location:edit.php?lid=".$lid."";
+header($url2);
 //window.location.reload(true);
     } else {
         echo "Sorry, there was an error uploading your file.";

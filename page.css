@@ -21,7 +21,7 @@ left: 200px;
 }
 
 .fade{
-border-style:none;
+display: block;
 }
 /*
 a {
