@@ -11,22 +11,22 @@ if(empty($_SESSION['loggedin']))
 {
 
 echo ("<div style = 'clear: right; float: right; text-align: right;font-weight: bold; padding:10px;'><br>");
-echo "<A id='lgn' href='login.php' style='color:white'>Login</A><br>";
-echo "<A id='lgn' href='register.php' style='color:white'>Register</A><br>";
+echo "<a id='lgn' href='login.php' style='color:white'>Login</a><br>";
+echo "<a id='lgn' href='register.php' style='color:white'>Register</a><br>";
 echo "</div>";
 //exit;
 }
 else{
 $name = $_SESSION['name'];
 echo ("<div style = 'clear: right; float: right; text-align: right;font-weight: bold; padding:10px;'><br>");
-echo "<A id='lgn' href='logout.php' style='color:white' >Logout</A><br>";
-echo "<A id='lgnd' href='dashboard.php' style='color:white'>My Dashboard</A><br>";
+echo "<a id='lgn' href='logout.php' style='color:white' >Logout</a><br>";
+echo "<a id='lgnd' href='dashboard.php' style='color:white'>My Dashboard</a><br>";
 echo "</div>";
 }
 ?>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-01-31T14:45:45+0530" >
+<meta name="date" content="2015-02-01T21:20:56+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">

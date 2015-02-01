@@ -24,8 +24,6 @@ $query = " select * from book_category";
 $query = $query . " where category_id = " . $searchcat . "";
 
 $_SESSION['itemdir'] = $dir
-
-
 }
 ?>
 
@@ -33,7 +31,7 @@ $_SESSION['itemdir'] = $dir
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-01-18T22:18:01+0530" >
+<meta name="date" content="2015-02-02T00:15:31+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">

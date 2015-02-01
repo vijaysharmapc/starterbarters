@@ -26,7 +26,7 @@ $fldr_path = substr($fldr_path,0,17);
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-01-31T23:25:11+0530" >
+<meta name="date" content="2015-02-02T00:22:28+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -62,7 +62,7 @@ require 'dbcon.php';
 
 $stmt = $db->prepare("insert into item_desk values (?,?,?,?,?,?,?,?,?,?,?,?)");
 $stmt->execute(array('',"$section_id","$category1","$title","$ihave","$iwant","$other","$city","$uid","$dir",'',''));
-$url = "Location:myitem.php";
+$url = "Location:dashboard.php";
 header($url);
 //$stmt = $db->prepare("insert into user_base values (?,?,?,?,?,?)");
 //$user_name = substr($firstname,0,5);
@@ -73,12 +73,6 @@ exit;
 }
 $db=null;
 ?>
-
-
-
-
-
-
 
 
 

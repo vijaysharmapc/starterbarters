@@ -23,10 +23,32 @@ $luid = $_SESSION["luid"] ;
 # open a database conn
 require '../dbcon.php';
 
+if(isset($_POST['ttl']) == true){
+$ttl = $_POST['ttl'];
+$ttl = addslashes($ttl);
+} else {exit;}
+if(isset($_POST['ihv']) == true){
+$ihv = $_POST['ihv'];
+$ihv = addslashes($ihv);
+}else {exit;};
+if(isset($_POST['iwt']) == true){
+$iwt = $_POST['iwt'];
+$iwt = addslashes($iwt);
+}else {exit;};
+if(isset($_POST['opn']) == true){
+$opn = $_POST['opn'];
+$opn = addslashes($opn);
+}else {exit;};
+if(isset($_POST['cty']) == true){
+$cty = $_POST['cty'];
+$cty = addslashes($cty);
+}else {exit;};
+
 
 try{
-$stmt = $db->prepare("update user_base set time_stamp = now() where CONCAT(user_name,'',user_id) = ?");
-$stmt->execute(array("$ulogin"));
+$stmt = $db->prepare("update item_desk set title = ?,have = ?,want = ?,other = ?, city = ? where CONCAT(usr_id,'',line_id) = ?");
+$stmt->execute(array($ttl,$ihv,$iwt,$opn,$cty,$luid));
+$retval = array( 'status_value' => 'Information saved');
 }
 catch (PDOException $e) {
 printf("Execution failed -  %s\n",$e->getMessage());
@@ -34,6 +56,4 @@ printf("Execution failed -  %s\n",$e->getMessage());
 
 echo json_encode($retval);
 $db = null;
-//update query
-
 ?>

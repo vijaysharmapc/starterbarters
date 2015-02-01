@@ -80,7 +80,7 @@ for(var i=0; i<total_count; i++)
 {
 lid = 0;
 lid+= response.data[i].line_id;
-result+='<p class ="clrbrk1"> &nbsp<a id= "editclk" href="edit.php?lid='+lid+'" style="color:white ;font-weight: bold">Edit</a>  &nbsp<a href="delete.php" style="color:white ;font-weight: bold">Delete</a> </p>';
+result+='<p class ="clrbrk1"> &nbsp<a id= "editclk" href="edit.php?lid='+lid+'" style="color:white ;font-weight: bold">Edit</a>  &nbsp<a class = "dlt1"  id ="'+lid+'" href="dashboard.php" style="color:white ;font-weight: bold">Delete</a> </p>';
 result+='<div style="float: right;"> <img hspace="5" id="itmimg" src="' +response.data[i].file_path + '" alt="Smiley face" height="42" width="42"></div>';
 result+='<li id ="clr"> Title : ' + response.data[i].title + '</li>';
 result+='<li id ="clr"> I have : ' + response.data[i].have + '</li>';
@@ -233,27 +233,29 @@ lids = 0;
 lids+= response.data[i].line_ids;
 results+='<table id="itemupdate">';
 results+='<tr><td>Title &nbsp</td>';
-results+='<td><INPUT type="text" name="title" title ="Name of the item" value ="'+response.data[i].titles+'" required></td></tr>';
+results+='<td><INPUT type="text" name="title" title ="Name of the item" value ="'+response.data[i].titles+'" id ="title" required></td></tr>';
 
 results+='<tr><td>I have &nbsp</td>';
-results+='<td><textarea name="ihave" rows="5" cols="40" maxlength="200" title="short description of what you have to offer (max 200 characters)" required>'+response.data[i].haves+'</textarea></td>';
+results+='<td><textarea name="ihave" id="ihave" rows="5" cols="40" maxlength="200" title="short description of what you have to offer (max 200 characters)" required>'+response.data[i].haves+'</textarea></td>';
 
 results+='<tr><td>I want &nbsp</td>';
-results+='<td><textarea name="ihave" rows="5" cols="40" maxlength="200" title="short description of what you want  (max 200 characters)" required>'+response.data[i].wants+'</textarea></td>';
+results+='<td><textarea name="ihave" id="iwant" rows="5" cols="40" maxlength="200" title="short description of what you want  (max 200 characters)" required>'+response.data[i].wants+'</textarea></td>';
 
 results+='<tr><td>Open to others?  &nbsp</td>';
-results+='<td><select name="other" title="open to other swap offers besides what you want?"><option value="yes">Yes</option><option value="no">No</option></select></td></tr>';
+results+='<td><select name="other" id="open" title="open to other swap offers besides what you want?"><option value="yes">Yes</option><option value="no">No</option></select></td></tr>';
 
 results+='<tr><td>Swap location :  &nbsp</td>';
 
-results+='<td><select name="city" title="place where you want to connect?"><option value="bengaluru">Bengaluru</option><option value="ahmedabad">Ahmedabad</option>'
+results+='<td><select name="city" id="city" title="place where you want to connect?"><option value="bengaluru">Bengaluru</option><option value="ahmedabad">Ahmedabad</option>'
 results+='<option value="chennai">Chennai</option><option value="delhi">Delhi</option><option value="hyderabad">Hyderabad</option><option value="jaipur">Jaipur</option>'
 results+='<option value="kolkata">Kolkata</option><option value="mumbai">Mumbai</option><option value="pune">Pune</option></select></td></tr>'
 
 results+='<tr></tr>';
 results+='<tr></tr>';
+results+='<tr><td><input type="submit" value="Save Changes" name="save" id ="saves" ></td></tr>';
+results+='<tr><td><a id= "back" href="dashboard.php" style="color:Black ;font-weight: ">Back</a></td></tr>';
 results+='</table>';
-results+='<input type="submit" value="Save Changes" name="save" id ="saves" >';
+//results+='<input type="submit" value="Save Changes" name="save" id ="saves" >';
 //dynamically set image path on edit page
 loc =response.data[i].file_paths;
 $('#idp').attr("src",loc);
@@ -263,26 +265,68 @@ $('#idp').attr("src",loc);
 }
 $('#editdata').append(results);
 }
-
 });
 //window.location.reload(true);
 //location.reload(true);
 }
 //
-
 });
 
 //update line item
 $(document).on('click','#saves',function() {
-alert("saved");
+var ttl = $('#title').val();
+ttl = $.trim(ttl);
+var ihv = $('#ihave').val();
+ihv = $.trim(ihv);
+var iwt = $('#iwant').val();
+iwt = $.trim(iwt);
+var opn = $('#open').val();
+opn = $.trim(opn);
+var cty = $('#city').val();
+cty = $.trim(cty);
+//data validation
+if (ttl == ''||ihv == ''||iwt == ''||opn == ''||cty == '') {
+alert("Fields can not be empty");
+return false;
+};
+//data validation
+$.ajax({
+dataType :"json",
+type :"POST",
+data :{ttl :ttl,ihv :ihv,iwt :iwt,opn :opn,cty :cty,},
+url :'ajax/update.php',
+success : function(response){
+alert(response.status_value);
+}});
+
+});
+
+
+//delete line item
+$(document).on('click','.dlt1',function() {
+//alert("delete");
+dlts=0;
+if (confirm("Do you want to delete this item?") == true) {
+var dlts = $(this).attr('id');
+alert(dlts);
+$.ajax({
+dataType :"json",
+type :"POST",
+data :{dlts :dlts,},
+url :'ajax/delete.php',
+success : function(response){
+alert(response.status_value);
+}});
+}else{
+x = "You pressed Cancel!";
+return false;
+}
 });
 
 
 
 
-
-
-
+//profile pic
 $( "#dp" ).click(function() {
 $(this).stop().animate({"opacity": "0.2"}, "fast");
  $("#move").removeClass("move_back");
@@ -294,7 +338,7 @@ $(this).stop().animate({"opacity": "1"}, "fast");
 $('#move').addClass("move_back");
 });
 
-
+//item pic
 $( "#idp" ).click(function() {
 $(this).stop().animate({"opacity": "0.3"}, "fast");
  $("#move").removeClass("move_back");
@@ -305,7 +349,6 @@ $(this).stop().animate({"opacity": "1"}, "fast");
  $("#move").removeClass("move_form");
 $('#move').addClass("move_back");
 });
-
 
 //new image rotate
 function slideSwitch() {
@@ -337,15 +380,17 @@ $('#slideshow').hover(function() {
 
 });
 
-/*
-//rotate pictures
-$("#slideshow div:gt(0)").hide();
-setInterval(function() {
-  $('#slideshow div:first')
-    .fadeOut(300)
-    .next()
-    .fadeIn(1000)
-    .end()
-    .appendTo('#slideshow');
-},  5000);
-*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+

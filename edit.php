@@ -30,7 +30,7 @@ $img_name_item = $_SESSION['image_name_item'];
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-01-31T23:42:19+0530" >
+<meta name="date" content="2015-02-01T21:34:02+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -48,7 +48,7 @@ require 'navigation.php';
 $name = ucwords($name);
 echo ('<h2 id="heading2">'. $name .' you can upload a item image & edit information</h2>');
 
-//get clicked edit on dashboard.php
+//get clicked edit or delete on dashboard.php
 if (isset($_GET['lid'])){
 $lid = trim($_GET['lid']);
 settype($lid, 'integer');
