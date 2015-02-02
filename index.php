@@ -5,11 +5,11 @@
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-01-31T16:22:32+0530" >
+<meta name="date" content="2015-02-02T23:06:23+0530" >
 <meta name="copyright" content="">
-<meta name="keywords" content="">
+<meta name="keywords" content="swap,exchange,bater,barter,starter,barters,starterbarter,starterbarters,trade,without,money,make,sell">
 <meta name="description" content="">
-<meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+<meta name="ROBOTS" content="INDEX, FOLLOW">
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8">
 <meta http-equiv="content-style-type" content="text/css">
@@ -19,12 +19,13 @@
 </head>
 <body>
 <?php
+include_once("analyticstracking.php");
 require 'navigation.php';
 ?>
 
 <h2 id="heading2"> Hello, build your barter network here.. </h2>
 
-<section id="main">
+<div id="main">
 //-------------------
 <!--
 <div class=" bordered-image" style="position: relative; left: 0; top: 0;">
@@ -60,7 +61,7 @@ With a contemporary twist, while keeping the essence of barter alive!! </p>
 
 
 </div>
-</section>
+</div>
 
 <script type="text/javascript" src="/starterbarters/js/jquery-2.1.1.min.js"> </script>
 <script type="text/javascript" src="/starterbarters/js/index.js"> </script>

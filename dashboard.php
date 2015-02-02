@@ -26,7 +26,7 @@ $img_name = $_SESSION['image_name'];
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-01-31T22:00:28+0530" >
+<meta name="date" content="2015-02-02T22:53:22+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -40,6 +40,7 @@ $img_name = $_SESSION['image_name'];
 </head>
 <body>
 <?php
+include_once("analyticstracking.php");
 require 'navigation.php';
 $name = ucwords($name);
 echo ('<h2 id="heading2"> Welcome to your dashboard - '. $name .'</h2>');

@@ -308,7 +308,7 @@ $(document).on('click','.dlt1',function() {
 dlts=0;
 if (confirm("Do you want to delete this item?") == true) {
 var dlts = $(this).attr('id');
-alert(dlts);
+//alert(dlts);
 $.ajax({
 dataType :"json",
 type :"POST",

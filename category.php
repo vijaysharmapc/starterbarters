@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-01-26T00:50:12+0530" >
+<meta name="date" content="2015-02-02T23:16:09+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -19,6 +19,7 @@
 </head>
 <body>
 <?php
+include_once("analyticstracking.php");
 require 'navigation.php';
 $categories =array(
 1 => "Books,",
@@ -36,10 +37,11 @@ $categories =array(
 //get category id clicked
 $catid = trim($_GET['catid']);
 $catid = addslashes($catid);
+settype($catid, 'integer');
 printf ('<input id="cats" type="hidden" name="catid" value='.$catid.'>');
 $var = $categories[$catid];
 
-printf ('<h2 id="heading2"> Select the '.$var.'  which interest you </h2>')
+printf ('<h2 id="heading2"> exchange or swap the '.$var.'  you like!! </h2>')
 ?>
 
 
