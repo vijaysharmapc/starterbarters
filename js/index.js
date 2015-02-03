@@ -323,6 +323,40 @@ return false;
 }
 });
 
+//get list of subcategories
+$(document).on('click','.catlist',function() {
+scat=0;
+var scat = $(this).attr('id');
+alert(scat);
+/*
+$.ajax({
+dataType :"json",
+type :"POST",
+data :{dlts :dlts,},
+url :'ajax/delete.php',
+success : function(response){
+alert(response.status_value);
+}});
+*/
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

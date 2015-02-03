@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-02-02T23:16:09+0530" >
+<meta name="date" content="2015-02-03T23:08:33+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -49,7 +49,7 @@ printf ('<h2 id="heading2"> exchange or swap the '.$var.'  you like!! </h2>')
 <section id="main">
 <p id="catdata">
 
-
+<div> results here </div>
 </p>
 </section>
 

@@ -83,6 +83,7 @@ height: 800px;
 td,p{
 color: black;
 font-size: 16px;
+padding-bottom:5px;
 }
 
 #hometext{

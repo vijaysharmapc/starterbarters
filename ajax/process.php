@@ -8,8 +8,8 @@ $searchcat = addslashes($searchcat);
 # open a database conn
 require '../dbcon.php';
 #build a query
-$query = " select book_category.category_name,count(item_desk.category_id) as catcnt from book_category left join item_desk ON book_category.section_id = item_desk.section_id ";
-$query = $query . " where book_category.category_id = " . $searchcat . " group by book_category.category_name";
+$query = " select book_category.section_id,book_category.category_name,count(item_desk.category_id) as catcnt from book_category left join item_desk ON book_category.section_id = item_desk.section_id ";
+$query = $query . " where book_category.category_id = " . $searchcat . " group by book_category.category_name order by book_category.section_id";
 try {
  $sth = $db->query($query);
  $catcount = $sth->rowCount(); #only on mysql
@@ -21,18 +21,15 @@ exit;
 while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
 $show = htmlentities($row['category_name']);
 $catcnt = htmlentities($row['catcnt']);
+$sec_id = htmlentities($row['section_id']);
 
-//echo $show;
-//echo "<br>";
 if($catcnt > 0) {
-echo ('<tr><td><a class = "catlist" style="color:black ;font-weight: bold" href="checkout.php?bookid=' . urlencode($show) . '">' .$show . '<a/><a style="color:#0020C2">  has '.$catcnt.' items </a>');
+//echo ('<tr><td><a id = "' . urlencode($sec_id) . '" class = "catlist" style="color:black ;font-weight: bold" href="category.php?bookid=' . urlencode($sec_id) . '">' .$show . '<a/><a style="color:#0020C2">&nbsp  has '.$catcnt.' items </a>');
+echo ('<tr><td><a id = "' . urlencode($sec_id) . '" class = "catlist" style="color:black ;font-weight: bold" href="">' .$show . '<a/><a style="color:#0020C2">&nbsp  has '.$catcnt.' items </a>');
 }else {
-echo ('<tr><td><a class = "catlist" style="color:black ;font-weight: bold" href="checkout.php?bookid=' . urlencode($show) . '">' .$show . '<a/><a style="color:black">  has '.$catcnt.' items </a>');
+echo ('<tr><td><a id = "' . urlencode($sec_id) . '" class = "catlist" style="color:black ;font-weight: bold" href="">' .$show . '<a/><a style="color:black">&nbsp  has '.$catcnt.' items </a>');
 }
-//echo  ('&nbsp <div> has '.$catcnt.' items</div></td></tr>');
 
-//echo  ('&nbsp has '.$catcnt.' items</td></tr>');
-echo "<tr><td> </td></tr>";
 echo "<br>";
 }
 }

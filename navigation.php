@@ -26,7 +26,7 @@ echo "</div>";
 ?>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-02-02T22:53:30+0530" >
+<meta name="date" content="2015-02-03T22:42:10+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -47,7 +47,7 @@ echo "</div>";
 <a  style ="color:#E3CCCC"> Swap Categories </a>
 <br>
 <a id="Books" style="color:white" href="/starterbarters/category.php?catid=1" > Books </a>
-<img class="hidden" id="1" src="/starterbarters/images/arrow.jpg" height="11" width="11">
+<img class="hidden" id="1" src="/starterbarters/images/arrow.jpg" height="10" width="10">
 <br>
 <a id="DVD" style="color:white" href="/starterbarters/category.php?catid=2"> DVD & films </a>
 <img class="hidden" id="2" src="/starterbarters/images/arrow.jpg" height="10" width="10">
