@@ -5,9 +5,9 @@ if(!isset($_SESSION['loggedin']))
     }
 //session_start();
 if(empty($_SESSION['loggedin']))
-//if(!$_SESSION['loggedin'])
 {
-//header("Not logged in");
+echo ('if you are a existing user,please login.New users please register & then login');
+echo ('<a href="/index.php">Back</a>');
 exit;
 }
 else{
@@ -16,19 +16,24 @@ $uid = $_SESSION['uid'];
 //full path of image
 $img_name = $_SESSION['image_name'];
 //combo of uid and lid
-$luid = $_SESSION["luid"] ;
-//echo ('<input id="uid" type="hidden" name="uid" value = ' .$uid.'>');
+$lid =$_SESSION["lidv"];
 }
-//echo $luid;
-$show = htmlentities("Upload a new item");
+
+//$_POST['tmp2']=9;
+
+//if(isset($_POST['tmp2']) == true){
+//$lid = $_POST['tmp2'];
+//}
+
 # open a database conn
 require '../dbcon.php';
 //$sql = "select title,have,want,other,city,file_path from item_desk where usr_id = ". mysql_real_escape_string(trim($_POST['uid'])) ."";
-$result = $db->prepare("select line_id,section_id,category_id,title,have,want,other,city,file_path from item_desk where CONCAT(usr_id,'',line_id) = ?");
-$result->execute(array("$luid"));
+$result = $db->prepare("select line_id,section_id,category_id,title,have,want,other,city,file_path from item_desk where line_id = ?");
+$result->execute(array("$lid"));
 $linecount = $result->rowCount();
 if ($linecount ==0){
-//printf ("sorry we did not find any matching categories");
+$retval = array( 'status_value' => 1,'status_text' => 'TRUE','total_count' => 0);
+echo json_encode($retval);
 exit;
 }
 $i=0;
@@ -43,7 +48,6 @@ $data[$i]['haves']=$row['have'];
 $data[$i]['wants']=$row['want'];
 $data[$i]['others']=$row['other'];
 $data[$i]['citys']=$row['city'];
-//echo $_SESSION['file_path'];
 $i++;
 };
 };

@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-02-02T23:06:23+0530" >
+<meta name="date" content="2015-02-04T19:25:49+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="swap,exchange,bater,barter,starter,barters,starterbarter,starterbarters,trade,without,money,make,sell">
 <meta name="description" content="">

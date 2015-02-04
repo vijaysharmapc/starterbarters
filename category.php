@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-02-03T23:08:33+0530" >
+<meta name="date" content="2015-02-04T22:06:34+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -41,17 +41,18 @@ settype($catid, 'integer');
 printf ('<input id="cats" type="hidden" name="catid" value='.$catid.'>');
 $var = $categories[$catid];
 
-printf ('<h2 id="heading2"> exchange or swap the '.$var.'  you like!! </h2>')
+printf ('<h2 id="heading2"> exchange or swap  '.$var.'  you like!! </h2>')
 ?>
 
 
 
-<section id="main">
-<p id="catdata">
-
-<div> results here </div>
-</p>
-</section>
+<div id="main">
+<div class="DivToScroll DivWithScroll" id="sectiondta">
+Start swapping by clicking on any sub category with items in it !!
+ </div>
+<div id="catdata">
+</div>
+</div>
 
 <script type="text/javascript" src="/starterbarters/js/jquery-2.1.1.min.js"> </script>
 <script type="text/javascript" src="/starterbarters/js/index.js"> </script>

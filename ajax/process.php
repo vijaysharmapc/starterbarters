@@ -25,9 +25,9 @@ $sec_id = htmlentities($row['section_id']);
 
 if($catcnt > 0) {
 //echo ('<tr><td><a id = "' . urlencode($sec_id) . '" class = "catlist" style="color:black ;font-weight: bold" href="category.php?bookid=' . urlencode($sec_id) . '">' .$show . '<a/><a style="color:#0020C2">&nbsp  has '.$catcnt.' items </a>');
-echo ('<tr><td><a id = "' . urlencode($sec_id) . '" class = "catlist" style="color:black ;font-weight: bold" href="">' .$show . '<a/><a style="color:#0020C2">&nbsp  has '.$catcnt.' items </a>');
+echo ('<tr><td><a id = "' . urlencode($sec_id) . '" class = "catlist" style="color:black ;font-weight: bold" href="" ;return false;>' .$show . '<a/><a style="color:#0020C2">&nbsp  has '.$catcnt.' items </a>');
 }else {
-echo ('<tr><td><a id = "' . urlencode($sec_id) . '" class = "catlist" style="color:black ;font-weight: bold" href="">' .$show . '<a/><a style="color:black">&nbsp  has '.$catcnt.' items </a>');
+echo ('<tr><td><a id = "' . urlencode($sec_id) . '" class = "catlist" style="color:black ;font-weight: bold" href="" ;return false;>' .$show . '<a/><a style="color:black">&nbsp  has '.$catcnt.' items </a>');
 }
 
 echo "<br>";

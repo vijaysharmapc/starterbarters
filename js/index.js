@@ -130,7 +130,7 @@ $('#selcat').attr('value',($(this).val()));
 var cat = ($(this).val())
 //alert(cat);
 var books = ["Action","Biographies","Comics","Cooking","Engineering","Entrance Exams","Health & Fitness","History & Politics","Humor","Indian Writing","Knowledge & Learning","Medicine","Music & Films","Other books"];
-var dvds = ['New Releases','Hollywood Movies','Bollywood Movies','Regional Movies','Tv Shows & Documentaries','Kids & Educational','Health & Fitness','Music','International Music','Bollywood Music','Indian Classical & Devotional','Gaming','Pc Games','Other dvd & films'];
+var dvds = ['New Releases','Hollywood Movies','Bollywood Movies','Regional Movies','Tv Show & Documentaries','Kids & Educational','Health & Fitness','Music','International Music','Bollywood Music','Classical & Devotional','Gaming','Pc Games','Other dvd & films'];
 var sports = ['Climbing','Cycling','Fitness','Golf','Nature Sports','Racquet Sports','Running','Roller Sports','Team Sports','Watersports','Other sports gear'];
 var furnitures = ['Living Room Furniture','Bedroom Furniture','Dining Room Furniture','Bar Furniture','Study Room Furniture','Outdoor Furniture','Lightings','Wall Decor','Bean Bags','Housekeeping','Other furnitures'];
 var electronics = ['Mobiles','Tablets','Mobile Accessories','Laptops','Computer Accessories','Televisions','Speakers','Mp3 Players','Gaming & Accessories','Washing Machines','Kitchen Appliances','Cameras','Health Care Devices','Other electronics'];
@@ -185,8 +185,8 @@ for (var i = 0;i < tmpary.length; i++ ) {
 
 //get sub category number in item upload
 $('#category2').change(function () {
-var category = ["Action","Biographies","Comics","Cooking","Engineering","Entrance Exams","Health & Fitness","History & Politics","Humor","Indian Writing","Knowledge & Learning","Medicine","Music & Films","Other books","New Releases","Hollywood Movies","Bollywood Movies","Regional Movies","Tv Shows & Documentaries","Kids & Educational",
-"Health & Fitness","Music","International Music","Bollywood Music","Indian Classical & Devotional","Gaming","Pc Games","Other dvd & films","Climbing","Cycling","Fitness","Golf","Nature Sports","Racquet Sports","Running","Roller Sports","Team Sports","Watersports","Other sports gear","Living Room Furniture",
+var category = ["Action","Biographies","Comics","Cooking","Engineering","Entrance Exams","Health & Fitness","History & Politics","Humor","Indian Writing","Knowledge & Learning","Medicine","Music & Films","Other books","New Releases","Hollywood Movies","Bollywood Movies","Regional Movies","Tv Show & Documentaries","Kids & Educational",
+"Health & Fitness","Music","International Music","Bollywood Music","Classical & Devotional","Gaming","Pc Games","Other dvd & films","Climbing","Cycling","Fitness","Golf","Nature Sports","Racquet Sports","Running","Roller Sports","Team Sports","Watersports","Other sports gear","Living Room Furniture",
 "Bedroom Furniture","Dining Room Furniture","Bar Furniture","Study Room Furniture","Outdoor Furniture","Lightings","Wall Decor","Bean Bags","Housekeeping","Other furnitures","Mobiles","Tablets","Mobile Accessories","Laptops","Computer Accessories","Televisions","Speakers","Mp3 Players","Gaming & Accessories","Washing Machines",
 "Kitchen Appliances","Cameras","Health Care Devices","Other electronics","School Supplies","Toys For Boys","Toys For Girls","Infant Toys","Remote Controlled Toys","Soft Toys","Educational Toys","Infant Clothing","Cradels","Others","Mopeds","Scooter","Cruiser","Standard","Other two wheelers"
 ,"Other cars"];
@@ -323,24 +323,103 @@ return false;
 }
 });
 
+// visitor view realted things
+$(document).ready(function(){
 //get list of subcategories
 $(document).on('click','.catlist',function() {
-scat=0;
-var scat = $(this).attr('id');
-alert(scat);
-/*
+var catname = $(this).text();
+//alert(catname);
+$('#sectiondta').empty();
+$('#sectiondta').html('<p> Available swap range in - '+catname+' </p> ');
+//scat=0;
+var tmps = $(this).attr('id');
+//alert(tmps);
 $.ajax({
 dataType :"json",
 type :"POST",
-data :{dlts :dlts,},
-url :'ajax/delete.php',
-success : function(response){
-alert(response.status_value);
-}});
-*/
+data :{tmps :tmps,},
+url :'ajax/itemlist.php',
+success : function(response) {
+var total_count = response.total_count;
+//alert(total_count);
+//alert(total_count);
+if (response.status_value == 1) {
+var result = "";
+var cnt=0;
+var lid=0;
+//var rec_s= new Array();
+for(var i=0; i<total_count; i++)
+{
+lid = 0;
+lid+= response.data[i].line_id;
+result+='<div  id ='+lid+' class = "clickview">';
+result+='<p class ="clrbrk11"> &nbsp<a id= "view" href="viewitem.php?lid='+lid+'" style="color:white ;font-weight: bold"></a>	</p>';
+result+='<div style="float: right;"> <img hspace="5" id="itmimg" src="' +response.data[i].file_path + '" alt="Smiley face" height="42" width="42"></div>';
+result+='<li id ="clr"> Title : ' + response.data[i].title + '</li>';
+result+='<li id ="clr"> I have : ' + response.data[i].have + '</li>';
+result+='<li id ="clr"> I want : ' + response.data[i].want + '</li>';
+result+='<li id ="clr"> Open to other swaps? ' + response.data[i].other + '</li>';
+result+='<li id ="clr"> Place : ' + response.data[i].city + '</li>';
+result+='</div>';
+}
+}
+$('#sectiondta').append(result);
+
+if(total_count == 0){
+$('#sectiondta').append('No items found');
+};
+}
+
+});
+return false;
+});
 });
 
 
+$(document).on('mouseenter','.clickview',function() {
+$(this).css('cursor','pointer');
+});
+
+$(document).on('click','.clickview',function() {
+var tmp2 = ($(this).attr('id'));
+alert(tmp2);
+window.location.href = "itemview.php?tmp2="+tmp2;
+return false;
+$.ajax({
+dataType :"json",
+type :"POST",
+data :{tmp2 :tmp2,},
+url :'ajax/viewitem.php',
+success : function(response) {
+var total_count = response.total_count;
+alert(total_count);
+if (response.status_value == 1) {
+//alert(total_count);
+var result = "";
+var cnt=0;
+var lid=0;
+//var rec_s= new Array();
+for(var i=0; i<total_count; i++)
+{
+lid = 0;
+lid+= response.data[i].line_id;
+//result+='<p class ="clrbrk1"> &nbsp<a id= "editclk" href="edit.php?lid='+lid+'" style="color:white ;font-weight: bold">Edit</a>  &nbsp<a class = "dlt1"  id ="'+lid+'" href="dashboard.php" style="color:white ;font-weight: bold">Delete</a> </p>';
+//result+='<div style="float: right;"> <img hspace="5" id="itmimg" src="' +response.data[i].file_path + '" alt="Smiley face" height="42" width="42"></div>';
+//result+='<li id ="clr"> Title : ' + response.data[i].title + '</li>';
+//result+='<li id ="clr"> I have : ' + response.data[i].have + '</li>';
+//result+='<li id ="clr"> I want : ' + response.data[i].want + '</li>';
+//result+='<li id ="clr"> Open to other swaps? ' + response.data[i].other + '</li>';
+//result+='<li id ="clr"> Place : ' + response.data[i].city + '</li>';
+}
+}
+$('#editdata2').append(total_count);
+}
+});
+//-------------
+
+});
+
+//--------------
 
 
 
