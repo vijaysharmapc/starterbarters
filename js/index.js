@@ -381,10 +381,13 @@ $(this).css('cursor','pointer');
 });
 
 $(document).on('click','.clickview',function() {
-var tmp2 = ($(this).attr('id'));
-alert(tmp2);
-window.location.href = "itemview.php?tmp2="+tmp2;
-return false;
+var subcat = ($(this).attr('id'));
+alert(subcat);
+window.location.href = "itemview.php?subcat="+subcat;
+});
+
+//return false;
+/*
 $.ajax({
 dataType :"json",
 type :"POST",
@@ -412,12 +415,12 @@ lid+= response.data[i].line_id;
 //result+='<li id ="clr"> Place : ' + response.data[i].city + '</li>';
 }
 }
-$('#editdata2').append(total_count);
+$('#editdata2').append("test");
 }
 });
 //-------------
+*/
 
-});
 
 //--------------
 

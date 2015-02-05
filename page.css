@@ -72,6 +72,7 @@ left: 220px;
 
 
 #main {
+
 border:solid 3px white;
 border-radius: 5px;
 color: white;
@@ -81,6 +82,7 @@ height: 800px;
 }
 
 td,p{
+font-family: "Times New Roman", Times, serif;
 color: black;
 font-size: 16px;
 padding-bottom:5px;
@@ -93,7 +95,7 @@ position:relative;
 left: 400px;
 width:55%;
 height: 800px;
-padding-left:20px;
+padding-left:10px;
 }
 
 #editdata{
@@ -101,6 +103,17 @@ position:relative;
 top: -140px;
 left: 250px;
 }
+
+#itmview{
+position: relative;
+border:solid 5px #EBF4FA;
+width: 60%;
+height: 40%;
+border-collapse: collapse;
+padding: 2px;
+}
+#vt:nth-child(even) {background: #EBF4FA}
+#vt:nth-child(odd) {background: white}
 
 /*helps thext on home to stick to image
 #slideshow {

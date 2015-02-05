@@ -31,7 +31,7 @@ $img_name_item = $_SESSION['image_name_item'];
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-02-05T00:31:33+0530" >
+<meta name="date" content="2015-02-06T00:12:20+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -50,40 +50,66 @@ $name = ucwords($name);
 echo ('<h2 id="heading2">'. $name .' you can send a message to this item owner</h2>');
 
 //get clicked edit or delete on dashboard.php
-if (isset($_GET['tmp2'])){
-$lid = trim($_GET['tmp2']);
+if (isset($_GET['subcat'])){
+$lid = trim($_GET['subcat']);
 settype($lid, 'integer');
 $lid = addslashes($lid);
-printf ('<input id="editclk" type="text" name="catid" value='.$lid.'>');
-$_SESSION["lidv"] = $lid;
+# open a database conn
+require 'dbcon.php';
+
+
+$result = $db->prepare("select line_id,section_id,category_id,title,have,want,other,city,file_path from item_desk where line_id = ?");
+$result->execute(array("$lid"));
+
+
+$linecount = $result->rowCount();
+//echo $linecount;
+
+if ($linecount ==0){
+printf ("<p>sorry we did not find any matching data</p>");
+exit;
 }
-/*
-if(empty($_SESSION["luid"])){
-//session_start();
-};
-printf ('<input id="editclk" type="hidden" name="catid" value='.$luid.'>');
-$_SESSION["luid"] = $luid;
-$_SESSION["lid"] = $lid;
-//echo  $_SESSION["luid"];
+
+while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+$title = htmlentities($row['title']);
+$have = htmlentities($row['have']);
+$want = htmlentities($row['want']);
+$other = htmlentities($row['other']);;
+$city = htmlentities($row['city']);;
+$file = htmlentities($row['file_path']);;
+
+echo '<section id="main">';
+echo "<br>";
+printf ('<img id="idp2" src='.$file.' class="dashimg" height="200" width="200" title="click here to change">');
+printf ('<div id="editdata2">');
+printf ('<table id="itmview">');
+printf ('<tr id="vt"><td>Title :</td>');
+printf ('<td>'.$title.' </td></tr>');
+printf ('<tr id="vt"><td>I have :</td>');
+printf ('<td>'.$have.' </td></tr>');
+printf ('<tr id="vt"><td>I want</td>');
+printf ('<td>'.$want.' </td></tr>');
+printf ('<tr id="vt"><td>Open to other offers?</td>');
+printf ('<td>'.$other.' </td></tr>');
+printf ('<tr id="vt"><td>Place</td>');
+printf ('<td>'.$city.' </td></tr>');
+printf('</div>');
+printf ('</table>');
+
+
+
+
 }
-*/
+
+
+
+
+
+}
 ?>
 
 
-<section id="main">
 
-<form action="file_uploader_item.php" method="post" enctype="multipart/form-data">
-<br>
-<?php
-//file path will have default image of item also src set by js
-//$file_path = $_SESSION["file_path"];
-printf ('<img id="idp" src="" class="dashimg" height="200" width="200" title="click here to change">');
-//}
-?>
-</form>
-<div id="editdata2">
-
-</div>
 
 
 
