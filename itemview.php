@@ -31,7 +31,7 @@ $img_name_item = $_SESSION['image_name_item'];
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-02-06T00:12:20+0530" >
+<meta name="date" content="2015-02-07T00:42:10+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -58,9 +58,8 @@ $lid = addslashes($lid);
 require 'dbcon.php';
 
 
-$result = $db->prepare("select line_id,section_id,category_id,title,have,want,other,city,file_path from item_desk where line_id = ?");
+$result = $db->prepare("select line_id,section_id,category_id,title,have,want,other,city,usr_id,file_path from item_desk where line_id = ?");
 $result->execute(array("$lid"));
-
 
 $linecount = $result->rowCount();
 //echo $linecount;
@@ -74,15 +73,26 @@ while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
 $title = htmlentities($row['title']);
 $have = htmlentities($row['have']);
 $want = htmlentities($row['want']);
-$other = htmlentities($row['other']);;
-$city = htmlentities($row['city']);;
-$file = htmlentities($row['file_path']);;
+$other = htmlentities($row['other']);
+$city = htmlentities($row['city']);
+$file = htmlentities($row['file_path']);
+$usrnme = htmlentities($row['usr_id']);
+
+
+$result2 = $db->prepare("select first_name from user_base where CONCAT(user_name,'',user_id) = ?");
+$result2->execute(array("$usrnme"));
+$rows = $result2->fetch(PDO::FETCH_ASSOC);
+$fname = htmlentities($rows['first_name']);
+$fname = ucwords($fname);
+
 
 echo '<section id="main">';
 echo "<br>";
-printf ('<img id="idp2" src='.$file.' class="dashimg" height="200" width="200" title="click here to change">');
+printf ('<img id="idp2" src='.$file.' class="dashimg" height="200" width="200" >');
 printf ('<div id="editdata2">');
 printf ('<table id="itmview">');
+printf ('<tr id="vt"><td>Owned by :</td>');
+printf ('<td>'.$fname.' </td></tr>');
 printf ('<tr id="vt"><td>Title :</td>');
 printf ('<td>'.$title.' </td></tr>');
 printf ('<tr id="vt"><td>I have :</td>');
@@ -93,8 +103,10 @@ printf ('<tr id="vt"><td>Open to other offers?</td>');
 printf ('<td>'.$other.' </td></tr>');
 printf ('<tr id="vt"><td>Place</td>');
 printf ('<td>'.$city.' </td></tr>');
+printf ('<a href="messages.php" style = "color:blue">Send a message</a>');
 printf('</div>');
 printf ('</table>');
+
 
 
 
@@ -104,7 +116,7 @@ printf ('</table>');
 
 
 
-
+$db=null;
 }
 ?>
 

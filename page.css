@@ -41,6 +41,9 @@ a:active {background-color:  #610B0B;}
 .catlist{
 color: black;
 }
+li span{
+color: #0020C2;
+}
 
 /*
 #lgnd{
@@ -111,6 +114,7 @@ width: 60%;
 height: 40%;
 border-collapse: collapse;
 padding: 2px;
+left: 20%;
 }
 #vt:nth-child(even) {background: #EBF4FA}
 #vt:nth-child(odd) {background: white}

@@ -25,3 +25,5 @@ this web application is only to help you connect with possible bater partners.
 <br>
 Laws:<br>
 These Terms of Service shall be governed by and constructed in accordance with the laws of India.
+<br>
+<br>

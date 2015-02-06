@@ -355,11 +355,11 @@ lid+= response.data[i].line_id;
 result+='<div  id ='+lid+' class = "clickview">';
 result+='<p class ="clrbrk11"> &nbsp<a id= "view" href="viewitem.php?lid='+lid+'" style="color:white ;font-weight: bold"></a>	</p>';
 result+='<div style="float: right;"> <img hspace="5" id="itmimg" src="' +response.data[i].file_path + '" alt="Smiley face" height="42" width="42"></div>';
-result+='<li id ="clr"> Title : ' + response.data[i].title + '</li>';
-result+='<li id ="clr"> I have : ' + response.data[i].have + '</li>';
-result+='<li id ="clr"> I want : ' + response.data[i].want + '</li>';
-result+='<li id ="clr"> Open to other swaps? ' + response.data[i].other + '</li>';
-result+='<li id ="clr"> Place : ' + response.data[i].city + '</li>';
+result+='<li id ="clr"><span> Title : </span>' + response.data[i].title + '</li>';
+result+='<li id ="clr"><span> I have : </span>' + response.data[i].have + '</li>';
+result+='<li id ="clr"><span> I want : </span>' + response.data[i].want + '</li>';
+result+='<li id ="clr"><span> Open to other swaps? </span>' + response.data[i].other + '</li>';
+result+='<li id ="clr"><span> Place : </span>' + response.data[i].city + '</li>';
 result+='</div>';
 }
 }
@@ -375,14 +375,14 @@ return false;
 });
 });
 
-
+//item
 $(document).on('mouseenter','.clickview',function() {
 $(this).css('cursor','pointer');
 });
 
 $(document).on('click','.clickview',function() {
 var subcat = ($(this).attr('id'));
-alert(subcat);
+//alert(subcat);
 window.location.href = "itemview.php?subcat="+subcat;
 });
 
