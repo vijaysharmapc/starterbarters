@@ -58,9 +58,9 @@ $('div.dashbrd3').removeClass('zoom');
 
 var tmp = ($(this).attr('id'));
 $('#data_area').empty();
-$('#data_area').append('<a href="itemupload.php" style="color:blue ;font-weight: bold">Upload a new item</a>');
 //alert(tmp);
 if (tmp == 'myl') {
+$('#data_area').append('<a href="itemupload.php" style="color:blue ;font-weight: bold">Upload a new item</a>');
 $.ajax({
 dataType :"json",
 type :"POST",
@@ -82,11 +82,11 @@ lid = 0;
 lid+= response.data[i].line_id;
 result+='<p class ="clrbrk1"> &nbsp<a id= "editclk" href="edit.php?lid='+lid+'" style="color:white ;font-weight: bold">Edit</a>  &nbsp<a class = "dlt1"  id ="'+lid+'" href="dashboard.php" style="color:white ;font-weight: bold">Delete</a> </p>';
 result+='<div style="float: right;"> <img hspace="5" id="itmimg" src="' +response.data[i].file_path + '" alt="Smiley face" height="42" width="42"></div>';
-result+='<li id ="clr"> Title : ' + response.data[i].title + '</li>';
-result+='<li id ="clr"> I have : ' + response.data[i].have + '</li>';
-result+='<li id ="clr"> I want : ' + response.data[i].want + '</li>';
-result+='<li id ="clr"> Open to other swaps? ' + response.data[i].other + '</li>';
-result+='<li id ="clr"> Place : ' + response.data[i].city + '</li>';
+result+='<li id ="clr"><span> Title : </span>' + response.data[i].title + '</li>';
+result+='<li id ="clr"><span> I have : </span>' + response.data[i].have + '</li>';
+result+='<li id ="clr"><span> I want : </span>' + response.data[i].want + '</li>';
+result+='<li id ="clr"><span> Open to other swaps? </span>' + response.data[i].other + '</li>';
+result+='<li id ="clr"><span> Place : </span>' + response.data[i].city + '</li>';
 }
 }
 $('#data_area').append(result);
@@ -107,7 +107,8 @@ if (tmp == 'msg') {
 	$('div.dashbrd3').removeClass('zoom');
 	//alert($(this).attr('id'));
 	$.post('ajax/process.php',{catid:catid},function (data) {
-   $("#data").html(data);
+		$("#data_area").html('inbox');
+ //  $("#data").html(data);
 });
 }
 if (tmp == 'mp') {
@@ -129,7 +130,7 @@ $('#category2').empty();
 $('#selcat').attr('value',($(this).val()));
 var cat = ($(this).val())
 //alert(cat);
-var books = ["Action","Biographies","Comics","Cooking","Engineering","Entrance Exams","Health & Fitness","History & Politics","Humor","Indian Writing","Knowledge & Learning","Medicine","Music & Films","Other books"];
+var books = ["Action","Biographies","Comics","Cooking","Engineering","Entrance Exams","Health & Fitness","History & Politics","Humor","Indian Writing","Knowledge & Learning","Medicine","Kids Books","Other books"];
 var dvds = ['New Releases','Hollywood Movies','Bollywood Movies','Regional Movies','Tv Show & Documentaries','Kids & Educational','Health & Fitness','Music','International Music','Bollywood Music','Classical & Devotional','Gaming','Pc Games','Other dvd & films'];
 var sports = ['Climbing','Cycling','Fitness','Golf','Nature Sports','Racquet Sports','Running','Roller Sports','Team Sports','Watersports','Other sports gear'];
 var furnitures = ['Living Room Furniture','Bedroom Furniture','Dining Room Furniture','Bar Furniture','Study Room Furniture','Outdoor Furniture','Lightings','Wall Decor','Bean Bags','Housekeeping','Other furnitures'];
@@ -185,7 +186,7 @@ for (var i = 0;i < tmpary.length; i++ ) {
 
 //get sub category number in item upload
 $('#category2').change(function () {
-var category = ["Action","Biographies","Comics","Cooking","Engineering","Entrance Exams","Health & Fitness","History & Politics","Humor","Indian Writing","Knowledge & Learning","Medicine","Music & Films","Other books","New Releases","Hollywood Movies","Bollywood Movies","Regional Movies","Tv Show & Documentaries","Kids & Educational",
+var category = ["Action","Biographies","Comics","Cooking","Engineering","Entrance Exams","Health & Fitness","History & Politics","Humor","Indian Writing","Knowledge & Learning","Medicine","Kids Books","Other books","New Releases","Hollywood Movies","Bollywood Movies","Regional Movies","Tv Show & Documentaries","Kids & Educational",
 "Health & Fitness","Music","International Music","Bollywood Music","Classical & Devotional","Gaming","Pc Games","Other dvd & films","Climbing","Cycling","Fitness","Golf","Nature Sports","Racquet Sports","Running","Roller Sports","Team Sports","Watersports","Other sports gear","Living Room Furniture",
 "Bedroom Furniture","Dining Room Furniture","Bar Furniture","Study Room Furniture","Outdoor Furniture","Lightings","Wall Decor","Bean Bags","Housekeeping","Other furnitures","Mobiles","Tablets","Mobile Accessories","Laptops","Computer Accessories","Televisions","Speakers","Mp3 Players","Gaming & Accessories","Washing Machines",
 "Kitchen Appliances","Cameras","Health Care Devices","Other electronics","School Supplies","Toys For Boys","Toys For Girls","Infant Toys","Remote Controlled Toys","Soft Toys","Educational Toys","Infant Clothing","Cradels","Others","Mopeds","Scooter","Cruiser","Standard","Other two wheelers"
@@ -200,10 +201,28 @@ $('#subcat').val(i+1)
 }
 }
 });
+
+//get swap loction
+$('#city').change(function () {
+cty =  $('#city').find(":selected").text();
+if (cty == 'other'){
+$('#othercity').removeClass("Hidden");
+$('#othercity').addClass("visible");
+}else {
+$('#othercity').removeClass("visible");
+$('#othercity').addClass("Hidden");
+}
+//alert(cat);
+});
+
+
+
 //show default my listings
 $(document).ready(function(){
 $('div.dashbrd1').trigger('click');
 });
+
+
 
 
 
@@ -232,13 +251,13 @@ for(var i=0; i<total_count; i++)
 lids = 0;
 lids+= response.data[i].line_ids;
 results+='<table id="itemupdate">';
-results+='<tr><td>Title &nbsp</td>';
+results+='<tr><td>Title : &nbsp</td>';
 results+='<td><INPUT type="text" name="title" title ="Name of the item" value ="'+response.data[i].titles+'" id ="title" required></td></tr>';
 
-results+='<tr><td>I have &nbsp</td>';
+results+='<tr><td>I have : &nbsp</td>';
 results+='<td><textarea name="ihave" id="ihave" rows="5" cols="40" maxlength="200" title="short description of what you have to offer (max 200 characters)" required>'+response.data[i].haves+'</textarea></td>';
 
-results+='<tr><td>I want &nbsp</td>';
+results+='<tr><td>I want : &nbsp</td>';
 results+='<td><textarea name="ihave" id="iwant" rows="5" cols="40" maxlength="200" title="short description of what you want  (max 200 characters)" required>'+response.data[i].wants+'</textarea></td>';
 
 results+='<tr><td>Open to others?  &nbsp</td>';
@@ -417,30 +436,12 @@ lid+= response.data[i].line_id;
 }
 $('#editdata2').append("test");
 }
-});
+	});
 //-------------
 */
 
 
 //--------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //profile pic
 $( "#dp" ).click(function() {
@@ -496,17 +497,58 @@ $('#slideshow').hover(function() {
 
 });
 
+//send message 
+$('#lftcnt').html(300);
+$('#lftcnt2').html(200);
+$('#lftcnt3').html(200);
+$('#msgarea,#msgarea2,#msgarea3').keyup(function () {
+var nme = ($(this).attr('id'));
+if (nme == 'msgarea') {
+var cnt = 300;
+getcount(cnt,nme);
+}else {
+var cnt = 200;
+getcount(cnt,nme);
+}
+});
+function getcount(cnt,nme){
+var count = $('#'+nme+'').val().length;
+var rmcnt = cnt-count;
+$('#lftcnt').html(rmcnt);
+if (nme == 'msgarea2'){
+$('#lftcnt2').html(rmcnt);
+}
+if (nme == 'msgarea3'){
+$('#lftcnt3').html(rmcnt);
+}
+};
 
 
+$(document).on('click','.msglink',function () {
+var msgd = ($(this).attr('id'));
+alert(msgd);
+$('#tomsg').text(msgd);
+});
 
 
+$(document).on('click','#sendmsg',function() {
+var var1 = $('#sendmsg').val();
+var msg1 = $('#msgarea').val();
+alert(msg1);
+alert(var1);
 
+if (var1) {
 
+$.ajax({
+dataType :"json",
+type :"POST",
+data :{var1 :var1,msg1 :msg1,},
+url :'ajax/sendmessage.php',
+success : function(response){
+alert(response.status_value);
+}});
+}
 
+});
 
-
-
-
-
-
-
+//send message

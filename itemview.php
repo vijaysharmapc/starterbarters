@@ -31,7 +31,7 @@ $img_name_item = $_SESSION['image_name_item'];
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-02-07T00:42:10+0530" >
+<meta name="date" content="2015-02-09T20:31:53+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -84,12 +84,21 @@ $result2->execute(array("$usrnme"));
 $rows = $result2->fetch(PDO::FETCH_ASSOC);
 $fname = htmlentities($rows['first_name']);
 $fname = ucwords($fname);
-
-
+$cont = $fname."+".$usrnme."+".$lid;
 echo '<section id="main">';
 echo "<br>";
 printf ('<img id="idp2" src='.$file.' class="dashimg" height="200" width="200" >');
+echo "<br>";
+printf ('<form action="messages.php" method="POST">');
+printf ('<button name="send" type="submit" value="'.$cont.'">Send message</button>');
+printf ('');
+printf('&nbsp,&nbsp,&nbsp,&nbsp,&nbsp,&nbsp,&nbsp,&nbsp');
+printf ('<a href="category.php?catid=1" style = "color:blue">Back</a>');
+
+printf('</form>');
+
 printf ('<div id="editdata2">');
+echo "<br>";
 printf ('<table id="itmview">');
 printf ('<tr id="vt"><td>Owned by :</td>');
 printf ('<td>'.$fname.' </td></tr>');
@@ -97,18 +106,15 @@ printf ('<tr id="vt"><td>Title :</td>');
 printf ('<td>'.$title.' </td></tr>');
 printf ('<tr id="vt"><td>I have :</td>');
 printf ('<td>'.$have.' </td></tr>');
-printf ('<tr id="vt"><td>I want</td>');
+printf ('<tr id="vt"><td>I want :</td>');
 printf ('<td>'.$want.' </td></tr>');
 printf ('<tr id="vt"><td>Open to other offers?</td>');
 printf ('<td>'.$other.' </td></tr>');
-printf ('<tr id="vt"><td>Place</td>');
+printf ('<tr id="vt"><td>Place :</td>');
 printf ('<td>'.$city.' </td></tr>');
-printf ('<a href="messages.php" style = "color:blue">Send a message</a>');
+
 printf('</div>');
 printf ('</table>');
-
-
-
 
 
 }

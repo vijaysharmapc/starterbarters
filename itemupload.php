@@ -26,7 +26,7 @@ $fldr_path = substr($fldr_path,0,17);
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-02-02T00:22:28+0530" >
+<meta name="date" content="2015-02-08T20:51:56+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -47,12 +47,23 @@ $fldr_path = substr($fldr_path,0,17);
 require 'navigation.php';
 if(isset($_POST['ihave'])) {
    $section_id=trim($_POST['subcat']);
+   $section_id = addslashes($section_id);
    $category1=trim($_POST['cat']);
+   $category1 = addslashes($category1);
    $title = trim($_POST['title']);
+   $title = addslashes($title);
    $ihave = trim($_POST['ihave']);
+   $ihave = addslashes($ihave);
    $iwant=trim($_POST['iwant']);
+   $iwant = addslashes($iwant);
    $other=trim($_POST['other']);
+   $other = addslashes($other);
    $city=trim($_POST['city']);
+   $city = addslashes($city);
+   if($city == "Other") {
+   $city = trim($_POST['othercity']);
+   $city = addslashes($city);
+   }
    $cnt = mt_rand(1,6);
    $dir = "uploads/uploads".$cnt."/dpi.jpg";
 
@@ -64,11 +75,6 @@ $stmt = $db->prepare("insert into item_desk values (?,?,?,?,?,?,?,?,?,?,?,?)");
 $stmt->execute(array('',"$section_id","$category1","$title","$ihave","$iwant","$other","$city","$uid","$dir",'',''));
 $url = "Location:dashboard.php";
 header($url);
-//$stmt = $db->prepare("insert into user_base values (?,?,?,?,?,?)");
-//$user_name = substr($firstname,0,5);
-//$stmt->execute(array('',"$user_name","$firstname","$pswd1","$dir",null));
-//printf ("<br> Item added" );
-//printf ("<br> <a href= dashboard.php>Return to my dashboard</a>");
 exit;
 }
 $db=null;
@@ -116,15 +122,21 @@ $db=null;
 <tr>
 <td>I Have : </td>
 <td>
-<textarea name="ihave" rows="5" cols="40" maxlength="200" title="short description of what you want to offer (max 200 characters)" required>
+<textarea id="msgarea2" name="ihave" rows="5" cols="40" maxlength="200" title="short description of what you want to offer (max 200 characters)" required>
 </textarea>
+<br>
+<label>Remaining characters:</label>
+<label id="lftcnt2" for="tomsg"></label>
 </td>
 </tr>
 <tr>
 <td>I Want :</td>
 <td>
-<textarea name="iwant" rows="5" cols="40" maxlength="200" title="short description of what you want in exchange (max 200 characters)" required>
+<textarea id="msgarea3" name="iwant" rows="5" cols="40" maxlength="200" title="short description of what you want in exchange (max 200 characters)" required>
 </textarea>
+<br>
+<label>Remaining characters:</label>
+<label id="lftcnt3" for="tomsg"></label>
 </td>
 </tr>
 <tr>
@@ -140,7 +152,7 @@ $db=null;
 <tr>
 <td>Swap Location</td>
 <td>
-<select name="city" title="place where you want to connect?">
+<select id="city" name="city" title="place where you want to connect?">
   <option value="bengaluru">Bengaluru</option>
   <option value="ahmedabad">Ahmedabad</option>
   <option value="chennai">Chennai</option>
@@ -150,13 +162,16 @@ $db=null;
   <option value="kolkata">Kolkata</option>
   <option value="mumbai">Mumbai</option>
   <option value="pune">Pune</option>
+  <option value="Other">other</option>
 </select>
-</td>
-</tr>
 
+<input type="text" name="othercity" id="othercity" class="hidden" maxlength="50" size="14" title="enter your city name" >
+</td>
+
+</tr>
 <tr>
 <td>
-<p> Click icon to upload an image of the item</p>
+<p> </p>
 </td>
 <tr>
 <td>

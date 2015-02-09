@@ -63,8 +63,8 @@ if (file_exists($target_file)) {
     $uploadOk = 1;
 }
 // Check file size 
-if ($_FILES["fileToUpload"]["size"] > 2000000) {
-    echo "Sorry, your file is too large.Please keep it below 1.8 MB in size.";
+if ($_FILES["fileToUpload"]["size"] > 9000000) {
+    echo "Sorry, your file is too large.Please keep it below 8 MB in size.";
     echo $_FILES["fileToUpload"]["size"];
     $uploadOk = 0;
 }

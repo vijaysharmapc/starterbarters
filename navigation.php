@@ -24,9 +24,12 @@ echo "<a id='lgnd' href='dashboard.php' style='color:white'>My Dashboard</a><br>
 echo "</div>";
 }
 ?>
+
+<!-- Place this tag in your head or just before your close body tag. -->
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-02-07T00:42:13+0530" >
+<meta name="date" content="2015-02-08T17:18:45+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -37,6 +40,7 @@ echo "</div>";
 <meta http-equiv="expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
+
 <body>
 
 <div id="nav">
@@ -74,6 +78,11 @@ echo "</div>";
 <img class="hidden" id="" src="/starterbarters/images/arrow.jpg" height="10" width="10">
 <br>
 <a style="color:white" href="/starterbarters/contact.php"> Connect with us</a>
+<div id="scnt">
+<br>
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="medium" data-annotation="bubble" data-width="200" data-href="https://plus.google.com/u/0/105952480612761411165"></div>
+</div>
 
 </div>
 

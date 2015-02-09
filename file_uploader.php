@@ -26,8 +26,7 @@ $file_path = substr($file_path,0,17);
 
 <body>
 <?php
-//$cnt = rand(1,4);
-//$target_dir = "uploads/";
+
 $target_dir = $fldr_path;
 //break to array and then pic last ext and rename
 $temp = explode(".",$_FILES["fileToUpload"]["name"]);
@@ -59,8 +58,8 @@ if (file_exists($target_file)) {
     $uploadOk = 1;
 }
 // Check file size 
-if ($_FILES["fileToUpload"]["size"] > 2000000) {
-    echo "Sorry, your file is too large.Please keep it below 1.8 MB in size.";
+if ($_FILES["fileToUpload"]["size"] > 9000000) {
+    echo "Sorry, your file is too large.Please keep it below 8.0 MB in size.";
     echo $_FILES["fileToUpload"]["size"];
     $uploadOk = 0;
 }

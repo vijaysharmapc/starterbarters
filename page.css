@@ -1,4 +1,6 @@
 
+
+
 body {
 font-family:Helvetica;
 font-size: 15px;
@@ -56,7 +58,10 @@ width: 950px;
 margin: 0 auto;
 }
 
+#area1{
+width: 5px;
 
+}
 
 #swap{
 position: relative;
@@ -75,13 +80,12 @@ left: 220px;
 
 
 #main {
-
 border:solid 3px white;
 border-radius: 5px;
 color: white;
 background-color:white;
 width:100%;
-height: 800px;
+height: 850px;
 }
 
 td,p{
@@ -346,6 +350,7 @@ background-color: #800000;
     z-index:2;
 }
 
+
 #updatetable{
 border:solid 7px #black;
 }
@@ -353,4 +358,10 @@ border:solid 7px #black;
 #idp{
 position: relative;
 top: 20px;
+}
+
+#tomsg{
+color:#800000;
+font-weight: bold;
+font-family: "Times New Roman", Times, serif;
 }

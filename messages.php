@@ -25,7 +25,7 @@ $img_name = $_SESSION['image_name'];
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-02-08T16:21:57+0530" >
+<meta name="date" content="2015-02-09T23:19:53+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -39,48 +39,64 @@ $img_name = $_SESSION['image_name'];
 </head>
 <body>
 <?php
-include_once("analyticstracking.php");
+//include_once("analyticstracking.php");
 require 'navigation.php';
 $name = ucwords($name);
-echo ('<h2 id="heading2"> Welcome to your dashboard - '. $name .'</h2>');
-?>
+echo ('<h2 id="heading2"> Each message you send can contain 300 characters , '. $name .'</h2>');
+if(isset($_POST['send']) == true){
+$var1 = $_POST['send'];
+//echo $var1;
+printf('<input type="hidden" value ="'.$var1.'" id="sendmsg">');
+$name = explode("+",$var1);
+$back = $name[2];
+$back = addslashes($back);
+$tofname =$name[0];
+$tofname = trim($tofname);
+$tofname = addslashes($tofname);
 
+}
+?>
 
 <div id="main">
-<form action="file_uploader.php" method="post" enctype="multipart/form-data">
-<br>
+<div class="messages" id="message">
+
+<table border="0" cellpadding="10" cellspacing="2" width="500" align="center">
+<tr>
+<br><br>
+<td align="right">Send To</td>
 <?php
-printf ('<img id="dp" src="'.$img_name .'" class="dashimg" height="150" width="150" title="click here to change">')
+printf('<td><label id="tomsg" for="tomsg">'.$tofname.'</label></td>');
 ?>
-<div id="move" class="move_back">
-<p> Select image to upload:</p>
-<p><input type="file" name="fileToUpload" id="fileToUpload"></p>
-<input type="submit" value="Upload" name="submit">
-(&nbsp<a id='lgn' href='dashboard.php' style='color:black'>Cancel</a><br>
-</div>
-</form>
-<div class="dashbrd1" id="myl">
-<div id="txt1">
-My Listings
-</div>
-</div>
-<div class="dashbrd2" id="msg">
-<div id="txt2">
-My Messages
-</div>
-</div>
-<div class="dashbrd3" id="mp">
-<div id="txt3">
-My Profile
-</div>
-</div>
-<div class="DivToScroll DivWithScroll" id="data_area">
-<p id="data">
-</p>
+</tr>
+<tr>
+<td align="right">Message</td>
+<td>
+<textarea id="msgarea" cols="50" rows="5" name ="msgarea" maxlength="300">
+</textarea>
+<br>
+<label>Remaining characters</label>
+<label id="lftcnt" for="tomsg"></label>
+</td>
+</tr>
+<tr>
+<td>
+<?php
+printf('<input type="submit" id="sendmsg" type="submit" width = 30 name="send" value="Send">');
+?>
+</td>
+<td>
+<?php
+printf('<a  id ="backitmview" style ="color:blue" href="itemview.php?subcat='.$back.'">Back</a>');
+?>
+</td>
+<div id="msgstatus">
+jjjj
 </div>
 
+</tr>
+</table>
 
-
+</div>
 </div>
 
 <script type="text/javascript" src="/starterbarters/js/jquery-2.1.1.min.js"> </script>
