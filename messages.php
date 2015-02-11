@@ -25,7 +25,7 @@ $img_name = $_SESSION['image_name'];
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-02-09T23:19:53+0530" >
+<meta name="date" content="2015-02-11T00:10:57+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -89,11 +89,18 @@ printf('<input type="submit" id="sendmsg" type="submit" width = 30 name="send" v
 printf('<a  id ="backitmview" style ="color:blue" href="itemview.php?subcat='.$back.'">Back</a>');
 ?>
 </td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
 <div id="msgstatus">
-jjjj
 </div>
+</td>
 
 </tr>
+
+
 </table>
 
 </div>

@@ -55,7 +55,6 @@ $('div.dashbrd1,div.dashbrd2,div.dashbrd3').click(function () {
 $('div.dashbrd1').addClass('zoom');
 $('div.dashbrd2').removeClass('zoom');
 $('div.dashbrd3').removeClass('zoom');
-
 var tmp = ($(this).attr('id'));
 $('#data_area').empty();
 //alert(tmp);
@@ -106,11 +105,11 @@ if (tmp == 'msg') {
 	$('div.dashbrd1').removeClass('zoom');
 	$('div.dashbrd3').removeClass('zoom');
 	//alert($(this).attr('id'));
-	$.post('ajax/process.php',{catid:catid},function (data) {
-		$("#data_area").html('inbox');
- //  $("#data").html(data);
+	$.post('ajax/inbox.php',{catid:catid},function (data) {
+   $("#data_area").html(data);
 });
 }
+
 if (tmp == 'mp') {
 	$('div.dashbrd3').addClass('zoom');
 	$('div.dashbrd1').removeClass('zoom');
@@ -130,14 +129,14 @@ $('#category2').empty();
 $('#selcat').attr('value',($(this).val()));
 var cat = ($(this).val())
 //alert(cat);
-var books = ["Action","Biographies","Comics","Cooking","Engineering","Entrance Exams","Health & Fitness","History & Politics","Humor","Indian Writing","Knowledge & Learning","Medicine","Kids Books","Other books"];
-var dvds = ['New Releases','Hollywood Movies','Bollywood Movies','Regional Movies','Tv Show & Documentaries','Kids & Educational','Health & Fitness','Music','International Music','Bollywood Music','Classical & Devotional','Gaming','Pc Games','Other dvd & films'];
-var sports = ['Climbing','Cycling','Fitness','Golf','Nature Sports','Racquet Sports','Running','Roller Sports','Team Sports','Watersports','Other sports gear'];
-var furnitures = ['Living Room Furniture','Bedroom Furniture','Dining Room Furniture','Bar Furniture','Study Room Furniture','Outdoor Furniture','Lightings','Wall Decor','Bean Bags','Housekeeping','Other furnitures'];
-var electronics = ['Mobiles','Tablets','Mobile Accessories','Laptops','Computer Accessories','Televisions','Speakers','Mp3 Players','Gaming & Accessories','Washing Machines','Kitchen Appliances','Cameras','Health Care Devices','Other electronics'];
-var toys = ['School Supplies','Toys For Boys','Toys For Girls','Infant Toys','Remote Controlled Toys','Soft Toys','Educational Toys','Infant Clothing','Cradels','Others'];
-var twos = ['Mopeds','Scooter','Cruiser','Standard','Other two wheelers'];
-var cars = ['Other cars'];
+var books = ["Select","Action","Biographies","Comics","Cooking","Engineering","Entrance Exams","Health & Fitness","History & Politics","Humor","Indian Writing","Knowledge & Learning","Medicine","Kids Books","Other books"];
+var dvds = ['Select','New Releases','Hollywood Movies','Bollywood Movies','Regional Movies','Tv Show & Documentaries','Kids & Educational','Health & Fitness','Music','International Music','Bollywood Music','Classical & Devotional','Gaming','Pc Games','Other dvd & films'];
+var sports = ['Select','Climbing','Cycling','Fitness','Golf','Nature Sports','Racquet Sports','Running','Roller Sports','Team Sports','Watersports','Other sports gear'];
+var furnitures = ['Select','Living Room Furniture','Bedroom Furniture','Dining Room Furniture','Bar Furniture','Study Room Furniture','Outdoor Furniture','Lightings','Wall Decor','Bean Bags','Housekeeping','Other furnitures'];
+var electronics = ['Select','Mobiles','Tablets','Mobile Accessories','Laptops','Computer Accessories','Televisions','Speakers','Mp3 Players','Gaming & Accessories','Washing Machines','Kitchen Appliances','Cameras','Health Care Devices','Other electronics'];
+var toys = ['Select','School Supplies','Toys For Boys','Toys For Girls','Infant Toys','Remote Controlled Toys','Soft Toys','Educational Toys','Infant Clothing','Cradels','Others'];
+var twos = ['Select','Mopeds','Scooter','Cruiser','Standard','Other two wheelers'];
+var cars = ['Select','Other cars'];
 var tmpary = [];
 
 if (cat == 'books') {
@@ -194,9 +193,12 @@ var category = ["Action","Biographies","Comics","Cooking","Engineering","Entranc
 $('#category2').attr('value',($(this).val()));
 var cat = ($(this).val());
 //alert(cat);
+
 for (var i = 0;i < category.length; i++ ) {
 catary = category[i]
 if (catary == cat) {
+//alert(catary);
+//test = $('#subcat').val(i+1);
 $('#subcat').val(i+1)
 }
 }
@@ -504,6 +506,7 @@ $('#lftcnt3').html(200);
 $('#msgarea,#msgarea2,#msgarea3').keyup(function () {
 var nme = ($(this).attr('id'));
 if (nme == 'msgarea') {
+$('#msgstatus').html('');
 var cnt = 300;
 getcount(cnt,nme);
 }else {
@@ -534,21 +537,18 @@ $('#tomsg').text(msgd);
 $(document).on('click','#sendmsg',function() {
 var var1 = $('#sendmsg').val();
 var msg1 = $('#msgarea').val();
-alert(msg1);
-alert(var1);
-
 if (var1) {
-
 $.ajax({
 dataType :"json",
 type :"POST",
 data :{var1 :var1,msg1 :msg1,},
 url :'ajax/sendmessage.php',
 success : function(response){
-alert(response.status_value);
+//alert(response.status_value);
+$('#msgarea').val('');
+$('#msgstatus').html('<p>&#10004sent</p>')
 }});
 }
-
 });
 
 //send message

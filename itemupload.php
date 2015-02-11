@@ -2,6 +2,7 @@
 <html>
 <head>
 <?php
+ob_start();
 if(!isset($_SESSION['loggedin'])) 
     {
         session_start(); 
@@ -26,7 +27,7 @@ $fldr_path = substr($fldr_path,0,17);
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-02-08T20:51:56+0530" >
+<meta name="date" content="2015-02-11T23:34:51+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">

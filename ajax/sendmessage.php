@@ -38,17 +38,19 @@ $uid = addslashes($uid);
 $fname = $_SESSION['name'];
 $fname = trim($fname);
 $fname = addslashes($fname);
+$time = date("d/m/y :h:i:s",time());
 
 if(isset($_POST['msg1']) == true){
-$msgarea = htmlspecialchars($_POST['msg1']);
+$msgarea = htmlentities($_POST['msg1']);
+$msgarea = trim($msgarea);
 $msgarea = addslashes($msgarea);
 };
 
 # open a database conn
 require '../dbcon.php';
 
-$stmt = $db->prepare("insert into message_list values (?,?,?,?,?,?,?,?)");
-$stmt->execute(array('',"$uid","$$msgarea","$touid",'','','',''));
+$stmt = $db->prepare("insert into message_list values (?,?,?,?,?,?,?,?,?,?)");
+$stmt->execute(array('',"$uid","$fname","$msgarea","$touid","$tofname",'',"$time",'',''));
 
 }
 
