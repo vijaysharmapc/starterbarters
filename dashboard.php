@@ -25,7 +25,7 @@ $img_name = $_SESSION['image_name'];
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-02-08T16:21:57+0530" >
+<meta name="date" content="2015-02-13T00:01:50+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -59,11 +59,13 @@ printf ('<img id="dp" src="'.$img_name .'" class="dashimg" height="150" width="1
 (&nbsp<a id='lgn' href='dashboard.php' style='color:black'>Cancel</a><br>
 </div>
 </form>
+<div id="msgcnt" style="height:12px" Title="new message"></div>
 <div class="dashbrd1" id="myl">
 <div id="txt1">
 My Listings
 </div>
 </div>
+
 <div class="dashbrd2" id="msg">
 <div id="txt2">
 My Messages

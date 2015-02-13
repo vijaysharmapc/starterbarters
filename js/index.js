@@ -551,4 +551,36 @@ $('#msgstatus').html('<p>&#10004sent</p>')
 }
 });
 
+//scan for msg
+var ajax_call = function(){
+var1=0;
+$.ajax({
+dataType :"json",
+type :"POST",
+data :{var1 :var1,},
+url :'ajax/scanmsg.php',
+success : function(response){
+	var total_count = response.total_count;
+//alert(response.status_value);
+$('#msgcnt').html('');
+if (total_count >0) {
+$('#msgcnt').html('<a id= "back" href="dashboard.php" style="color:red ;font-weight: ">'+total_count+'</a>');
+}
+}});
+
+};
+var interval = 10000;
+setInterval(ajax_call,interval);
+
+
+
+
+
+
+
+
+
+
+
+
 //send message
