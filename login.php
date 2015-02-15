@@ -16,9 +16,10 @@ printf ('<h2 id="heading2"> Please login here  </h2>');
 # open a database conn
 require 'dbcon.php';
 //build query
-$query = " select CONCAT(user_name,'',user_id),password,first_name,image_name from user_base ";
+$query = " select CONCAT(user_name,'',user_id) as uid,password,first_name,image_name,email from user_base ";
 if ($ulogin && $upassword )  {
-$query = $query . " where CONCAT(user_name,'',user_id) = '" . $ulogin . "' and password = '" . $upassword . "'";
+//$query = $query . " where CONCAT(user_name,'',user_id) = '" . $ulogin . "' and password = '" . $upassword . "'";
+$query = $query . " where email = '" . $ulogin . "' and password = '" . $upassword . "'";
 }
 
 $sth = $db->query($query);
@@ -26,22 +27,23 @@ $ucount = $sth->rowCount();
 if ($ucount ==0){
 printf('<section id="main">');
 printf ("<p> Wrong user id or password ,please try again </p>");
-} else {
-
+//exit;
+} elseif($ucount ==1) {
 $_SESSION['loggedin'] = "YES";
-$_SESSION['uid'] = $ulogin;
 $row = $sth->fetch(PDO::FETCH_ASSOC);
+$_SESSION['uid'] = $row['uid'];
 $_SESSION['name'] = $row['first_name'];
 //full file path
 $_SESSION['image_name'] = $row['image_name'];
-//$url = "Location:dashboard.php";
-//ob_start()
-//header("Location:dashboard.php");
+
+
 header("Location: dashboard.php");
-die();
+//die();
 //login time stamp
-$stmt = $db->prepare("update user_base set time_stamp = now() where CONCAT(user_name,'',user_id) = ?");
-$stmt->execute(array("$ulogin"));
+//echo $_SESSION['uid'];
+//echo $ulogin;
+$stmt = $db->prepare("update user_base set time_stamp = now() where email = ?");
+$stmt->execute(array($ulogin));
 
 exit;
 }
@@ -56,7 +58,7 @@ $db=null;
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-01-21T09:11:01+0530" >
+<meta name="date" content="2015-02-15T20:35:57+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -75,11 +77,11 @@ $db=null;
 <table border="0" cellpadding="10" cellspacing="2" width="500" align="center">
 <tr>
 <br><br>
-<td align="right">User id</td>
+<td align="right">Registered email : </td>
 <td><INPUT type="text" name="ulogin"  required></td>
 </tr>
 <tr>
-<td align="right">Password</td>
+<td align="right">Password : </td>
 <td><INPUT type="Password" name="upassword"  required></td>
 </tr>
 <tr>

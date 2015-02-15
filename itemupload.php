@@ -27,7 +27,7 @@ $fldr_path = substr($fldr_path,0,17);
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-02-11T23:34:51+0530" >
+<meta name="date" content="2015-02-15T17:28:09+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -84,9 +84,8 @@ $db=null;
 
 
 <h2 id="heading2"> Upload a new item!! </h2>
-<section id="main">
-<div id="hometext">
 
+<div id="main">
 <form action="itemupload.php" method="post">
 
 <table id="itemupload" border="0" cellpadding="1" cellspacing="1" width="550">
@@ -191,10 +190,10 @@ $db=null;
 </form>
 
 </div>
-</section>
 
 <script type="text/javascript" src="/starterbarters/js/jquery-2.1.1.min.js"> </script>
 <script type="text/javascript" src="/starterbarters/js/index.js"> </script>
+
 </body>
 </div>
 

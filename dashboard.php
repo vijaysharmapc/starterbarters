@@ -25,7 +25,7 @@ $img_name = $_SESSION['image_name'];
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-02-13T00:01:50+0530" >
+<meta name="date" content="2015-02-15T00:52:11+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">

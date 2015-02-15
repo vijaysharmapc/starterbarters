@@ -101,6 +101,7 @@ $('#data_area').append(result);
 
 
 if (tmp == 'msg') {
+	//alert("yes");
 	$('div.dashbrd2').addClass('zoom');
 	$('div.dashbrd1').removeClass('zoom');
 	$('div.dashbrd3').removeClass('zoom');
@@ -499,6 +500,27 @@ $('#slideshow').hover(function() {
 
 });
 
+
+//check email registered are same
+function isValidEmailAddress(emailAddress) {
+    var pattern = new RegExp(/^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i);
+    return pattern.test(emailAddress);
+};
+$(document).on('click','.rgstr',function () {
+var eid = ($('#eid').val());
+if(!isValidEmailAddress(eid)) {
+alert("not a correct email id"); } else {
+if (eid) {
+$.post('ajax/checkemail.php',{eid:eid},function (data) {
+if (data ==1) {
+alert("Email already exit");
+$('#eid').val('');
+};
+});
+}
+}
+});
+
 //send message 
 $('#lftcnt').html(300);
 $('#lftcnt2').html(200);
@@ -529,14 +551,50 @@ $('#lftcnt3').html(rmcnt);
 
 $(document).on('click','.msglink',function () {
 var msgd = ($(this).attr('id'));
-alert(msgd);
+//alert(msgd);
 $('#tomsg').text(msgd);
+});
+
+//send message from out and my dash
+$(document).on('click','#sendmsg',function() {
+var var1 = $('#sendmsg2').val();
+//alert(var1);
+var msg1 = $('#msgarea').val();
+if (msg1=='') {
+alert("No message typed")
+return false;
+}
+//alert(var1);
+//alert(msg1);
+
+if (var1) {
+$.ajax({
+dataType :"json",
+type :"POST",
+data :{var1 :var1,msg1 :msg1,},
+url :'ajax/sendmessage.php',
+success : function(response){
+//alert(response.status_value);
+$('#msgarea').val('');
+$('#msgstatus').html('<p>&#10004sent</p>')
+}});
+}
 });
 
 
 $(document).on('click','#sendmsg',function() {
 var var1 = $('#sendmsg').val();
+//alert(var1);
 var msg1 = $('#msgarea').val();
+
+
+if (msg1=='') {
+alert("No message typed")
+return false;
+}
+//alert(var1);
+//alert(msg1);
+
 if (var1) {
 $.ajax({
 dataType :"json",
@@ -571,6 +629,14 @@ $('#msgcnt').html('<a id= "back" href="dashboard.php" style="color:red ;font-wei
 };
 var interval = 10000;
 setInterval(ajax_call,interval);
+
+$(document).on('mouseover','.msglst',function () {
+$(this).css('cursor','pointer');
+});
+
+
+
+
 
 
 

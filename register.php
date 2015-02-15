@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-02-06T23:37:16+0530" >
+<meta name="date" content="2015-02-15T20:06:09+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -22,16 +22,27 @@
 require 'navigation.php';
 if(isset($_POST['email'])) {
 	$firstname = trim($_POST['firstname']);
+	$firstname = addslashes($firstname);
 	$lastname=trim($_POST['lastname']);
+	$lastname = addslashes($lastname);
 	$pswd1 = trim($_POST['password1']);
+	$pswd1 = addslashes($pswd1);
 	$pswd2 = trim($_POST['password2']);
+	$pswd2 = addslashes($pswd2);
    $email=trim($_POST['email']);
+   $email = addslashes($email);
    $phone=trim($_POST['phone']);
+   $phone = addslashes($phone);
    $country=trim($_POST['country']);
+   $country = addslashes($country);
    $state=trim($_POST['state']);
+   $state = addslashes($state);
    $city=trim($_POST['city']);
+   $city = addslashes($city);
    $postalcode=trim($_POST['postalcode']);
+   $postalcode = addslashes($postalcode);
    $terms=trim($_POST['terms']);
+   $terms = addslashes($terms);
 
    $cnt = mt_rand(1,6);
    $dir = "uploads/uploads".$cnt."/dp.jpg";
@@ -50,9 +61,9 @@ require 'dbcon.php';
 $stmt = $db->prepare("insert into registration_desk values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 $stmt->execute(array('',"$firstname","$lastname","$pswd1","$email","$phone","$country","$state","$city","$postalcode",'','',"$terms","$dir"));
 
-$stmt = $db->prepare("insert into user_base values (?,?,?,?,?,?)");
+$stmt = $db->prepare("insert into user_base values (?,?,?,?,?,?,?)");
 $user_name = substr($firstname,0,5);
-$stmt->execute(array('',"$user_name","$firstname","$pswd1","$dir",null));
+$stmt->execute(array('',"$user_name","$firstname","$pswd1","$dir",null,$email));
 printf ("<br> User added" );
 printf ("<br> <a href=index.php>Return to home page and login</a>");
 
@@ -77,14 +88,14 @@ $db=null;
 </tr>
 <tr>
 <td>Password</td>
-<td><INPUT type="password" name="password1" title ="Chose a combination of numbers and text" required></td>
+<td><INPUT id="pass1" type="password" name="password1" title ="Chose a combination of numbers and text" required></td>
 </tr>
 <td>Retype the Password</td>
-<td><INPUT type="password" name="password2" title ="Chose a combination of numbers and text" required></td>
+<td><INPUT id="pass2" type="password" name="password2" title ="Chose a combination of numbers and text" required></td>
 </tr>
 <tr>
 <td>Email</td>
-<td><INPUT type="text" name="email" required></td>
+<td><INPUT id="eid" type="text" name="email" required></td>
 </tr>
 <tr>
 <td>Mobile Phone</td>
@@ -115,7 +126,7 @@ $db=null;
 </tr>
 <tr>
 <td></td>
-<td><INPUT type="submit" name="submit" value="Register"></td>
+<td><INPUT class="rgstr" type="submit" name="submit" value="Register"></td>
 <td><a href="index.php" style="color:black">Back</a></td>
 </tr>
 
