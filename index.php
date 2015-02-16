@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-02-08T17:36:38+0530" >
+<meta name="date" content="2015-02-16T22:46:07+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="swap,exchange,bater,barter,starter,barters,starterbarter,starterbarters,trade,without,money,make,sell">
 <meta name="description" content="">
@@ -55,7 +55,7 @@ require 'navigation.php';
 
 
 <div id="hometext">
-<p> &nbsp &nbsp Barter,swap or exchanging of goods is as old as human history goes. starterbarters.com will help you exchange things,that you have with what you would love to have.
+<p> &nbsp &nbsp Barter,swap or exchanging of goods is as old as human history goes, starterbarters.com will help you exchange things that you have with what you would love to have.
 With a contemporary twist, while keeping the essence of barter alive!! 
 <p> Click into the category you like from the left ribbon,look for people & things they offer,connect with them using messages</p>
 <p>You only have to register to connect with your prospective barter partner and all this is absolutely free!!!</p>

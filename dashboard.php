@@ -25,7 +25,7 @@ $img_name = $_SESSION['image_name'];
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-02-15T00:52:11+0530" >
+<meta name="date" content="2015-02-16T22:37:45+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -77,7 +77,7 @@ My Profile
 </div>
 </div>
 <div class="DivToScroll DivWithScroll" id="data_area">
-<p id="data">
+<p id="data2">
 </p>
 </div>
 

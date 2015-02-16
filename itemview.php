@@ -31,7 +31,7 @@ $img_name_item = $_SESSION['image_name_item'];
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-02-09T20:31:53+0530" >
+<meta name="date" content="2015-02-16T22:52:18+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -97,7 +97,7 @@ printf ('<a href="category.php?catid=1" style = "color:blue">Back</a>');
 
 printf('</form>');
 
-printf ('<div id="editdata2">');
+printf ('<div id="editdata2"  >');
 echo "<br>";
 printf ('<table id="itmview">');
 printf ('<tr id="vt"><td>Owned by :</td>');

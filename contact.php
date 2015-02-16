@@ -6,7 +6,7 @@
 
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-01-04T14:54:16+0530" >
+<meta name="date" content="2015-02-17T00:25:31+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -21,7 +21,36 @@
 <body>
 <?php
 require 'navigation.php';
+//check if email is valid
+if (isset($_POST["customeremail"])){
+
+
+if(! ereg("[a-z]+@[a-z]+\.[a-z]+",$_POST["customeremail"])) {
+	echo " invalid email";
+	
+	exit;
+}
+
+//get data from form
+$customeremail = $_POST["customeremail"];
+$message = $_POST["message"];
+$replywanted = false;
+if (isset($_POST["replywanted"])) $replywanted=true;
+//Build  the text of email
+$t = "you have received an message from " . $customeremail . " :\n";
+$t = $t . $message . ":\n";
+if ($replywanted)
+$t = $t . "a reply was requested";
+else
+$t = $t . "No reply was requested";
+
+//send an email
+mail("pd78@localhost","Customer message", $t);
+
+
+}
 ?>
+
 <h2 id="heading2">  Give us feedback or ask a question here .. </h2>
 <section id="main">
 
@@ -41,6 +70,11 @@ require 'navigation.php';
 <tr>
 <td>Your message:</td>
 <td><textarea rows="5" cols="50" name="message"></textarea> </td>
+</tr>
+
+<tr>
+<td> Do you want an reply?</td>
+<td><input type="checkbox" name="replywanted"></td>
 </tr>
 
 <tr>
