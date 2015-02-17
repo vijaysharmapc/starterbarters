@@ -6,7 +6,7 @@
 
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-02-17T00:25:31+0530" >
+<meta name="date" content="2015-02-17T23:37:59+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -25,11 +25,12 @@ require 'navigation.php';
 if (isset($_POST["customeremail"])){
 
 
-if(! ereg("[a-z]+@[a-z]+\.[a-z]+",$_POST["customeremail"])) {
-	echo " invalid email";
-	
-	exit;
+$email = $_POST["customeremail"];
+if (strpos($email,'@') == false) {
+echo " invalid email";
+exit;
 }
+
 
 //get data from form
 $customeremail = $_POST["customeremail"];
@@ -45,7 +46,7 @@ else
 $t = $t . "No reply was requested";
 
 //send an email
-mail("pd78@localhost","Customer message", $t);
+mail("mail@starterbarters.com","Customer message", $t);
 
 
 }

@@ -2,11 +2,11 @@
 <html>
 <head>
 <script src="https://apis.google.com/js/platform.js" async defer></script>
-<title>Barter Network </title>
+<title>swap,exchange,barter and more</title>
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-02-16T22:46:07+0530" >
+<meta name="date" content="2015-02-17T22:23:30+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="swap,exchange,bater,barter,starter,barters,starterbarter,starterbarters,trade,without,money,make,sell">
 <meta name="description" content="">

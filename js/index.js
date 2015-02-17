@@ -38,6 +38,25 @@ if ( catid ) {
 });
 }
 
+$('#filter').change(function () {
+$('#filter').attr('value',($(this).val()));
+var cty = ($(this).val());
+alert(cty);
+var catid = $("#cats").val();
+
+alert(catid);
+if ( catid ) {
+ $.post('ajax/process.php',{catid:catid,cty:cty},function (data) {
+ $("#catdata").html(data);
+});
+}
+
+});
+
+
+
+
+
 
 
 $('div.dashbrd1,div.dashbrd2,div.dashbrd3').hover(

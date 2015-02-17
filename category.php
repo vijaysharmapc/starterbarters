@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-02-04T22:06:34+0530" >
+<meta name="date" content="2015-02-18T00:10:25+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -47,6 +47,21 @@ printf ('<h2 id="heading2"> exchange or swap  '.$var.'  you like!! </h2>')
 
 
 <div id="main">
+<div id="placefilter">
+<label><font color="Brown">Filter by location: </font></label>
+<select name="filter" id="filter" title="Location filter">
+  <option value="1">All</option>
+  <option value="bengaluru">Bengaluru</option>
+  <option value="ahmedabad">Ahmedabad</option>
+  <option value="chennai">Chennai</option>
+  <option value="delhi">Delhi</option>
+  <option value="hyderabad">Hyderabad</option>
+  <option value="jaipur">Jaipur</option>
+  <option value="kolkata">Kolkata</option>
+  <option value="mumbai">Mumbai</option>
+  <option value="pune">Pune</option>
+</select>
+</div>
 <div class="DivToScroll DivWithScroll" id="sectiondta">
 Start swapping by clicking on any sub category with items in it !!
  </div>
