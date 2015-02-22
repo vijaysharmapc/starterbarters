@@ -41,10 +41,10 @@ if ( catid ) {
 $('#filter').change(function () {
 $('#filter').attr('value',($(this).val()));
 var cty = ($(this).val());
-alert(cty);
+//alert(cty);
 var catid = $("#cats").val();
 
-alert(catid);
+//alert(catid);
 if ( catid ) {
  $.post('ajax/process.php',{catid:catid,cty:cty},function (data) {
  $("#catdata").html(data);
@@ -110,6 +110,9 @@ result+='<li id ="clr"><span> Place : </span>' + response.data[i].city + '</li>'
 $('#data_area').append(result);
 }
 });
+//activate scan msg
+var interval = 10000;
+setInterval(ajax_call,interval);
 };
 //get edit page
 //$('#editclk').click(function () {
@@ -601,6 +604,8 @@ $('#msgstatus').html('<p>&#10004sent</p>')
 });
 
 
+
+
 $(document).on('click','#sendmsg',function() {
 var var1 = $('#sendmsg').val();
 //alert(var1);
@@ -646,16 +651,40 @@ $('#msgcnt').html('<a id= "back" href="dashboard.php" style="color:red ;font-wei
 }});
 
 };
-var interval = 10000;
-setInterval(ajax_call,interval);
+
 
 $(document).on('mouseover','.msglst',function () {
 $(this).css('cursor','pointer');
+});
+//send message
+
+
+
+//email verification & reset password
+$(document).on('click','#vmail',function () {
+var emailv = ($('#emailv').val());
+if (emailv) {
+ $.post('ajax/sendmail.php',{emailv:emailv},function (data) {
+alert(data);
+});
+}});
+
+$(document).on('click','#resetclick',function () {
+var pswd1 = ($('#pass1').val());
+var pswd2 = ($('#pass2').val());
+if (pswd1!=pswd2) {
+alert("passwords do not match!!")
+$('#pass1').val('');
+$('#pass2').val('');
+return false;
+}
+
 });
 
 
 
 
+//email verification & reset password
 
 
 
@@ -667,5 +696,3 @@ $(this).css('cursor','pointer');
 
 
 
-
-//send message

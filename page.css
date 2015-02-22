@@ -12,6 +12,12 @@ left: -5%;
 text-align: center;
 }
 
+
+#helplst{
+position: relative;
+padding-left: 10%;
+}
+
 #terms{
 padding: 22px;
 width: 450px;

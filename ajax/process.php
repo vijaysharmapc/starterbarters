@@ -23,7 +23,7 @@ try {
  $sth = $db->query($query);
  $catcount = $sth->rowCount(); #only on mysql
  if ($catcount ==0){
-printf ("sorry we did not find any matching categories");
+printf ("sorry no matching categories found !");
 //printf ("<br> <a href=../index.php>Return to home page</a>");
 exit; 
 }

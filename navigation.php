@@ -2,6 +2,7 @@
 <html>
 <head>
 <?php
+
 if(!isset($_SESSION['loggedin'])) 
     {
        session_start(); 
@@ -29,7 +30,7 @@ echo "</div>";
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-02-08T17:18:45+0530" >
+<meta name="date" content="2015-02-22T12:45:22+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -71,7 +72,7 @@ echo "</div>";
 <a id="Two" style="color:white" href="/starterbarters/category.php?catid=7">  Two wheelers! </a>
 <img class="hidden" id="7" src="/starterbarters/images/arrow.jpg" height="10" width="10">
 <br>
-<a id="Cars" style="color:white" href="/starterbarters/category.php?catid=9">   Cars!! </a>
+<a id="Cars" style="color:white" href="/starterbarters/help.php?catid=9">   Help </a>
 <img class="hidden" id="8" src="/starterbarters/images/arrow.jpg" height="10" width="10">
 <br>
 <a id="Real" style="color:white" href="/starterbarters/aboutus.php">  About us </a>

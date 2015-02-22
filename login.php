@@ -58,7 +58,7 @@ $db=null;
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-02-17T22:46:11+0530" >
+<meta name="date" content="2015-02-21T11:45:47+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -86,8 +86,8 @@ $db=null;
 </tr>
 <tr>
 <td></td>
-<td><INPUT type="submit" name="submit" value="login"></td>
-<td>
+<td><INPUT type="submit" name="submit" value="login">
+&nbsp
 <a href="resetpassword.php" style='color:black' >forgot password?</a>
 </td>
 </tr>
