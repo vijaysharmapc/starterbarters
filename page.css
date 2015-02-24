@@ -410,3 +410,12 @@ color:#800000;
 font-weight: bold;
 font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
 }
+
+#newswap{
+position: relative;
+width: 51%;
+height: 30%;
+top: -400px;
+left: 47%;
+background-color: #E3E4FA;
+}

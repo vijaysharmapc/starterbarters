@@ -23,7 +23,7 @@ $fldr_path = substr($fldr_path,0,17);
 $file_path = $_SESSION["file_path"];
 $file_path = substr($file_path,0,17);
 
-echo $file_path;
+//echo $file_path;
 }
 ?>
 </head>
@@ -49,7 +49,7 @@ if(isset($_POST["submit"])) {
     //echo "<br>";
     //print_r($check);
     if($check !== false) {
-        echo "File is an image - " . $check["mime"] . ".";
+      //  echo "File is an image - " . $check["mime"] . ".";
         $uploadOk = 1;
     } else {
         echo "File is not an image.";
@@ -59,7 +59,7 @@ if(isset($_POST["submit"])) {
 // Check if file already exists
 if (file_exists($target_file)) {
     unlink($target_file);
-    echo "old file with same name will be replaced";
+    echo " Old file with same name will be replaced, ";
     $uploadOk = 1;
 }
 // Check file size 

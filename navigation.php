@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
+
 <?php
 
 if(!isset($_SESSION['loggedin'])) 
@@ -25,24 +23,6 @@ echo "<a id='lgnd' href='dashboard.php' style='color:white'>My Dashboard</a><br>
 echo "</div>";
 }
 ?>
-
-<!-- Place this tag in your head or just before your close body tag. -->
-<script src="https://apis.google.com/js/platform.js" async defer></script>
-<meta name="generator" content="Bluefish 2.2.5" >
-<meta name="author" content="pd78" >
-<meta name="date" content="2015-02-22T12:45:22+0530" >
-<meta name="copyright" content="">
-<meta name="keywords" content="">
-<meta name="description" content="">
-<meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8">
-<meta http-equiv="content-style-type" content="text/css">
-<meta http-equiv="expires" content="0">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-</head>
-
-<body>
 
 <div id="nav">
 <br>
@@ -78,7 +58,7 @@ echo "</div>";
 <a id="Real" style="color:white" href="/starterbarters/aboutus.php">  About us </a>
 <img class="hidden" id="" src="/starterbarters/images/arrow.jpg" height="10" width="10">
 <br>
-<a style="color:white" href="/starterbarters/contact.php"> Connect with us</a>
+<a style="color:white" href="/starterbarters/contact.php"> Contact us</a>
 <div id="scnt">
 <br>
 <!-- Place this tag where you want the +1 button to render. -->
@@ -88,12 +68,3 @@ echo "</div>";
 </div>
 
 <div class="container">
-
-<!--
-end of thos div is in sheets
-
-
-<section id="main">
-
-</section>
--->
