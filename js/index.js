@@ -689,6 +689,12 @@ return false;
 
 $(document).ready(function(){
 var tmps = 1;
+$('#window1').empty();
+$('#window2').empty();
+$('#window3').empty();
+$('#window4').empty();
+$('#window5').empty();
+$('#window6').empty();
 $.ajax({
 dataType :"json",
 type :"POST",
@@ -705,19 +711,36 @@ var lid=0;
 //var rec_s= new Array();
 for(var i=0; i<total_count; i++)
 {
+var result = "";
 lid = 0;
 lid+= response.data[i].line_id;
-result+='<div  id ='+lid+' class = "clickview">';
-result+='<p class ="clrbrk11"> &nbsp<a id= "view" href="viewitem.php?lid='+lid+'" style="color:white ;font-weight: bold"></a>	</p>';
-result+='<div style="float: right;"> <img hspace="5" id="itmimg" src="' +response.data[i].file_path + '" alt="Smiley face" height="42" width="42"></div>';
-result+='<li id ="clr"><span> Title : </span>' + response.data[i].title + '</li>';
+result+='<div  id ='+lid+' class = "clickview" >';
+result+='<a  href="viewitem.php?subcat='+lid+'" style="color:darkblue ;font-weight: bold">'+ response.data[i].title +'</a>';
+//result+='<a id= "view" href="viewitem.php?lid='+lid+'" style="color:white ;font-weight: bold"></a>	</p>';
+result+='<img hspace="" id="itmimg2" src="' +response.data[i].file_path + '" alt="Smiley face" height="100" width="100">';
+
 result+='</div>';
-j=i+1;
-win = "'#window"+j+"'";
+if (i==0) {
+$('#window1').html(result);
 }
-alert(win);
-$('#window1').append(result);
+if (i==1) {
+$('#window2').append(result);
 }
+if (i==2) {
+$('#window3').append(result);
+}
+if (i==3) {
+$('#window4').append(result);
+}
+if (i==4) {
+$('#window5').append(result);
+}
+if (i==5) {
+$('#window6').append(result);
+}
+}
+}
+
 }
 
 });
