@@ -368,7 +368,7 @@ return false;
 });
 
 // visitor view realted things
-$(document).ready(function(){
+//$(document).ready(function(){
 //get list of subcategories
 $(document).on('click','.catlist',function() {
 var catname = $(this).text();
@@ -417,7 +417,7 @@ $('#sectiondta').append('No items found');
 });
 return false;
 });
-});
+//});
 
 //item
 $(document).on('mouseenter','.clickview',function() {
@@ -681,16 +681,51 @@ return false;
 
 });
 
-
-
-
 //email verification & reset password
 
 
 
 
 
+$(document).ready(function(){
+var tmps = 1;
+$.ajax({
+dataType :"json",
+type :"POST",
+data :{tmps :tmps,},
+url :'ajax/toplist.php',
+success : function(response) {
+var total_count = response.total_count;
+//alert(total_count);
+//alert(total_count);
+if (response.status_value == 1) {
+var result = "";
+var cnt=0;
+var lid=0;
+//var rec_s= new Array();
+for(var i=0; i<total_count; i++)
+{
+lid = 0;
+lid+= response.data[i].line_id;
+result+='<div  id ='+lid+' class = "clickview">';
+result+='<p class ="clrbrk11"> &nbsp<a id= "view" href="viewitem.php?lid='+lid+'" style="color:white ;font-weight: bold"></a>	</p>';
+result+='<div style="float: right;"> <img hspace="5" id="itmimg" src="' +response.data[i].file_path + '" alt="Smiley face" height="42" width="42"></div>';
+result+='<li id ="clr"><span> Title : </span>' + response.data[i].title + '</li>';
+result+='</div>';
+j=i+1;
+win = "'#window"+j+"'";
+}
+alert(win);
+$('#window1').append(result);
+}
+}
 
+});
+
+
+
+alert(temp);
+});
 
 
 

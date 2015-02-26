@@ -6,10 +6,10 @@
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-02-24T23:52:03+0530" >
+<meta name="date" content="2015-02-26T22:44:26+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="swap,exchange,bater,barter,starter,barters,starterbarter,starterbarters,trade,without,money,make,sell">
-<meta name="description" content="">
+<meta name="description" content="start,barter,swap,exchange">
 <meta name="ROBOTS" content="INDEX, FOLLOW">
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8">
@@ -46,8 +46,31 @@ require 'navigation.php';
  &nbsp &nbsp- Or You can message some on who fits your swap criteria</p>
 <p> see <a href="help.php" style = "color:darkblue"> help</a> for more information</p>
 </div>
-<div id="newswap">
-<p>New barter / swap offers!!</p>
+<div id="newswap" >
+<p title="Top 6 new swap/exchange offers">Hot & crisp barter / swap offers!!
+<a href="hotnewitems.php?list=1" style="color:darkblue" id="vall">View all </a>
+</p>
+
+<div class="window" id="window1">
+</div>
+<div class="window" id="window2">
+</div>
+
+
+<div class="window2" id="window3">
+</div>
+<div class="window2" id="window4">
+</div>
+
+
+<div class="window3" id="window5">
+</div>
+<div class="window3" id="window6">
+</div>
+
+
+
+
 </div>
 
 </div>

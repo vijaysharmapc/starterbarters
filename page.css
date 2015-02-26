@@ -414,8 +414,46 @@ font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
 #newswap{
 position: relative;
 width: 51%;
-height: 30%;
+height: 40%;
 top: -400px;
 left: 47%;
 background-color: #E3E4FA;
+border:solid 5px #ADD8E6;
+}
+
+.window{
+position: relative;
+width: 30%;
+height: 40%;
+background-color: #FFFF00;
+border:solid 2px black;
+}
+.window2{
+position: relative;
+width: 30%;
+height: 40%;
+left: 34.5%;
+top: -83%;
+background-color: #00FFFF;
+border:solid 2px black;
+}
+.window3{
+position: relative;
+width: 30%;
+height: 40%;
+left: 69%;
+top: -166%;
+background-color:#FFA500;
+border:solid 2px black;
+}
+
+
+
+
+
+
+#vall{
+position: relative;
+float: right;
+padding-right: 10%;
 }
