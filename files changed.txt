@@ -1,5 +1,5 @@
 index.php
-
+viewall.php
 page.css
 js
 

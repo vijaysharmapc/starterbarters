@@ -16,7 +16,7 @@ $i=0;
 $data = array();
 while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
 $data[$i]['line_id']=$row['line_id'];
-$data[$i]['title']=$row['title'];
+$data[$i]['title']= trim($row['title']);
 $data[$i]['file_path']=$row['file_path'];
 $i++;
 };

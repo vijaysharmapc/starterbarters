@@ -715,12 +715,12 @@ var result = "";
 lid = 0;
 lid+= response.data[i].line_id;
 result+='<div  id ='+lid+' class = "clickview" >';
-result+='<a  href="viewitem.php?subcat='+lid+'" style="color:darkblue ;font-weight: bold">'+ response.data[i].title +'</a>';
-//result+='<a id= "view" href="viewitem.php?lid='+lid+'" style="color:white ;font-weight: bold"></a>	</p>';
+result+='<a  id="title1" href="itemview.php?subcat='+lid+'" style="color:darkblue ;font-weight: bold">'+ response.data[i].title +'</a>';
 result+='<img hspace="" id="itmimg2" src="' +response.data[i].file_path + '" alt="Smiley face" height="100" width="100">';
-
 result+='</div>';
 if (i==0) {
+result+='<div id ="ttl">';
+result+='</div>';
 $('#window1').html(result);
 }
 if (i==1) {
@@ -744,10 +744,6 @@ $('#window6').append(result);
 }
 
 });
-
-
-
-alert(temp);
 });
 
 

@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="https://apis.google.com/js/platform.js" async defer></script>
-<title>swap,exchange,barter and more</title>
+<title>start barter,swap,exchange and more</title>
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-02-26T23:57:26+0530" >
+<meta name="date" content="2015-02-27T23:44:08+0530" >
 <meta name="copyright" content="">
-<meta name="keywords" content="swap,exchange,bater,barter,starter,barters,starterbarter,starterbarters,trade,without,money,make,sell">
+<meta name="keywords" content="swap,exchange,barter,starter,barters">
 <meta name="description" content="start,barter,swap,exchange">
 <meta name="ROBOTS" content="INDEX, FOLLOW">
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -16,6 +15,7 @@
 <meta http-equiv="content-style-type" content="text/css">
 <meta http-equiv="expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 <?php
 include_once("analyticstracking.php");
 require 'navigation.php';
@@ -36,19 +36,19 @@ require 'navigation.php';
 <p>  &nbsp&nbsp&nbsp<a href="http://en.wikipedia.org/wiki/Barter" target="_blank" style="color:darkblue">Barter</a>,swap or exchange of goods is 
 <span id="_description2" itemprop="description">trade without money</span>, starterbarters.com will help you exchange things that you have with what you would love to have.
 </p>
-<p>click into the swap category you like from the left ribbon,if you want to exchange a book/novel which you have already read for some thing else,this is the right place to find what people offer in return to what you have,Our product listing is endless!!
+<p>Click into the swap category you like from the left ribbon,if you want to swap a book/novel which you have already read for some thing else,this is the right place to find what people offer in return to what you have...Our product listing is endless!!
 
 <p>You only have to register to connect with your prospective barter partner and all this is absolutely free.<br>
  Once you login you can: <br>
  &nbsp &nbsp- Upload an item you want to swap/exchange <br>
- &nbsp &nbsp- Mention what you have,and what you want in return? <br>
+ &nbsp &nbsp- Mention what you have,and what you want in return? **<br>
  &nbsp &nbsp- Wait for someone to initiate swap via our messaging feature<br>
  &nbsp &nbsp- Or You can message some on who fits your swap criteria</p>
 <p> see <a href="help.php" style = "color:darkblue"> help</a> for more information</p>
 </div>
 <div id="newswap" >
 <p title="Top 6 new swap/exchange offers">Hot & crisp barter / swap offers!!
-<a href="hotnewitems.php?list=1" style="color:darkblue" id="vall">View all </a>
+<a href="viewall.php?list=1" style="color:darkblue" id="vall">View all </a>
 </p>
 
 <div class="window" id="window1">
@@ -68,10 +68,6 @@ require 'navigation.php';
 <div class="window3" id="window6">
 </div>
 
-
-
-
-</div>
 
 </div>
 
