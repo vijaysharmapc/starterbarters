@@ -743,19 +743,71 @@ $('#window6').append(result);
 
 
 
+// all items views and filters
 $(document).on('mouseenter','.catlist',function() {
 $(this).css('cursor','pointer');
+$(this).css('background-color','black' );
 });
 
+$(document).on('mouseleave','.catlist',function() {
+$(this).css('background-color','#8B1300' );
+});
+
+// default pointer on filter change to all
 $('#filter2').change(function () {
 $('#filter2').attr('value',($(this).val()));
 var cty = ($(this).val());
-alert(cty);
+var aid = 'allv';
+var cty = ($('#filter2').val());
+
+if (aid == 'allv'){
+$(".head h2").html("Listing uploaded swap / barter offers - All categories");
+$('#catsall').val(0);
+
+}
+
+//********************
+var selcat = $('#catsall').val();
+//alert("category "+ selcat+ "");
+if (typeof selcat!== 'undefined') {
+tmps = selcat;
+$('#vall2').empty();
+$.ajax({
+dataType :"json",
+type :"POST",
+data :{tmps :tmps,cty :cty,},
+url :'ajax/viewall1.2.php',
+success : function(response) {
+var total_count = response.total_count;
+
+if (response.status_value == 1) {
+var result = "";
+var cnt=0;
+var lid=0;
+//var rec_s= new Array();
+for(var i=0; i<total_count; i++)
+{
+lid = 0;
+lid+= response.data[i].line_id;
+result+='<div  id ='+lid+' class = "clickview clickviewall" >';
+result+='<a  id="title1" href="itemview.php?subcat='+lid+'" style="color:darkblue ;font-weight: bold">'+ response.data[i].title +'</a><br>';
+result+='<img hspace="" id="itmimg2" src="' +response.data[i].file_path + '" alt="Smiley face" height="100" width="100">';
+result+='</div>';
+}
+}
+$('#vall2').append(result);
+}
+
+});
+}
+//*******************
+//alert(cty);
 });
 
-
+// on cat click
 $(document).on('click','.catlist',function() {
 var aid = ($(this).attr('id'));
+var cty = ($('#filter2').val());
 if (aid == 'allv'){
 $(".head h2").html("Listing uploaded swap / barter offers - All categories");
 $('#catsall').val(0);
@@ -792,16 +844,16 @@ $(".head h2").html("Listing uploaded swap / barter offers - in two wheelers ");
 $('#catsall').val(7);
 }
 
-
 //********************
 var selcat = $('#catsall').val();
+//alert("category "+ selcat+ "");
 if (typeof selcat!== 'undefined') {
 tmps = selcat;
 $('#vall2').empty();
 $.ajax({
 dataType :"json",
 type :"POST",
-data :{tmps :tmps,},
+data :{tmps :tmps,cty :cty,},
 url :'ajax/viewall1.2.php',
 success : function(response) {
 var total_count = response.total_count;
@@ -835,17 +887,17 @@ $('#vall2').append(result);
 
 
 
-//view all clicked
+//view all clicked  from index page
 
 var selcat = $('#catsall').val();
-//alert(selcat);
+var cty =1;
 if (typeof selcat!== 'undefined') {
 tmps = selcat;
 $('#vall2').empty();
 $.ajax({
 dataType :"json",
 type :"POST",
-data :{tmps :tmps,},
+data :{tmps :tmps,cty :cty},
 url :'ajax/viewall1.2.php',
 success : function(response) {
 var total_count = response.total_count;
