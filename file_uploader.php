@@ -83,7 +83,13 @@ $img_nme = $fldr_path.$img_nme;
 $_SESSION['image_name'] = $img_nme;
 //$img_nme = $target_dir ."".$img_nme;
 //resize image
+if($imageFileType == "jpg" or $imageFileType == "JPG"){
 $scr = imagecreatefromjpeg($img_nme);
+}
+if($imageFileType == "png" or $imageFileType == "PNG"){
+$scr = imagecreatefrompng($img_nme);
+}
+
 list($width,$height) = getimagesize($img_nme);
 $newwidth = 150;
 $newheight = ($height/$width)*$newwidth;

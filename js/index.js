@@ -744,12 +744,12 @@ $('#window6').append(result);
 
 
 // all items views and filters
-$(document).on('mouseenter','.catlist',function() {
+$(document).on('mouseenter','.catlist2',function() {
 $(this).css('cursor','pointer');
 $(this).css('background-color','black' );
 });
 
-$(document).on('mouseleave','.catlist',function() {
+$(document).on('mouseleave','.catlist2',function() {
 $(this).css('background-color','#8B1300' );
 });
 
@@ -805,7 +805,7 @@ $('#vall2').append(result);
 });
 
 // on cat click
-$(document).on('click','.catlist',function() {
+$(document).on('click','.catlist2',function() {
 var aid = ($(this).attr('id'));
 var cty = ($('#filter2').val());
 if (aid == 'allv'){
@@ -922,3 +922,10 @@ $('#vall2').append(result);
 
 });
 }
+
+$(document).ready(function(){
+	$('#back2').click(function(){
+		window.history.back();
+		return false;
+	});
+});

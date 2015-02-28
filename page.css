@@ -50,24 +50,15 @@ color: black;
 .fade{
 display: block;
 }
-/*
-a {
-color: #FFFFFF;
-}
-a:link {color: #FFFFFF; text-decoration: underline; }
-.container {
-width: 950px;
-margin: 0 auto;
-}
-*/
 
 
 a:visited {color: #FFFFFF; text-decoration:none;}
 a:hover {color: #CDCDCD; text-decoration: none;}
-a:active {background-color:  #610B0B;}
+
 .catlist{
 color: black;
 }
+
 li span{
 color: #0020C2;
 }

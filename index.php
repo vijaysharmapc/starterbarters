@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-02-28T18:43:24+0530" >
+<meta name="date" content="2015-02-28T21:41:57+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="swap,exchange,barter,starter,barters">
 <meta name="description" content="start,barter,swap,exchange">
@@ -61,7 +61,7 @@ require 'navigation.php';
  &nbsp &nbsp- Upload an item you want to swap/exchange <br>
  &nbsp &nbsp- Mention what you have,and what you want in return?<br>
  &nbsp &nbsp- Wait for someone to initiate swap via our messaging feature<br>
- &nbsp &nbsp- Or You can message some on who fits your swap criteria</p>
+ &nbsp &nbsp- Or You can message some one who fits your swap criteria</p>
 <p> see <a href="help.php" style = "color:darkblue"> help</a> for more information</p>
 </div>
 <div id="newswap" >

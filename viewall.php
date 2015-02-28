@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-02-28T18:23:05+0530" >
+<meta name="date" content="2015-02-28T22:10:42+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="swap,exchange,barter,starter,barters">
 <meta name="description" content="start,barter,swap,exchange">
@@ -51,29 +51,29 @@ printf ('<input id="catsall" type="hidden" name="catidall" value='.$catid.'>');
 
 
 
-<div id="allv" class="catlist" >
+<div id="allv" class="catlist2" >
 All
 </div>
 
-<div id="sbooks" class="catlist" >
+<div id="sbooks" class="catlist2" >
 swap book
 </div>
-<div id="sdvd" class="catlist">
+<div id="sdvd" class="catlist2">
 swap dvd 
 </div>
-<div id="ssports" class="catlist">
+<div id="ssports" class="catlist2">
 swap sport gear 
 </div>
-<div id="sfurni" class="catlist">
+<div id="sfurni" class="catlist2">
 swap furniture 
 </div>
-<div id="selec" class="catlist">
+<div id="selec" class="catlist2">
 swap electronics
 </div>
-<div id="stoys" class="catlist">
+<div id="stoys" class="catlist2">
 swap toy
 </div>
-<div id="stwow" class="catlist">
+<div id="stwow" class="catlist2">
 swap two wheeler
 </div>
 
