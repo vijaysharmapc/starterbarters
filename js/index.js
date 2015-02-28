@@ -576,10 +576,12 @@ $('#tomsg').text(msgd);
 });
 
 //send message from out and my dash
-$(document).on('click','#sendmsg',function() {
+$(document).on('click','#sendmsg2',function() {
 var var1 = $('#sendmsg2').val();
-//alert(var1);
+alert(var1);
 var msg1 = $('#msgarea').val();
+alert(msg1);
+
 if (msg1=='') {
 alert("No message typed")
 return false;
@@ -606,9 +608,9 @@ $('#msgstatus').html('<p>&#10004sent</p>')
 
 $(document).on('click','#sendmsg',function() {
 var var1 = $('#sendmsg').val();
-//alert(var1);
+alert(var1);
 var msg1 = $('#msgarea').val();
-
+alert(msg1);
 
 if (msg1=='') {
 alert("No message typed")

@@ -25,7 +25,7 @@ $img_name = $_SESSION['image_name'];
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-02-20T22:54:44+0530" >
+<meta name="date" content="2015-03-01T00:48:45+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -109,18 +109,14 @@ printf('<label>Remaining characters : </label>');
 printf('<label id="lftcnt" for="tomsg"></label>');
 printf('</td></tr>');
 printf('<tr><td>');
-printf('<input type="submit" id="sendmsg" class= "sendmsg2" type="submit" width = 30 name="send" value="Send">&nbsp&nbsp');
+printf('<input type="submit" id="sendmsg2" class= "sendmsg2" type="submit" width = 30 name="send" value="Send">&nbsp&nbsp');
 printf('<a  id ="backitmview" style ="color:blue" href="dashboard.php">Back</a><div id="msgstatus"></div></td>');
 printf('</tr>');
 $var1 = $toname."+".$toid."+0";
 //printf('<input type="hidden" value ="'.$cnct.'" id="sendmsg">');
-printf('<input type="hidden" value ="'.$var1.'" id="sendmsg2">');
+printf('<input type="text" value ="'.$var1.'" id="sendmsg2">');
 printf('</table>');
-//$cnct = $frname."+".$uid."+".$toname."+".$toid;
 
-//$retval = array( 'status_value' => 1,'status_text' => 'TRUE','total_count' => count($data), 'data' => $data);
-
-//echo json_encode($retval);
 }
 
 
