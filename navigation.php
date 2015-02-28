@@ -64,7 +64,7 @@ echo "</div>";
 <!-- Place this tag where you want the +1 button to render. -->
 <div class="g-plusone" data-size="medium" data-annotation="bubble" data-width="200" data-href="https://plus.google.com/u/0/105952480612761411165"></div>
 </div>
-
+<div class="fb-like" data-href="https://www.facebook.com/pages/starterbarterscom/411186932371710" data-width="20" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
 </div>
 
 <div class="container">

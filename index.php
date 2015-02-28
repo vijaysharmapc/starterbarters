@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-02-28T14:11:25+0530" >
+<meta name="date" content="2015-02-28T18:43:24+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="swap,exchange,barter,starter,barters">
 <meta name="description" content="start,barter,swap,exchange">
@@ -15,13 +15,31 @@
 <meta http-equiv="content-style-type" content="text/css">
 <meta http-equiv="expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<!--google & fb like-->
 <script src="https://apis.google.com/js/platform.js" async defer></script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 <?php
 include_once("analyticstracking.php");
 require 'navigation.php';
 ?>
 </head>
 <body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <h2 id="heading2"> Hello, build your barter network here.. </h2>
 
 <div id="main">
