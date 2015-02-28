@@ -2,7 +2,6 @@ body {
 font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
 font-size: 15px;
 background-color: #8B1300;
-//background: linear-gradient(darkred,brown);
 }
 #heading2{
 position: relative;
@@ -357,7 +356,48 @@ box-shadow: 7px 7px 5px #888888;
     height:500px;
     overflow: auto;
     overflow-x:hidden;
+    
 }
+
+//for all
+.dall{
+position: relative;
+width: 95.5%;
+height: 80%;
+padding:20px;
+
+}
+
+.DivToScroll2{   
+    
+    border: 4px solid #EBF4FA;
+    border-radius: 4px;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 20px;
+ 
+    
+}
+
+.DivWithScroll2{
+	 position: relative;
+	 top: 1%;
+    height:800px;
+    background-color: #F5F5DC;
+    overflow: auto;
+    overflow-x:hidden;
+}
+
+
+
+
+
+
+
+
+
+
 
 .clrbrk1{
 background-color: teal;
@@ -419,25 +459,35 @@ font-weight: bold;
 font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
 }
 
+
+.clickviewall{
+display:inline-block;
+padding: 1%;
+border:solid 2px #C2DFFF;
+}
+
+#allv,#sbooks,#sdvd,#ssports,#sfurni,#selec,#stoys,#stwow{
+display:inline-block;
+width: 11.1%;
+height: 3%;
+text-align: center;
+background-color: #8B1300;
+color: white;
+font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+font-size: 13px;
+}
+
 #newswap{
 position: relative;
 width: 51%;
 height: 40%;
 top: -40%;
 left: 47%;
-background-color: #E3E4FA;
-border:solid 5px #ADD8E6;
+background-color: #F5F5DC;
+border:solid 5px #BCC6CC;
+border-radius: 10px;
 }
 
-
-#sbooks,#sdvd,#ssports,#sfurni,#selec,#stoys,#stwow{
-display:inline-block;
-width: 13%;
-height: 3%;
-text-align: center;
-background-color: #8B1300;
-
-}
 
 #window1 a{
 position: relative;
@@ -451,7 +501,7 @@ height: 40%;
 left: 0.5%;
 top: -0.4%;
 background-color: white;
-border:solid 3px #ADD8E6;
+border:solid 3px #EBF4FA;
 }
 .window2{
 position: relative;
@@ -460,7 +510,7 @@ height: 40%;
 left: 34.5%;
 top: -83%;
 background-color: white;
-border:solid 3px #ADD8E6;
+border:solid 3px #EBF4FA;
 }
 .window3{
 position: relative;
@@ -469,9 +519,8 @@ height: 40%;
 left: 69%;
 top: -166%;
 background-color: white;
-border:solid 3px #ADD8E6;
+border:solid 3px #EBF4FA;
 }
-
 
 
 

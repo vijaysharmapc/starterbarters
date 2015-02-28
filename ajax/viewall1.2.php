@@ -1,11 +1,24 @@
 <?php
-$_POST['tmps']=1;
+
+
 if(isset($_POST['tmps']) == true){
+$catid = ($_POST['tmps']);
+settype($catid, 'integer');
+$catid = addslashes($catid);
+
+
+
 # open a database conn
 require '../dbcon.php';
 
-$result = $db->prepare("SELECT line_id, title, file_path FROM item_desk ORDER BY line_id desc LIMIT 6");
+if ($catid == 0){
+$result = $db->prepare("SELECT line_id, title, file_path FROM item_desk ORDER BY line_id DESC");
 $result->execute();
+} else {
+$result = $db->prepare("SELECT line_id, title, file_path FROM item_desk WHERE category_id =? ORDER BY line_id DESC");
+$result->execute(array($catid));
+}
+
 $linecount = $result->rowCount();
 if ($linecount ==0){
 $retval = array( 'status_value' => 1,'status_text' => 'TRUE','total_count' =>0);

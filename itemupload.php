@@ -27,7 +27,7 @@ $fldr_path = substr($fldr_path,0,17);
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-02-15T17:28:09+0530" >
+<meta name="date" content="2015-02-28T14:51:44+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -91,7 +91,7 @@ $db=null;
 <table id="itemupload" border="0" cellpadding="1" cellspacing="1" width="550">
 <tr>
 <td>Title</td>
-<td><INPUT type="text" name="title" title ="Name of the item" required></td>
+<td><INPUT type="text" name="title" title ="Name of the item max 25 chars" maxlength="25" required></td>
 </tr>
 
 

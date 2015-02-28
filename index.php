@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-02-27T23:44:08+0530" >
+<meta name="date" content="2015-02-28T14:11:25+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="swap,exchange,barter,starter,barters">
 <meta name="description" content="start,barter,swap,exchange">
@@ -41,14 +41,14 @@ require 'navigation.php';
 <p>You only have to register to connect with your prospective barter partner and all this is absolutely free.<br>
  Once you login you can: <br>
  &nbsp &nbsp- Upload an item you want to swap/exchange <br>
- &nbsp &nbsp- Mention what you have,and what you want in return? **<br>
+ &nbsp &nbsp- Mention what you have,and what you want in return?<br>
  &nbsp &nbsp- Wait for someone to initiate swap via our messaging feature<br>
  &nbsp &nbsp- Or You can message some on who fits your swap criteria</p>
 <p> see <a href="help.php" style = "color:darkblue"> help</a> for more information</p>
 </div>
 <div id="newswap" >
-<p title="Top 6 new swap/exchange offers">Hot & crisp barter / swap offers!!
-<a href="viewall.php?list=1" style="color:darkblue" id="vall">View all </a>
+<p title="Top 6 new swap/exchange offers">Hot & crisp barter / swap deals!!
+<a href="viewall.php?list=0" style="color:darkblue" id="vall">View all </a>
 </p>
 
 <div class="window" id="window1">

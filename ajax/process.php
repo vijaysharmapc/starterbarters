@@ -14,6 +14,7 @@ $query = " select book_category.section_id,book_category.category_name,count(ite
 if((isset($_POST['cty']) == true) && ($_POST['cty']!= '1')){
 $ctysel = $_POST['cty'];
 $ctysel = addslashes($ctysel);
+
 $query = $query . " where book_category.category_id = " . $searchcat . " and item_desk.city = '".$ctysel."' group by book_category.category_name order by book_category.section_id";
 } else {
 $query = $query . " where book_category.category_id = " . $searchcat . " group by book_category.category_name order by book_category.section_id";
@@ -35,11 +36,10 @@ $sec_id = htmlentities($row['section_id']);
 if($catcnt > 0) {
 //echo ('<tr><td><a id = "' . urlencode($sec_id) . '" class = "catlist" style="color:black ;font-weight: bold" href="category.php?bookid=' . urlencode($sec_id) . '">' .$show . '<a/><a style="color:#0020C2">&nbsp  has '.$catcnt.' items </a>');
 echo ('<tr><td><a id = "' . urlencode($sec_id) . '" class = "catlist" style="color:black ;font-weight: bold" href="" ;return false;>' .$show . '<a/><a style="color:#0020C2">&nbsp  has '.$catcnt.' items </a>');
-}else {
-echo ('<tr><td><a id = "' . urlencode($sec_id) . '" class = "catlist" style="color:black ;font-weight: bold" href="" ;return false;>' .$show . '<a/><a style="color:black">&nbsp  has '.$catcnt.' items </a>');
-}
-
 echo "<br>";
+}else {
+//echo ('<tr><td><a id = "' . urlencode($sec_id) . '" class = "catlist" style="color:black ;font-weight: bold" href="" ;return false;>' .$show . '<a/><a style="color:black">&nbsp  has '.$catcnt.' items </a>');
+}
 }
 }
 

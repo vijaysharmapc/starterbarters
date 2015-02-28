@@ -43,14 +43,12 @@ $('#filter').attr('value',($(this).val()));
 var cty = ($(this).val());
 //alert(cty);
 var catid = $("#cats").val();
-
 //alert(catid);
 if ( catid ) {
  $.post('ajax/process.php',{catid:catid,cty:cty},function (data) {
  $("#catdata").html(data);
 });
 }
-
 });
 
 
@@ -686,7 +684,7 @@ return false;
 
 
 
-
+//top 6 new items
 $(document).ready(function(){
 var tmps = 1;
 $('#window1').empty();
@@ -738,15 +736,137 @@ $('#window5').append(result);
 if (i==5) {
 $('#window6').append(result);
 }
+}}
 }
-}
-
-}
-
 });
 });
 
 
 
+$(document).on('mouseenter','.catlist',function() {
+$(this).css('cursor','pointer');
+});
+
+$('#filter2').change(function () {
+$('#filter2').attr('value',($(this).val()));
+var cty = ($(this).val());
+alert(cty);
+});
 
 
+$(document).on('click','.catlist',function() {
+var aid = ($(this).attr('id'));
+if (aid == 'allv'){
+$(".head h2").html("Listing uploaded swap / barter offers - All categories");
+$('#catsall').val(0);
+}
+if (aid == 'sbooks'){
+$(".head h2").html("Listing uploaded swap / barter offers - in books");
+$('#catsall').val(1);
+}
+if (aid == 'sdvd'){
+$(".head h2").html("Listing uploaded swap / barter offers - in DVD & films");
+$('#catsall').val(2);
+}
+if (aid == 'ssports'){
+$(".head h2").html("Listing uploaded swap / barter offers - in sports gear");
+$('#catsall').val(3);
+}
+if (aid == 'sfurni'){
+$(".head h2").html("Listing uploaded swap / barter offers - in furniture");
+$('#catsall').val(4);
+}
+
+if (aid == 'selec'){
+$(".head h2").html("Listing uploaded swap / barter offers - in electronics");
+$('#catsall').val(5);
+}
+
+if (aid == 'stoys'){
+$(".head h2").html("Listing uploaded swap / barter offers - in toys & kids gear");
+$('#catsall').val(6);
+}
+
+if (aid == 'stwow'){
+$(".head h2").html("Listing uploaded swap / barter offers - in two wheelers ");
+$('#catsall').val(7);
+}
+
+
+//********************
+var selcat = $('#catsall').val();
+if (typeof selcat!== 'undefined') {
+tmps = selcat;
+$('#vall2').empty();
+$.ajax({
+dataType :"json",
+type :"POST",
+data :{tmps :tmps,},
+url :'ajax/viewall1.2.php',
+success : function(response) {
+var total_count = response.total_count;
+
+if (response.status_value == 1) {
+var result = "";
+var cnt=0;
+var lid=0;
+//var rec_s= new Array();
+for(var i=0; i<total_count; i++)
+{
+lid = 0;
+lid+= response.data[i].line_id;
+result+='<div  id ='+lid+' class = "clickview clickviewall" >';
+result+='<a  id="title1" href="itemview.php?subcat='+lid+'" style="color:darkblue ;font-weight: bold">'+ response.data[i].title +'</a><br>';
+result+='<img hspace="" id="itmimg2" src="' +response.data[i].file_path + '" alt="Smiley face" height="100" width="100">';
+result+='</div>';
+}
+}
+$('#vall2').append(result);
+}
+
+});
+}
+//*******************
+
+//alert(aid);
+});
+
+
+
+
+
+//view all clicked
+
+var selcat = $('#catsall').val();
+//alert(selcat);
+if (typeof selcat!== 'undefined') {
+tmps = selcat;
+$('#vall2').empty();
+$.ajax({
+dataType :"json",
+type :"POST",
+data :{tmps :tmps,},
+url :'ajax/viewall1.2.php',
+success : function(response) {
+var total_count = response.total_count;
+
+if (response.status_value == 1) {
+var result = "";
+var cnt=0;
+var lid=0;
+//var rec_s= new Array();
+for(var i=0; i<total_count; i++)
+{
+lid = 0;
+lid+= response.data[i].line_id;
+result+='<div  id ='+lid+' class = "clickview clickviewall" >';
+result+='<a  id="title1" href="itemview.php?subcat='+lid+'" style="color:darkblue ;font-weight: bold">'+ response.data[i].title +'</a><br>';
+result+='<img hspace="" id="itmimg2" src="' +response.data[i].file_path + '" alt="Smiley face" height="100" width="100">';
+result+='</div>';
+}
+}
+$('#vall2').append(result);
+}
+
+});
+}

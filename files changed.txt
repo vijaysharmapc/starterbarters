@@ -2,4 +2,8 @@ index.php
 viewall.php
 page.css
 js
+viewall1.2.php
+process.php
 
+in itemupload.php
+<td><INPUT type="text" name="title" title ="Name of the item max 25 chars" maxlength="25" required></td>
