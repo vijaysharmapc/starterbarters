@@ -19,7 +19,7 @@ $name = $_SESSION['name'];
 $uid = $_SESSION['uid'];
 //full path of image
 $img_name = $_SESSION['image_name'];
-if(isset($_SESSION['image_name_item'])){ 
+if(isset($_SESSION['image_name_item'])){
 $img_name_item = $_SESSION['image_name_item'];
 };
 //echo $img_name;
@@ -30,7 +30,7 @@ $img_name_item = $_SESSION['image_name_item'];
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-02-01T21:34:02+0530" >
+<meta name="date" content="2015-03-01T13:54:37+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">

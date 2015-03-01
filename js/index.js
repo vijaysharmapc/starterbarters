@@ -109,7 +109,7 @@ $('#data_area').append(result);
 }
 });
 //activate scan msg
-var interval = 10000;
+var interval = 3000;
 setInterval(ajax_call,interval);
 };
 //get edit page
@@ -137,7 +137,7 @@ if (tmp == 'mp') {
 	$('div.dashbrd2').removeClass('zoom');
 	//alert($(this).attr('id'));
 	$.post('ajax/myprofile.php',{tmp:tmp},function (data) {
-   $("#data").html(data);
+   $("#data_area").html(data);
 });
 }
 });
@@ -578,9 +578,9 @@ $('#tomsg').text(msgd);
 //send message from out and my dash
 $(document).on('click','#sendmsg2',function() {
 var var1 = $('#sendmsg2').val();
-alert(var1);
+//alert(var1);
 var msg1 = $('#msgarea').val();
-alert(msg1);
+//alert(msg1);
 
 if (msg1=='') {
 alert("No message typed")
@@ -608,9 +608,9 @@ $('#msgstatus').html('<p>&#10004sent</p>')
 
 $(document).on('click','#sendmsg',function() {
 var var1 = $('#sendmsg').val();
-alert(var1);
+//alert(var1);
 var msg1 = $('#msgarea').val();
-alert(msg1);
+//alert(msg1);
 
 if (msg1=='') {
 alert("No message typed")
@@ -757,6 +757,7 @@ $(this).css('background-color','#8B1300' );
 
 // default pointer on filter change to all
 $('#filter2').change(function () {
+
 $('#filter2').attr('value',($(this).val()));
 var cty = ($(this).val());
 var aid = 'allv';

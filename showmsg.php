@@ -25,7 +25,7 @@ $img_name = $_SESSION['image_name'];
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-03-01T00:48:45+0530" >
+<meta name="date" content="2015-03-01T10:45:24+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -65,6 +65,7 @@ $frnnme = addslashes($frnnme);
 require 'dbcon.php';
 
 $result = $db->prepare("select message_id,fromid,from_name,message,toid,to_name from message_list where (fromid = ? or fromid =?) and (toid =? or toid=?) and message<>'' order by message_id");
+//$result->execute(array("$frmid","$uid","$frmid","$uid"));
 $result->execute(array("$frmid","$uid","$frmid","$uid"));
 
 $linecount = $result->rowCount();
@@ -114,7 +115,7 @@ printf('<a  id ="backitmview" style ="color:blue" href="dashboard.php">Back</a><
 printf('</tr>');
 $var1 = $toname."+".$toid."+0";
 //printf('<input type="hidden" value ="'.$cnct.'" id="sendmsg">');
-printf('<input type="text" value ="'.$var1.'" id="sendmsg2">');
+printf('<input type="hidden" value ="'.$var1.'" id="sendmsg2">');
 printf('</table>');
 
 }

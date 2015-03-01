@@ -4,6 +4,21 @@ page.css
 js
 viewall1.2.php
 process.php
-navigation.php ** custom change
+navigation.php ** custom change mostly google and fb
 in itemupload.php
 <td><INPUT type="text" name="title" title ="Name of the item max 25 chars" maxlength="25" required></td>
+
+showmsg.php
+
+itemview.php
+**
+//check if message is to myself
+if($usrnme == $uid) {
+$usrnme = "self";
+echo "messages sent to self are ignored!!";
+}
+
+$cont = $fname."+".$usrnme."+".$lid;
+***
+myprofile.php
+

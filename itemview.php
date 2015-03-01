@@ -31,7 +31,7 @@ $img_name_item = $_SESSION['image_name_item'];
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-02-28T23:19:25+0530" >
+<meta name="date" content="2015-03-01T10:27:09+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -84,7 +84,18 @@ $result2->execute(array("$usrnme"));
 $rows = $result2->fetch(PDO::FETCH_ASSOC);
 $fname = htmlentities($rows['first_name']);
 $fname = ucwords($fname);
+
+//check if message is to myself
+if($usrnme == $uid) {
+$usrnme = "self";
+echo "messages sent to self are ignored!!";
+}
+
 $cont = $fname."+".$usrnme."+".$lid;
+
+
+
+
 echo '<section id="main">';
 echo "<br>";
 printf ('<img id="idp2" src='.$file.' class="dashimg" height="200" width="200" >');

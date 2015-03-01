@@ -21,14 +21,14 @@ $img_name = $_SESSION['image_name'];
 }
 ?>
 
-<title>Barter Network </title>
+<title>start barter,swap,exchange and more</title>
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-03-01T00:48:56+0530" >
+<meta name="date" content="2015-03-01T14:02:21+0530" >
 <meta name="copyright" content="">
-<meta name="keywords" content="">
-<meta name="description" content="">
+<meta name="keywords" content="swap,exchange,barter,starter,barters">
+<meta name="description" content="start,barter,swap,exchange">
 <meta name="ROBOTS" content="INDEX, FOLLOW">
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8">

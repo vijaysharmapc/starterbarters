@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-02-28T22:10:42+0530" >
+<meta name="date" content="2015-03-01T09:56:17+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="swap,exchange,barter,starter,barters">
 <meta name="description" content="start,barter,swap,exchange">
@@ -34,7 +34,7 @@ printf ('<input id="catsall" type="hidden" name="catidall" value='.$catid.'>');
 <div id="main">
 <div id="placefilter">
 <label><font color="Brown">Filter by location: </font></label>
-<select name="filter" id="filter2" title="Location filter">
+<select name="filter" id="filter2" title="Location filter,once you select a location,you can click on any category to see location specific barter/swap offers">
   <option value="1">All</option>
   <option value="bengaluru">Bengaluru</option>
   <option value="ahmedabad">Ahmedabad</option>
