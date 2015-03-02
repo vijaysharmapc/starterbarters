@@ -25,7 +25,7 @@ $img_name = $_SESSION['image_name'];
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-03-01T10:45:24+0530" >
+<meta name="date" content="2015-03-01T22:02:59+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -115,7 +115,7 @@ printf('<a  id ="backitmview" style ="color:blue" href="dashboard.php">Back</a><
 printf('</tr>');
 $var1 = $toname."+".$toid."+0";
 //printf('<input type="hidden" value ="'.$cnct.'" id="sendmsg">');
-printf('<input type="hidden" value ="'.$var1.'" id="sendmsg2">');
+printf('<input type="hidden" value ="'.$var1.'" id="sendmsg3">');
 printf('</table>');
 
 }

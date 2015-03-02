@@ -577,7 +577,7 @@ $('#tomsg').text(msgd);
 
 //send message from out and my dash
 $(document).on('click','#sendmsg2',function() {
-var var1 = $('#sendmsg2').val();
+var var1 = $('#sendmsg3').val();
 //alert(var1);
 var msg1 = $('#msgarea').val();
 //alert(msg1);

@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-03-01T14:02:50+0530" >
+<meta name="date" content="2015-03-01T22:09:51+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="swap,exchange,barter,starter,barters">
 <meta name="description" content="start,barter,swap,exchange">
@@ -31,14 +31,6 @@ require 'navigation.php';
 ?>
 </head>
 <body>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 
 <h2 id="heading2"> Hello, build your barter network here.. </h2>
 
@@ -54,7 +46,7 @@ require 'navigation.php';
 <p>  &nbsp&nbsp&nbsp<a href="http://en.wikipedia.org/wiki/Barter" target="_blank" style="color:darkblue">Barter</a>,swap or exchange of goods is 
 <span id="_description2" itemprop="description">trade without money</span>, starterbarters.com will help you exchange things that you have with what you would love to have.
 </p>
-<p>Click into the swap category you like from the left ribbon,if you want to swap a book/novel which you have already read for some thing else,this is the right place to find what people offer in return to what you have...Our product listing is endless!!
+<p>Click into the swap category you like from the left ribbon,if you want to swap a book/novel which you have already read for some thing else,this is the right place to find what people offer in return to what you have...our product listing is endless!!
 
 <p>You only have to register to connect with your prospective barter partner and all this is absolutely free.<br>
  Once you login you can: <br>

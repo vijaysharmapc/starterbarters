@@ -127,6 +127,16 @@ padding-bottom:5px;
 background-color: back;
 }
 
+#navt,td{
+font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+color: black;
+font-size: 14px;
+padding-bottom:2px;
+}
+
+
+
+
 #hometext{
 font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
 font-size: 18px;
@@ -321,7 +331,7 @@ position: relative;
 position: relative;
 width: 63%;
 top: -180px;
-left: 135px;
+left: 18%;
 border-top-width: 2px;
 padding-top: 2px;
 padding-left: 10px;
@@ -474,6 +484,7 @@ width: 51%;
 height: 40%;
 top: -40%;
 left: 47%;
+padding-left: -5%;
 background-color: #F5F5DC;
 border:solid 5px #BCC6CC;
 border-radius: 10px;

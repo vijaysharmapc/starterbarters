@@ -10,16 +10,26 @@ if(empty($_SESSION['loggedin']))
 {
 
 echo ("<div style = 'clear: right; float: right; text-align: right;font-weight: bold; padding:10px;'><br>");
+printf('<table id ="navt"><tr><td>');
 echo "<a id='lgn' href='login.php' style='color:white'>Login</a><br>";
+printf('</td></tr>');
+printf('<tr><td>');
 echo "<a id='lgn' href='register.php' style='color:white'>Register</a><br>";
+printf('</td></tr>');
+printf('</table>');
 echo "</div>";
 //exit;
 }
 else{
 $name = $_SESSION['name'];
 echo ("<div style = 'clear: right; float: right; text-align: right;font-weight: bold; padding:10px;'><br>");
+printf('<table id ="navt"><tr><td>');
 echo "<a id='lgn' href='logout.php' style='color:white' >Logout</a><br>";
+printf('</td></tr>');
+printf('<tr><td>');
 echo "<a id='lgnd' href='dashboard.php' style='color:white'>My Dashboard</a><br>";
+printf('</td></tr>');
+printf('</table>');
 echo "</div>";
 }
 ?>
@@ -29,27 +39,27 @@ echo "</div>";
 <a href="/starterbarters/index.php">
 <img class="fade" src="/starterbarters/images/home.jpg" height="40" width="50" style="border-style:none;"> </a>
 
-<a  style ="color:#E3CCCC"> Swap Categories </a>
+<a  style ="color:#E3CCCC"> swap categories </a>
 <br>
-<a id="Books" style="color:white" href="/starterbarters/category.php?catid=1" > Books </a>
+<a id="Books" style="color:white" href="/starterbarters/category.php?catid=1" >swap books </a>
 <img class="hidden" id="1" src="/starterbarters/images/arrow.jpg" height="10" width="10">
 <br>
-<a id="DVD" style="color:white" href="/starterbarters/category.php?catid=2"> DVD & films </a>
+<a id="DVD" style="color:white" href="/starterbarters/category.php?catid=2"> swap DVD & films </a>
 <img class="hidden" id="2" src="/starterbarters/images/arrow.jpg" height="10" width="10">
 <br>
-<a id="Sport" style="color:white" href="/starterbarters/category.php?catid=3"> Sports gear </a>
+<a id="Sport" style="color:white" href="/starterbarters/category.php?catid=3"> swap sports gear </a>
 <img class="hidden" id="3" src="/starterbarters/images/arrow.jpg" height="10" width="10">
 <br>
-<a id="Furn" style="color:white" href="/starterbarters/category.php?catid=4"> Furnitures</a>
+<a id="Furn" style="color:white" href="/starterbarters/category.php?catid=4"> swap furnitures</a>
 <img class="hidden" id="4" src="/starterbarters/images/arrow.jpg" height="10" width="10">
 <br>
-<a id="Elec" style="color:white" href="/starterbarters/category.php?catid=5">  Electronics </a> 
+<a id="Elec" style="color:white" href="/starterbarters/category.php?catid=5"> swap electronics </a> 
 <img class="hidden" id="5" src="/starterbarters/images/arrow.jpg" height="10" width="10">
 <br>
-<a id="Toys" style="color:white" href="/starterbarters/category.php?catid=6"> Toys & kids gear </a>
+<a id="Toys" style="color:white" href="/starterbarters/category.php?catid=6"> swap toys,kids gear </a>
 <img class="hidden" id="6" src="/starterbarters/images/arrow.jpg" height="10" width="10">
 <br>
-<a id="Two" style="color:white" href="/starterbarters/category.php?catid=7">  Two wheelers! </a>
+<a id="Two" style="color:white" href="/starterbarters/category.php?catid=7">  swap two wheelers </a>
 <img class="hidden" id="7" src="/starterbarters/images/arrow.jpg" height="10" width="10">
 <br>
 <a id="Cars" style="color:white" href="/starterbarters/help.php?catid=9">   Help </a>

@@ -81,6 +81,8 @@ if ($uploadOk == 0) {
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo "The file ". basename($_FILES["fileToUpload"]["name"]). " has been uploaded.";
+                echo '<br>';
+        printf ('<a href="dashboard.php" style="color:darkblue"> Back</a>');
 
 //script to update image name and path in db
 $img_nme = basename($newfilename);
