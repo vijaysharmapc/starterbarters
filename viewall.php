@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-03-01T09:56:17+0530" >
+<meta name="date" content="2015-03-03T09:43:05+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="swap,exchange,barter,starter,barters">
 <meta name="description" content="start,barter,swap,exchange">
@@ -20,7 +20,7 @@
 <body>
 <?php
 require 'navigation.php';
-
+include_once("analyticstracking.php");
 //get category id clicked
 $catid = trim($_GET['list']);
 $catid = addslashes($catid);

@@ -6,7 +6,7 @@
 
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-02-22T15:46:07+0530" >
+<meta name="date" content="2015-03-03T09:43:17+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -21,6 +21,7 @@
 <body>
 <?php
 require 'navigation.php';
+include_once("analyticstracking.php");
 //check if email is valid
 if (isset($_POST["customeremail"])){
 

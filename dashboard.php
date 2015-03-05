@@ -25,7 +25,7 @@ $img_name = $_SESSION['image_name'];
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-03-01T14:02:21+0530" >
+<meta name="date" content="2015-03-05T11:34:46+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="swap,exchange,barter,starter,barters">
 <meta name="description" content="start,barter,swap,exchange">
@@ -44,6 +44,33 @@ require 'navigation.php';
 $name = ucwords($name);
 echo ('<h2 id="heading2"> Welcome to your dashboard - '. $name .'</h2>');
 ?>
+
+
+<!-- /* pop up group*/ -->
+<a href="#login-box" class="login-window" style="color:white">Create a group</a>
+<div id="login-box" class="login-popup">
+<a href="#" class="close"><img src="close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
+  <form method="post" class="signin" action="">
+        <fieldset class="textbox">
+        <label class="username">
+        <span>Enter group name</span>
+        <input id="username" name="username" value="" type="text" autocomplete="on" placeholder="group name" title="minumun 5 chracters">
+        </label>
+        <label class="password">
+        <span>Password</span>
+        <input id="password" name="password" value="" type="password" placeholder="Password">
+        </label>
+        <button class="submit button" type="button">Sign in</button>
+        <p>
+        <a class="forgot" href="#">Forgot your password?</a>
+        </p>
+        </fieldset>
+  </form>
+</div>
+<!-- /* pop up group*/ -->
+
+
+
 
 
 <div id="main">
@@ -87,6 +114,7 @@ My Profile
 
 <script type="text/javascript" src="/starterbarters/js/jquery-2.1.1.min.js"> </script>
 <script type="text/javascript" src="/starterbarters/js/index.js"> </script>
+<script type="text/javascript" src="/starterbarters/js/dialog.js"> </script>
 </body>
 </div>
 

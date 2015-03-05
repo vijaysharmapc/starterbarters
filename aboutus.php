@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-03-01T20:57:19+0530" >
+<meta name="date" content="2015-03-03T09:43:25+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -20,6 +20,7 @@
 <body>
 <?php
 require 'navigation.php';
+include_once("analyticstracking.php");
 ?>
 
 <h2 id="heading2"> Hello, start your barter experience here.. </h2>

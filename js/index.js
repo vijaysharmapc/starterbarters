@@ -932,3 +932,6 @@ $(document).ready(function(){
 		return false;
 	});
 });
+
+
+//group pop up
