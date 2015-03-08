@@ -110,8 +110,8 @@ $stmt = $db->prepare("update item_desk set file_path= ? where CONCAT(usr_id,'',l
 $stmt->execute(array("$img_nme","$luid"));
 
 
-$url2 = "Location:edit.php?lid=".$lid."";
-header($url2);
+//$url2 = "Location:edit.php?lid=".$lid."";
+//header($url2);
 //window.location.reload(true);
     } else {
         echo "Sorry, there was an error uploading your file.";

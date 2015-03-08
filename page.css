@@ -1,4 +1,17 @@
 /* pop up group*/
+
+#grpadd{
+position: relative;
+left: 30%;
+top: 8%
+}
+
+#grpdesc{
+position: relative;
+left: 80%;
+top: 20%;
+}
+
 #mask {
     display: none;
     background: #000;
@@ -111,12 +124,6 @@ form.signin input::-webkit-input-placeholder {
 }
 
 /* pop up group*/
-
-
-
-
-
-
 
 
 body {
@@ -653,4 +660,27 @@ border:solid 3px #EBF4FA;
 position: relative;
 float: right;
 padding-right: 10%;
+}
+
+
+#sendgrpm1{
+position: relative;
+padding-left: 5px;
+padding-right: 5px;
+height: 250px;
+width: 70%;
+left: 20%;
+}
+#chatarea3{
+position: relative;
+padding-left: 5px;
+padding-right: 5px;
+height: 250px;
+width: 70%;
+left: 20%;
+padding:5px;
+background-color:#EBF4FA;
+border:solid 4px black;
+word-wrap: break-word;
+--overflow-y: auto;
 }

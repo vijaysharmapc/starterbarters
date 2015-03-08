@@ -1,6 +1,6 @@
 <?php
 ob_start();
-error_reporting(E_ALL);
+//error_reporting(E_ALL);
 session_start();
 require 'navigation.php';
 
@@ -58,7 +58,7 @@ $db=null;
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-02-22T16:27:54+0530" >
+<meta name="date" content="2015-03-08T22:11:20+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">

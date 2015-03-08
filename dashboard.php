@@ -18,17 +18,20 @@ $name = $_SESSION['name'];
 $uid = $_SESSION['uid'];
 //full path of image
 $img_name = $_SESSION['image_name'];
+if(isset($_SESSION['vargg'])){
+$varg = $_SESSION['vargg'];
+}
 }
 ?>
 
-<title>start barter,swap,exchange and more</title>
+<title>start barter,swap,exchange and more,swap books,swap dvd,swap games,swap furniture</title>
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-03-05T11:34:46+0530" >
+<meta name="date" content="2015-03-08T22:13:16+0530" >
 <meta name="copyright" content="">
-<meta name="keywords" content="swap,exchange,barter,starter,barters">
-<meta name="description" content="start,barter,swap,exchange">
+<meta name="keywords" content="swap,exchange,barter,starter,barters,swap books,swap dvd,swap games,swap furniture,swap kids gear">
+<meta name="description" content="swap,exchange,barter,starter,barters,swap books,swap dvd,swap games,swap furniture,swap kids gear">
 <meta name="ROBOTS" content="INDEX, FOLLOW">
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8">
@@ -45,9 +48,45 @@ $name = ucwords($name);
 echo ('<h2 id="heading2"> Welcome to your dashboard - '. $name .'</h2>');
 ?>
 
+<div id="main">
+
+
 
 <!-- /* pop up group*/ -->
-<a href="#login-box" class="login-window" style="color:white">Create a group</a>
+
+<table id="grpadd">
+<tr>
+<td>
+
+</td>
+<td>
+<a href="#login-box" class="login-window" style="color:darkblue" title="create a group,ask your friends to add the same group.message and swap within group"><strong>Create swap group</strong></a>
+</td>
+<td>
+&nbsp&nbsp<a href="help_grp.php" style="color:darkblue" target="_blank">what is a swap group?</a>
+</td>
+</tr>
+
+<tr>
+</tr>
+<tr>
+</tr>
+<div id="groupf">
+<tr>
+<td>
+
+<label><font color="Brown"></font></label>
+</td>
+<td>
+<select name="filter2" id="getgrp1" class="filter2" title="chose a swap view">
+  <option value="1">My dashboard</option>
+</select>
+</td>
+</tr>
+
+</div>
+</table>
+
 <div id="login-box" class="login-popup">
 <a href="#" class="close"><img src="close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
   <form method="post" class="signin" action="">
@@ -56,24 +95,24 @@ echo ('<h2 id="heading2"> Welcome to your dashboard - '. $name .'</h2>');
         <span>Enter group name</span>
         <input id="username" name="username" value="" type="text" autocomplete="on" placeholder="group name" title="minumun 5 chracters">
         </label>
+        <!--
         <label class="password">
         <span>Password</span>
         <input id="password" name="password" value="" type="password" placeholder="Password">
         </label>
-        <button class="submit button" type="button">Sign in</button>
+        -->
+        <button class="submit button" id="creategrp" type="button">Create group</button>
+        <!--
         <p>
         <a class="forgot" href="#">Forgot your password?</a>
         </p>
+        -->
         </fieldset>
   </form>
 </div>
 <!-- /* pop up group*/ -->
 
 
-
-
-
-<div id="main">
 <form action="file_uploader.php" method="post" enctype="multipart/form-data">
 <br>
 <?php
@@ -108,9 +147,8 @@ My Profile
 </p>
 </div>
 
-
-
 </div>
+
 
 <script type="text/javascript" src="/starterbarters/js/jquery-2.1.1.min.js"> </script>
 <script type="text/javascript" src="/starterbarters/js/index.js"> </script>

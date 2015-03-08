@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-03-08T22:43:23+0530" >
+<meta name="date" content="2015-03-08T22:42:40+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="swap,exchange,barter,starter,barters,swap books,swap dvd,swap games,swap furniture,swap kids gear">
 <meta name="description" content="swap,exchange,barter,starter,barters,swap books,swap dvd,swap games,swap furniture,swap kids gear">
@@ -23,20 +23,16 @@ require 'navigation.php';
 include_once("analyticstracking.php");
 ?>
 
-<h2 id="heading2"> Hello, start your barter experience here.. </h2>
-
 <div id="main">
-<p>
-starterbarters.com, owned by a Bangalore based transport company, is a platform for E-exchange or swap or barter established in 2015.It operates exclusively in India, with headquarters at Bangalore, Karnataka.</p>
-
-<p>starterbarters.com is about turning things you no longer want or need into something useful or desirable to you.
-On our site there are many barter/swap/exchange deals listed for you to browse through. Once you see something you like you will need to make a swap proposal to the person 
-who has listed the swap.</p>
-<p>
-A swap proposal will mean you offering one of your listed items in exchange to the other person's requirements. When you list a new item it is also there to be browsed by other members.
-</p>
-<br>
-<p>Copyright © 2015 starterbarters.com All Rights Reserved</p>
+<p>You can create a  swap group,
+list items within group & send group messages</p>
+<img id ="sl1" src="/starterbarters/images/1.jpg" alt="" class="active1" />
+<p> swap group name has to be unique and not more than 15 charterers</p>
+<img id ="sl1" src="/starterbarters/images/2.jpg" alt="" class="active1" />
+<p> select a group you want to see specific listings and click my messages to chat within group </p>
+<img id ="sl1" src="/starterbarters/images/3.jpg" alt="" class="active1" /><br>
+<img id ="sl1" src="/starterbarters/images/4.jpg" alt="" class="active1" />
+<p> example of swap group: your college mates,office mates,locality mates idea is to swap day to day things you have to what you want </p>
 </div>
 
 
@@ -53,6 +49,7 @@ A swap proposal will mean you offering one of your listed items in exchange to t
 <a href="/starterbarters/category.php?catid=5">swap electronics</a>
 <a href="/starterbarters/category.php?catid=6">swap toys kids gear</a>
 </footer>
+
 </body>
 </div>
 

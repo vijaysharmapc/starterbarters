@@ -24,8 +24,6 @@ require '../dbcon.php';
 $uid = addslashes($uid);
 $query = "select message_id,fromid,from_name,toid,to_name from message_list where fromid <>'".$uid."' and fromid <>toid and toid = '".$uid."'  group by fromid,toid,from_name,to_name order by message_id";
 
-//$query = $query . " where book_category.category_id = " . $searchcat . " group by book_category.category_name order by book_category.section_id";
-
 
 
 

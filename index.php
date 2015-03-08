@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>start barter,swap,exchange and more</title>
+<title>start barter,swap,exchange and more,swap books,swap dvd,swap games,swap furniture</title>
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-03-01T22:09:51+0530" >
+<meta name="date" content="2015-03-08T23:19:16+0530" >
 <meta name="copyright" content="">
-<meta name="keywords" content="swap,exchange,barter,starter,barters">
-<meta name="description" content="start,barter,swap,exchange">
+<meta name="keywords" content="swap,exchange,barter,starter,barters,swap books,swap dvd,swap games,swap furniture,swap kids gear">
+<meta name="description" content="swap,exchange,barter,starter,barters,swap books,swap dvd,swap games,swap furniture,swap kids gear">
 <meta name="ROBOTS" content="INDEX, FOLLOW">
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8">
@@ -54,6 +54,7 @@ require 'navigation.php';
  &nbsp &nbsp- Mention what you have,and what you want in return?<br>
  &nbsp &nbsp- Wait for someone to initiate swap via our messaging feature<br>
  &nbsp &nbsp- Or You can message some one who fits your swap criteria</p>
+ &nbsp &nbsp-you can also create a swap group to barter with</p>
 <p> see <a href="help.php" style = "color:darkblue"> help</a> for more information</p>
 </div>
 <div id="newswap" >
@@ -85,6 +86,16 @@ require 'navigation.php';
 <script type="text/javascript" src="/starterbarters/js/jquery-2.1.1.min.js"> </script>
 <script type="text/javascript" src="/starterbarters/js/index.js"> </script>
 </div>
+
+<footer>
+<p>barter swap exchange here</p>
+<a href="/starterbarters/category.php?catid=1">swap book</a>
+<a href="/starterbarters/category.php?catid=2">swap dvd</a>
+<a href="/starterbarters/category.php?catid=4">swap furnitures</a>
+<a href="/starterbarters/category.php?catid=3">swap sports gear</a>
+<a href="/starterbarters/category.php?catid=5">swap electronics</a>
+<a href="/starterbarters/category.php?catid=6">swap toys kids gear</a>
+</footer>
 </body>
 
 

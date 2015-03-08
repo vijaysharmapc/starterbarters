@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>start barter,swap,exchange and more</title>
+<title>start barter,swap,exchange and more,swap books,swap dvd,swap games,swap furniture</title>
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-02-28T16:14:40+0530" >
+<meta name="date" content="2015-03-08T22:08:59+0530" >
 <meta name="copyright" content="">
-<meta name="keywords" content="">
-<meta name="description" content="">
+<meta name="keywords" content="swap,exchange,barter,starter,barters,swap books,swap dvd,swap games,swap furniture,swap kids gear">
+<meta name="description" content="swap,exchange,barter,starter,barters,swap books,swap dvd,swap games,swap furniture,swap kids gear">
 <meta name="ROBOTS" content="INDEX, FOLLOW">
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8">
