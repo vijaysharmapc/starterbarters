@@ -27,7 +27,7 @@ $fldr_path = substr($fldr_path,0,17);
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-02-28T14:51:44+0530" >
+<meta name="date" content="2015-03-14T18:30:01+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -65,6 +65,10 @@ if(isset($_POST['ihave'])) {
    $city = trim($_POST['othercity']);
    $city = addslashes($city);
    }
+   $lcty = trim($_POST['location']);
+   $lcty = addslashes($lcty);
+   $lcty = ucwords($lcty);
+   
    $cnt = mt_rand(1,6);
    $dir = "uploads/uploads".$cnt."/dpi.jpg";
 
@@ -72,8 +76,8 @@ if(isset($_POST['ihave'])) {
 # open a database conn
 require 'dbcon.php';
 
-$stmt = $db->prepare("insert into item_desk values (?,?,?,?,?,?,?,?,?,?,?,?)");
-$stmt->execute(array('',"$section_id","$category1","$title","$ihave","$iwant","$other","$city","$uid","$dir",'',''));
+$stmt = $db->prepare("insert into item_desk values (?,?,?,?,?,?,?,?,?,?,?,?,?)");
+$stmt->execute(array('',"$section_id","$category1","$title","$ihave","$iwant","$other","$city","$lcty","$uid","$dir",'',''));
 $url = "Location:dashboard.php";
 header($url);
 exit;
@@ -169,10 +173,21 @@ $db=null;
 </td>
 
 </tr>
+
 <tr>
+<td>specific area </td>
+<td>
+<input type="text" name="location" id="location"  maxlength="30" size="14" title="enter your locality(max 30 characters) for better search ex:near mg road" >
+</td>
+</tr>
+
+
 <td>
 <p> </p>
 </td>
+
+
+
 <tr>
 <td>
 <INPUT type="submit" name="submit" value="Upload" id = "itemadd" style="height:40px; width:150px">

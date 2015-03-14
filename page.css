@@ -618,10 +618,10 @@ border:solid 5px #BCC6CC;
 border-radius: 10px;
 }
 
-
+/* view all first text*/
 #window1 a{
 position: relative;
-left: -25%;
+left: -5%;
 }
 
 .window{

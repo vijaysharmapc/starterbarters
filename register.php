@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-02-22T16:27:59+0530" >
+<meta name="date" content="2015-03-10T00:44:30+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -107,7 +107,7 @@ $db=null;
 </tr>
 <tr>
 <td>State</td>
-<td><INPUT type="text" name="state" required></td>
+<td><INPUT id="state" type="text" name="state" required></td>
 </tr>
 <tr>
 <td>City</td>
@@ -119,7 +119,7 @@ $db=null;
 </tr>
 <tr>
 <td> Do you agree with the <br>terms & condition? </td>
-<td><input type="checkbox" name="terms" value="1" required>
+<td><input type="checkbox" id="state" name="terms" value="1" required>
 <a id="" style="color:black" href="terms_of_service.php" target="_blank" > Terms of Service </a>
 </td>
 </tr>

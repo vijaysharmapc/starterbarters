@@ -28,7 +28,7 @@ $varg = $_SESSION['vargg'];
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-03-08T22:13:16+0530" >
+<meta name="date" content="2015-03-14T12:31:51+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="swap,exchange,barter,starter,barters,swap books,swap dvd,swap games,swap furniture,swap kids gear">
 <meta name="description" content="swap,exchange,barter,starter,barters,swap books,swap dvd,swap games,swap furniture,swap kids gear">
@@ -88,7 +88,7 @@ echo ('<h2 id="heading2"> Welcome to your dashboard - '. $name .'</h2>');
 </table>
 
 <div id="login-box" class="login-popup">
-<a href="#" class="close"><img src="close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
+<a href="#" class="close"><img src="" style="color:white" class="btn_close" title="Close Window" alt="Close" /></a>
   <form method="post" class="signin" action="">
         <fieldset class="textbox">
         <label class="username">

@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-03-08T22:08:59+0530" >
+<meta name="date" content="2015-03-14T16:04:37+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="swap,exchange,barter,starter,barters,swap books,swap dvd,swap games,swap furniture,swap kids gear">
 <meta name="description" content="swap,exchange,barter,starter,barters,swap books,swap dvd,swap games,swap furniture,swap kids gear">
@@ -48,7 +48,7 @@ printf ('<h2 id="heading2"> exchange or swap  '.$var.'  you like!! </h2>')
 
 <div id="main">
 <div id="placefilter">
-<label><font color="Brown">Filter by location: </font></label>
+<label><font color="Brown">Filter by city: </font></label>
 <select name="filter" id="filter" title="Location filter">
   <option value="1">All</option>
   <option value="bengaluru">Bengaluru</option>
@@ -61,6 +61,13 @@ printf ('<h2 id="heading2"> exchange or swap  '.$var.'  you like!! </h2>')
   <option value="mumbai">Mumbai</option>
   <option value="pune">Pune</option>
 </select>
+&nbsp
+<label><font color="Brown">Filter by locality: </font></label>
+<select name="localityf" id="localityf" title="Location filter">
+  <option value="1">Select All</option>
+</select>
+
+
 </div>
 <div class="DivToScroll DivWithScroll" id="sectiondta">
 Start swapping by clicking on any sub category with items in it !!
