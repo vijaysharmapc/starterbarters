@@ -4,12 +4,18 @@ if(isset($_POST['tmps']) == true){
 $subcat = trim($_POST['tmps']);
 settype($subcat, 'integer');
 $subcat = addslashes($subcat);
-
+$lcty = $_POST['llty2'];
+$cty = $_POST['cty2'];
 # open a database conn
 require '../dbcon.php';
-
+if($lcty==1) {
 $result = $db->prepare("select line_id,title,have,want,other,city,file_path from item_desk where section_id = ?");
 $result->execute(array("$subcat"));
+}else {
+$result = $db->prepare("select line_id,title,have,want,other,city,file_path from item_desk where section_id = ? and city=? and locality=?");
+$result->execute(array("$subcat","$cty","$lcty"));
+}
+
 $linecount = $result->rowCount();
 if ($linecount ==0){
 $retval = array( 'status_value' => 1,'status_text' => 'TRUE','total_count' =>0);

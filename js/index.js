@@ -389,6 +389,10 @@ return false;
 //$(document).ready(function(){
 //get list of subcategories
 $(document).on('click','.catlist',function() {
+var llty2 = $('#localityf').val();
+var cty2 = $('#filter').val();
+//alert(llty2);
+//alert(cty2);
 var catname = $(this).text();
 //alert(catname);
 $('#sectiondta').empty();
@@ -399,7 +403,7 @@ var tmps = $(this).attr('id');
 $.ajax({
 dataType :"json",
 type :"POST",
-data :{tmps :tmps,},
+data :{tmps :tmps,llty2 :llty2,cty2 :cty2,},
 url :'ajax/itemlist.php',
 success : function(response) {
 var total_count = response.total_count;
