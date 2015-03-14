@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-03-08T22:42:36+0530" >
+<meta name="date" content="2015-03-14T21:18:37+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="swap,exchange,barter,starter,barters,swap books,swap dvd,swap games,swap furniture,swap kids gear">
 <meta name="description" content="swap,exchange,barter,starter,barters,swap books,swap dvd,swap games,swap furniture,swap kids gear">
@@ -33,7 +33,7 @@ printf ('<input id="catsall" type="hidden" name="catidall" value='.$catid.'>');
 </div>
 <div id="main">
 <div id="placefilter">
-<label><font color="Brown">Filter by location: </font></label>
+<label><font color="Brown">Filter by city: </font></label>
 <select name="filter" id="filter2" title="Location filter,once you select a location,you can click on any category to see location specific barter/swap offers">
   <option value="1">All</option>
   <option value="bengaluru">Bengaluru</option>
@@ -46,10 +46,14 @@ printf ('<input id="catsall" type="hidden" name="catidall" value='.$catid.'>');
   <option value="mumbai">Mumbai</option>
   <option value="pune">Pune</option>
 </select>
+
+&nbsp
+<label><font color="Brown">Filter by locality: </font></label>
+<select name="localityf" id="localityf2" title="Location filter">
+  <option value="1">Select All</option>
+</select>
 </div>
 <br>
-
-
 
 <div id="allv" class="catlist2" >
 All

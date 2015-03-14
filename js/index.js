@@ -551,7 +551,7 @@ function isValidEmailAddress(emailAddress) {
     return pattern.test(emailAddress);
 };
 $(document).on('click','#state',function () {
-alert()
+//alert()
 var eid = ($('#eid').val());
 if(!isValidEmailAddress(eid)) {
 alert("not a correct email id"); } else {
@@ -782,22 +782,32 @@ $(document).on('mouseleave','.catlist2',function() {
 $(this).css('background-color','#8B1300' );
 });
 
+
+
+
+$('#localityf2').change(function () {
+$('#allv').trigger('click');
+});
 // default pointer on filter change to all
 $('#filter2').change(function () {
-
 $('#filter2').attr('value',($(this).val()));
 var cty = ($(this).val());
+//alert(cty);
+var llt ="1";
+if (cty==1) {
+$('#allv').trigger('click');
+}
+
 var aid = 'allv';
 var cty = ($('#filter2').val());
-
 if (aid == 'allv'){
 $(".head h2").html("Listing uploaded swap / barter offers - All categories");
 $('#catsall').val(0);
-
 }
-
 //********************
 var selcat = $('#catsall').val();
+
+
 //alert("category "+ selcat+ "");
 if (typeof selcat!== 'undefined') {
 tmps = selcat;
@@ -805,7 +815,7 @@ $('#vall2').empty();
 $.ajax({
 dataType :"json",
 type :"POST",
-data :{tmps :tmps,cty :cty,},
+data :{tmps :tmps,cty :cty,llt :llt,},
 url :'ajax/viewall1.2.php',
 success : function(response) {
 var total_count = response.total_count;
@@ -831,13 +841,22 @@ $('#vall2').append(result);
 });
 }
 //*******************
-//alert(cty);
+/*location filter list populate*/
+$("#localityf2").empty();
+if (cty) {
+ $.post('ajax/getloaclity.php',{cty:cty},function (data) {
+ $("#localityf2").append("<option value='1'>Select all</option><br>");
+ $("#localityf2").append(data);
 });
+}
+});
+
 
 // on cat click
 $(document).on('click','.catlist2',function() {
 var aid = ($(this).attr('id'));
 var cty = ($('#filter2').val());
+
 if (aid == 'allv'){
 $(".head h2").html("Listing uploaded swap / barter offers - All categories");
 $('#catsall').val(0);
@@ -876,6 +895,8 @@ $('#catsall').val(7);
 
 //********************
 var selcat = $('#catsall').val();
+var llt = $('#localityf2').val();
+//alert(llt);
 //alert("category "+ selcat+ "");
 if (typeof selcat!== 'undefined') {
 tmps = selcat;
@@ -883,7 +904,7 @@ $('#vall2').empty();
 $.ajax({
 dataType :"json",
 type :"POST",
-data :{tmps :tmps,cty :cty,},
+data :{tmps :tmps,cty :cty,llt :llt,},
 url :'ajax/viewall1.2.php',
 success : function(response) {
 var total_count = response.total_count;
@@ -921,6 +942,7 @@ $('#vall2').append(result);
 
 var selcat = $('#catsall').val();
 var cty =1;
+
 if (typeof selcat!== 'undefined') {
 tmps = selcat;
 $('#vall2').empty();
@@ -928,7 +950,7 @@ $.ajax({
 dataType :"json",
 type :"POST",
 data :{tmps :tmps,cty :cty},
-url :'ajax/viewall1.2.php',
+url :'ajax/viewall1.3.php',
 success : function(response) {
 var total_count = response.total_count;
 
@@ -962,13 +984,3 @@ $(document).ready(function(){
 
 
 //group pop up
-
-
-//locality filter
-$('#filter').change(function () {
-
-});
-
-
-//locality filter
-
