@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-03-08T23:19:16+0530" >
+<meta name="date" content="2015-03-15T02:42:39+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="swap,exchange,barter,starter,barters,swap books,swap dvd,swap games,swap furniture,swap kids gear">
 <meta name="description" content="swap,exchange,barter,starter,barters,swap books,swap dvd,swap games,swap furniture,swap kids gear">
@@ -85,6 +85,7 @@ require 'navigation.php';
 
 <script type="text/javascript" src="/starterbarters/js/jquery-2.1.1.min.js"> </script>
 <script type="text/javascript" src="/starterbarters/js/index.js"> </script>
+
 </div>
 
 <footer>

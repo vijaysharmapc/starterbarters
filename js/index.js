@@ -10,6 +10,11 @@ function() {
 $(this).stop().animate({"opacity": "1"}, "slow");
 
 });
+//get counts
+var catid =1;
+ $.post('ajax/counts_swap.php',{catid:catid},function (data) {
+ $("#counta").html(data);
+});
 });
 
 
@@ -984,3 +989,6 @@ $(document).ready(function(){
 
 
 //group pop up
+
+
+

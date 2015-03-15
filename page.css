@@ -684,3 +684,8 @@ border:solid 4px black;
 word-wrap: break-word;
 --overflow-y: auto;
 }
+
+#counta{
+width: 75%;
+padding: 1px;
+}
