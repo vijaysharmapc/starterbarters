@@ -1,6 +1,7 @@
 
 
 
+
 $(document).ready(function(){
 $(".fade").hover(
 function() {
@@ -989,6 +990,13 @@ $(document).ready(function(){
 
 
 //group pop up
+
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+alert('dd');
+$('#main').removeAttr('id');
+$('#main').addClass("minimob");
+$('#hometext').html('<br>');
+}
 
 
 

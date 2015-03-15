@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/starterbarters/page.css"/>
+</head>
+</html>
+
+
 <?php
 ob_start();
 //error_reporting(E_ALL);
@@ -58,7 +66,7 @@ $db=null;
 <link rel="stylesheet" href="/starterbarters/page.css"/>
 <meta name="generator" content="Bluefish 2.2.5" >
 <meta name="author" content="pd78" >
-<meta name="date" content="2015-03-08T22:11:20+0530" >
+<meta name="date" content="2015-03-15T21:56:02+0530" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">

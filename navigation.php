@@ -11,7 +11,7 @@ if(empty($_SESSION['loggedin']))
 
 echo ("<div style = 'clear: right; float: right; text-align: right;font-weight: bold; padding:10px;'><br>");
 printf('<table id ="navt"><tr><td>');
-echo "<a id='lgn' href='login.php' style='color:white'>Login</a><br>";
+echo "<a id='lgn' href='login.php' style='color:white'>Login</a><br><br>";
 printf('</td></tr>');
 printf('<tr><td>');
 echo "<a id='lgn' href='register.php' style='color:white'>Register</a><br>";
