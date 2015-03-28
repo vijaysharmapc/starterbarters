@@ -998,4 +998,83 @@ alert('dd');
 $('#slideshow').addClass("hidden");
 
 
+//post review
+$(document).on('click','#sendmsgr',function() {
+var var1 = $('#sendmsgr').val();
+//alert(var1);
+var msg1 = $('#msgarearr').val();
+//alert(msg1);
+$('#msgarearr').val('');
+if (msg1=='') {
+alert("No message typed")
+return false;
+}
+//alert(var1);
+//alert(msg1);
+
+if (var1) {
+$.ajax({
+dataType :"json",
+type :"POST",
+data :{var1 :var1,msg1 :msg1,},
+url :'ajax/reviewsave.php',
+success : function(response){
+//alert(response.status_value);
+$('#msgarea').val('');
+$('#msgstatus').html('<p>&#10004sent</p>')
+}});
+}
+});
+
+
+//shoe review
+$(document).ready(function(){
+//var llty2 = $('#localityf').val();
+//var cty2 = $('#filter').val();
+//alert(llty2);
+//alert(cty2);
+//var catname = $(this).text();
+//alert(catname);
+//$('#sectiondta').empty();
+//$('#sectiondta').html('<p> Available swap range in - '+catname+' </p> ');
+//scat=0;
+var tmps = 1;
+//alert(tmps);
+$.ajax({
+dataType :"json",
+type :"POST",
+data :{tmps :tmps,},
+url :'ajax/reviewlist.php',
+success : function(response) {
+var total_count = response.total_count;
+//alert(total_count);
+//alert(total_count);
+if (response.status_value == 1) {
+var result = "";
+var cnt=0;
+var lid=0;
+//var rec_s= new Array();
+for(var i=0; i<total_count; i++)
+{
+lid = 0;
+lid+= response.data[i].line_id;
+result+='<div  id ="review" class = "review">';
+//result+='<p class ="clrbrk11"> &nbsp<a id= "view" href="viewitem.php?lid='+lid+'" style="color:white ;font-weight: bold"></a>	</p>';
+result+='<div style="float: right;"> <img hspace="5" id="itmimg" src="' +response.data[i].have + '" alt="Smiley face" height="30" width="30"></div>';
+result+='<li id ="clr"><span> '+response.data[i].name+ ' : </span>' + response.data[i].title + '</li>';
+//result+='<li id ="clr"><span> I have : </span>' + response.data[i].have + '</li>';
+result+='</div>';
+}
+$('#vall3').append(result);
+}
+
+
+if(total_count == 0){
+$('#vall3').append('No items found');
+};
+}
+
+});
+return false;
+});
 

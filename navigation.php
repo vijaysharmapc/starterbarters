@@ -68,7 +68,8 @@ echo "</div>";
 <a id="Real" style="color:white" href="/starterbarters/aboutus.php">  About us </a>
 <img class="hidden" id="" src="/starterbarters/images/arrow.jpg" height="10" width="10">
 <br>
-<a style="color:white" href="/starterbarters/contact.php"> Contact us</a>
+<a style="color:white" href="/starterbarters/contact.php"> Contact us</a> <br>
+<a style="color:white" href="/starterbarters/swap-books-games-movies-more.php">post & see reviews!!</a>
 <div id="scnt">
 <br>
 <!-- Place this tag where you want the +1 button to render. -->
