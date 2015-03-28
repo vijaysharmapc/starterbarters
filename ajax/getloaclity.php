@@ -8,10 +8,18 @@ $city = addslashes($city);
 # open a database conn
 require '../dbcon.php';
 
+if(isset($_POST['catid']) == true){
+$catid = $_POST['catid'];
+$query = " select locality from item_desk  ";
+$query = $query . " where city = '" . $city . "' and category_id = '" . $catid . "' group by locality order by locality desc";
+
+} else {
+
+
 #build a query
 $query = " select locality from item_desk  ";
 $query = $query . " where city = '" . $city . "' group by locality order by locality desc";
-
+}
 
 try {
  $sth = $db->query($query);

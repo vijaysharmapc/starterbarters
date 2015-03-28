@@ -1,7 +1,6 @@
 
 
 
-
 $(document).ready(function(){
 $(".fade").hover(
 function() {
@@ -58,7 +57,7 @@ if ( catid ) {
 }
 
 if (cty) {
- $.post('ajax/getloaclity.php',{cty:cty},function (data) {
+ $.post('ajax/getloaclity.php',{cty:cty,catid:catid},function (data) {
  $("#localityf").append("<option value='1'>Select all</option><br>");
  $("#localityf").append(data);
 });
@@ -993,10 +992,10 @@ $(document).ready(function(){
 
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 alert('dd');
-$('#main').removeAttr('id');
-$('#main').addClass("minimob");
-$('#hometext').html('<br>');
+
 }
+
+$('#slideshow').addClass("hidden");
 
 
 

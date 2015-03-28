@@ -238,14 +238,12 @@ width:100%;
 height: 1100px;
 }
 
-#minimob {
-
+.minimob {
 position: fixed;
-color: white;
-
-width:70%;
-height: 70%;
+top: 80%
 }
+
+
 
 #msgcnt{
 position: relative;
